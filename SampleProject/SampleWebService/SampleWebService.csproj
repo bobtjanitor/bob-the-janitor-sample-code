@@ -68,6 +68,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SampleBizLayer\SampleBizLayer.csproj">
+      <Project>{F0D3D9AB-D0D2-45A7-8827-86ACBBEFCC91}</Project>
+      <Name>SampleBizLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleObjects\SampleObjects.csproj">
+      <Project>{60E12150-94FB-4734-9B07-CE9E4D2804B4}</Project>
+      <Name>SampleObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -16,7 +16,7 @@ namespace SampleWebService
     // [System.Web.Script.Services.ScriptService]
     public class Service1 : System.Web.Services.WebService
     {
-
+       
         [WebMethod]
         public string HelloWorld()
         {

@@ -21,18 +21,20 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\SampleBizLayer_tests.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\SampleBizLayer_tests.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -40,10 +42,13 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Authentication_Tests.cs" />
+    <Compile Include="TestObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthoringTests.txt" />
@@ -52,6 +57,10 @@
     <ProjectReference Include="..\SampleBizLayer\SampleBizLayer.csproj">
       <Project>{F0D3D9AB-D0D2-45A7-8827-86ACBBEFCC91}</Project>
       <Name>SampleBizLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleDataLayer\SampleDataLayer.csproj">
+      <Project>{6C4886BB-4380-4E41-A0AA-83675CB45B08}</Project>
+      <Name>SampleDataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleObjects\SampleObjects.csproj">
       <Project>{60E12150-94FB-4734-9B07-CE9E4D2804B4}</Project>

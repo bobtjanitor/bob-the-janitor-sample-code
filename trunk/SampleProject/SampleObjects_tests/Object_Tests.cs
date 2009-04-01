@@ -1,23 +1,10 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SampleDataLayer_tests
-{
-    /// <summary>
-    /// Summary description for UnitTest1
-    /// </summary>
+namespace SampleObjects_tests
+{    
     [TestClass]
-    public class UnitTest1
+    public class Object_Tests
     {
-        public UnitTest1()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
         
         #region Additional test attributes
         //
@@ -40,7 +27,6 @@ namespace SampleDataLayer_tests
         // public void MyTestCleanup() { }
         //
         #endregion
-
-       
+        
     }
 }

@@ -7,7 +7,7 @@ namespace SampleBizLayer_tests
     /// Base class all of the Mock request objects implement that covers all of the common 
     /// functionality.
     /// </summary>
-    public class TestRequest
+    public class BaseTestRequest
     {
         /// <summary>
         /// Gets or sets the messages set by the methods called in classes that inherit this class.
@@ -16,9 +16,9 @@ namespace SampleBizLayer_tests
         public Collection<string> Messages { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestRequest"/> class.
+        /// Initializes a new instance of the <see cref="BaseTestRequest"/> class.
         /// </summary>
-        public TestRequest()
+        public BaseTestRequest()
         {
             Messages = new Collection<string>();
         }
@@ -28,7 +28,7 @@ namespace SampleBizLayer_tests
     /// A Mock Authentication object that implements IAuthenticationRequests
     /// this is used to test functionality of Authentication Requests that are correct
     /// </summary>
-    public class TestAuthenticationRequests : TestRequest, IAuthenticationRequests
+    public class TestAuthenticationRequests : BaseTestRequest, IAuthenticationRequests
     {
         /// <summary>
         /// Authenticates the user.
@@ -47,7 +47,7 @@ namespace SampleBizLayer_tests
     /// A Mock Authentication object that implements IAuthenticationRequests
     /// this is used to test functionality of Authentication Requests that are incorrect
     /// </summary>
-    public class BadTestAuthenticationRequests : TestRequest, IAuthenticationRequests
+    public class BadTestAuthenticationRequests : BaseTestRequest, IAuthenticationRequests
     {
         /// <summary>
         /// Dosn't Authenticates the user.

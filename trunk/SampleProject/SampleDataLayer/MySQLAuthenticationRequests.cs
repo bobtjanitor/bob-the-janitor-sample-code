@@ -32,16 +32,18 @@ namespace SampleDataLayer
         {
             bool success = false;
 
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select UserName, Password From User WHERE User.UserName = ?UserName";
-            cmd.Parameters.AddWithValue("?UserName", userName);
-            //Still Refactoring this
-            DataTable RequestTable = RequestInterface.GetDataTable(cmd, "");
-            if (RequestTable.Rows.Count>0)
+            MySqlCommand cmd = new MySqlCommand
             {
-                string UserName = RequestTable.Rows[0]["UserName"].ToString();
-                string Password = RequestTable.Rows[0]["Password"].ToString();
+               CommandType = CommandType.Text,
+               CommandText = "Select UserName, Password From User WHERE User.UserName = @UserName"
+            };
+            cmd.Parameters.AddWithValue("@UserName", userName);
+            //Still Refactoring this
+            DataTable requestTable = RequestInterface.GetDataTable(cmd, "");
+            if (requestTable.Rows.Count>0)
+            {
+                string UserName = requestTable.Rows[0]["UserName"].ToString();
+                string Password = requestTable.Rows[0]["Password"].ToString();
                 success = (UserName.Equals(UserName) && Password.Equals(Password));
             }             
             return success;

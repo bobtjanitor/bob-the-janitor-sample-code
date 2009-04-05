@@ -9,6 +9,16 @@
 <body>
     <form id="form1" runat="server">
     <div>
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td><asp:TextBox ID="TextUserName" runat="server"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Passowrd</td>
+            <td><asp:TextBox ID="TextPassword" runat="server"></asp:TextBox></td>
+        </tr>
+    </table>
     
     </div>
     </form>

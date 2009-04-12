@@ -18,6 +18,9 @@
             <td>Passowrd</td>
             <td><asp:TextBox ID="TextPassword" runat="server"></asp:TextBox></td>
         </tr>
+        <tr>
+            <td><asp:ImageButton ID="ButtonLogin" runat="server" ImageUrl="~/Images/Button_Login.png" OnClick="ButtonLogin_Click" /> </td>
+        </tr>
     </table>
     
     </div>

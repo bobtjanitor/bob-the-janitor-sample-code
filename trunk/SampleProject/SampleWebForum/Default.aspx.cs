@@ -21,5 +21,10 @@ namespace SampleWebForum
         {
 
         }
+
+        protected void ButtonLogin_Click(object sender, ImageClickEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

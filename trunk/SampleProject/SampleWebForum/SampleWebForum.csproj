@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Images\Button_Login.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

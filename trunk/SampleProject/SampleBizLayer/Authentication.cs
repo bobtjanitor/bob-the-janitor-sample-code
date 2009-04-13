@@ -5,7 +5,7 @@ namespace SampleBizLayer
     /// <summary>
     /// The biz object that handles Authentication
     /// </summary>
-    public class Authentication
+    public class Authentication : IAuthentication
     {
         /// <summary>
         /// Gets or sets the authentication request interface.

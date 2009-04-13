@@ -1,0 +1,12 @@
+﻿body
+{
+}
+
+td.LabelCell
+{
+    text-align:right;
+}
+ul.Error
+{
+    color:Red;
+}

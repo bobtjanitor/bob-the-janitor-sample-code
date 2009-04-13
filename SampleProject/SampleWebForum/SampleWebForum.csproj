@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Images\Button_Login.png" />
+    <Content Include="Includes\Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +73,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIClasses\UITools.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleBizLayer\SampleBizLayer.csproj">

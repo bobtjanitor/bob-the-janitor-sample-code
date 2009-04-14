@@ -9,9 +9,8 @@ namespace SampleBizLayer_tests
     [TestClass]
     public class Authentication_Tests
     {
-        private Authentication TestTarget;
-        private TestAuthenticationRequests SucessfulAuthenticationRequests;
-        private BadTestAuthenticationRequests UnSucessfulAuthenticationRequests;
+        private Authentication _testTarget;
+        private TestAuthenticationRequests _sucessfulAuthenticationRequests;
         #region Additional test attributes
         //
         // You can use the following additional attributes as you write your tests:
@@ -25,16 +24,16 @@ namespace SampleBizLayer_tests
         // public static void MyClassCleanup() { }
         //
         // Use TestInitialize to run code before running each test 
+        
         /// <summary>
         /// initialize the tests in this Test Class.
         /// </summary>
         [TestInitialize]
         public void TestInitialize()
         {
-            TestTarget = new Authentication();
-            SucessfulAuthenticationRequests = new TestAuthenticationRequests();
-            UnSucessfulAuthenticationRequests = new BadTestAuthenticationRequests();
-            TestTarget.AuthenticationRequestInterface = SucessfulAuthenticationRequests;
+            _testTarget = new Authentication();
+            _sucessfulAuthenticationRequests = new TestAuthenticationRequests();
+            _testTarget.AuthenticationRequestInterface = _sucessfulAuthenticationRequests;
             
         }
         //
@@ -52,9 +51,9 @@ namespace SampleBizLayer_tests
         {
             string TestUser = "TestUser";
             string TestPass = "TestPass";
-            bool Actual = TestTarget.AuthenticateUser(TestUser, TestPass);
+            bool Actual = _testTarget.AuthenticateUser(TestUser, TestPass);
             Assert.IsTrue(Actual);
-            Assert.IsTrue(SucessfulAuthenticationRequests.Messages[0] == "AuthenticateUser");
+            Assert.IsTrue(_sucessfulAuthenticationRequests.Messages[0] == "AuthenticateUser");
         }
 
         /// <summary>
@@ -65,22 +64,22 @@ namespace SampleBizLayer_tests
         {
             string TestUser = " ";
             string TestPass = "TestPass";
-            bool Actual = TestTarget.AuthenticateUser(TestUser, TestPass);
+            bool Actual = _testTarget.AuthenticateUser(TestUser, TestPass);
             Assert.IsFalse(Actual);
-            Assert.AreEqual(0,SucessfulAuthenticationRequests.Messages.Count);
+            Assert.AreEqual(0,_sucessfulAuthenticationRequests.Messages.Count);
         }
 
         /// <summary>
-        /// Tests the AuthenticateUser method with valid username and invalid password.
+        /// Tests the AuthenticateUser method with valid user name and invalid password.
         /// </summary>
         [TestMethod]
         public void AuthenticateUser_Test3()
         {
             string TestUser = "TestUser";
             string TestPass = "";
-            bool Actual = TestTarget.AuthenticateUser(TestUser, TestPass);
+            bool Actual = _testTarget.AuthenticateUser(TestUser, TestPass);
             Assert.IsFalse(Actual);
-            Assert.AreEqual(0, SucessfulAuthenticationRequests.Messages.Count);
+            Assert.AreEqual(0, _sucessfulAuthenticationRequests.Messages.Count);
         }
 
         /// <summary>
@@ -91,25 +90,24 @@ namespace SampleBizLayer_tests
         {
             string TestUser = "";
             string TestPass = "";
-            bool Actual = TestTarget.AuthenticateUser(TestUser, TestPass);
+            bool Actual = _testTarget.AuthenticateUser(TestUser, TestPass);
             Assert.IsFalse(Actual);
-            Assert.AreEqual(0, SucessfulAuthenticationRequests.Messages.Count);
+            Assert.AreEqual(0, _sucessfulAuthenticationRequests.Messages.Count);
         }
 
         /// <summary>
-        /// Tests the AuthenticateUser method with bad username and password.
+        /// Tests the AuthenticateUser method with bad user name and password.
         /// </summary>
         [TestMethod]
         public void AuthenticateUser_Test5()
         {
             string TestUser = "TestUser";
-            string TestPass = "TestPass";
-            TestTarget.AuthenticationRequestInterface = UnSucessfulAuthenticationRequests;
-            bool Actual = TestTarget.AuthenticateUser(TestUser, TestPass);
-            Assert.IsFalse(Actual);
-            Assert.AreEqual(1, UnSucessfulAuthenticationRequests.Messages.Count);
-            Assert.IsTrue(UnSucessfulAuthenticationRequests.Messages[0] == "AuthenticateUser");
-            Assert.IsTrue(SucessfulAuthenticationRequests.Messages.Count==0);
+            string testPass = "testPass";
+            _sucessfulAuthenticationRequests.FailOn.Add("AuthenticateUser");
+            bool actual = _testTarget.AuthenticateUser(TestUser, testPass);
+            Assert.IsFalse(actual);
+            Assert.AreEqual(1, _sucessfulAuthenticationRequests.Messages.Count);
+            Assert.IsTrue(_sucessfulAuthenticationRequests.Messages[0] == "AuthenticateUser");
         }
     }    
 }

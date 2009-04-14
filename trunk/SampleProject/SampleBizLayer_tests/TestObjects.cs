@@ -67,8 +67,7 @@ namespace SampleBizLayer_tests
         public bool AuthenticateUser(string userName, string password)
         {
             CurrentMessage ="AuthenticateUser";
-            bool success = WasSuccessful();
-            return success;
+            return WasSuccessful();
         }
     }  
 }

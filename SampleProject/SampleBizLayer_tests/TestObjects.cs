@@ -14,13 +14,41 @@ namespace SampleBizLayer_tests
         /// </summary>
         /// <value>The messages.</value>
         public Collection<string> Messages { get; set; }
-
+        /// <summary>
+        /// Gets or sets s Collection of messages for the mock object to fail on.
+        /// </summary>
+        /// <value>The fail on.</value>
+        public Collection<string> FailOn { get; set; }
+        private string _currentMessage = string.Empty;
+        /// <summary>
+        /// The Current Message for What is happening
+        /// </summary>
+        public string CurrentMessage
+        {
+            get { return _currentMessage; }
+            set 
+            {
+                _currentMessage = value;
+                Messages.Add(value);
+            }
+        }
+      
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseTestRequest"/> class.
         /// </summary>
         public BaseTestRequest()
         {
             Messages = new Collection<string>();
+            FailOn = new Collection<string>();            
+        }
+
+        /// <summary>
+        /// Was this request successful.
+        /// </summary>
+        /// <returns></returns>
+        public bool WasSuccessful()
+        {
+            return (!FailOn.Contains(_currentMessage));
         }
     }
 
@@ -38,27 +66,9 @@ namespace SampleBizLayer_tests
         /// <returns>true</returns>
         public bool AuthenticateUser(string userName, string password)
         {
-            Messages.Add("AuthenticateUser");
-            return true;
+            CurrentMessage ="AuthenticateUser";
+            bool success = WasSuccessful();
+            return success;
         }
-    }
-
-    /// <summary>
-    /// A Mock Authentication object that implements IAuthenticationRequests
-    /// this is used to test functionality of Authentication Requests that are incorrect
-    /// </summary>
-    public class BadTestAuthenticationRequests : BaseTestRequest, IAuthenticationRequests
-    {
-        /// <summary>
-        /// Dosn't Authenticates the user.
-        /// </summary>
-        /// <param name="userName">Name of the user.</param>
-        /// <param name="password">The password.</param>
-        /// <returns>false</returns>
-        public bool AuthenticateUser(string userName, string password)
-        {
-            Messages.Add("AuthenticateUser");
-            return false;
-        }
-    }
+    }  
 }

@@ -10,3 +10,7 @@ ul.Error
 {
     color:Red;
 }
+input.Login
+{
+    width:120px;
+}

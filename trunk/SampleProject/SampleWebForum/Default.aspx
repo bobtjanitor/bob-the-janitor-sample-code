@@ -3,11 +3,11 @@
     <table>
         <tr>
             <td class="LabelCell">User Name</td>
-            <td><asp:TextBox ID="TextUserName" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextUserName" runat="server" CssClass="Login"></asp:TextBox></td>
         </tr>
         <tr>
             <td class="LabelCell">Passowrd</td>
-            <td><asp:TextBox ID="TextPassword" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextPassword" CssClass="Login" runat="server"></asp:TextBox></td>
         </tr>
         <tr>
             <td colspan="2"><asp:ImageButton ID="ButtonLogin" runat="server" ImageUrl="~/Images/Button_Login.png" OnClick="ButtonLogin_Click" /> </td>

@@ -5,20 +5,6 @@ using System.Data;
 namespace SampleDataLayer
 {
     /// <summary>
-    /// The Interface for defining DB connections
-    /// </summary>
-    public interface IDBProviderFactory
-    {
-        /// <summary>
-        /// Gets a connection.
-        /// </summary>
-        /// <returns></returns>
-        IDbConnection GetConnection();
-
-        DbParameter AddParameterWithValue(string name,string value);
-    }
-
-    /// <summary>
     /// A class the implements the <see cref="IDBProviderFactory"/> 
     /// and is used for getting a connection for doing authentication  
     /// </summary>
@@ -51,6 +37,12 @@ namespace SampleDataLayer
             return connection;
         }
 
+        /// <summary>
+        /// Adds a parameter with value of the correct provider type.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
         public DbParameter AddParameterWithValue(string name,string value)
         {
             DbParameter parameter = _frameworkDBProviderFactory.CreateParameter();

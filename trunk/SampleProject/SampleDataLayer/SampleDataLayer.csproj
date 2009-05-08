@@ -62,7 +62,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DBConnectionFactory.cs" />
+    <Compile Include="DBUserProviderFactory.cs" />
+    <Compile Include="IDBProviderFactory.cs" />
     <Compile Include="IMySQLRequests.cs" />
     <Compile Include="MySQLAuthenticationRequests.cs" />
     <Compile Include="MySQLConnections.cs" />

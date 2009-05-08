@@ -39,6 +39,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=5.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -55,11 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationRequests.cs" />
     <Compile Include="Customers.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DBConnectionFactory.cs" />
     <Compile Include="IMySQLRequests.cs" />
     <Compile Include="MySQLAuthenticationRequests.cs" />
     <Compile Include="MySQLConnections.cs" />

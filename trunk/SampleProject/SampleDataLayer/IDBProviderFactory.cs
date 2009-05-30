@@ -12,7 +12,7 @@ namespace SampleDataLayer
         /// Gets a connection.
         /// </summary>
         /// <returns></returns>
-        IDbConnection GetConnection();
+        IDbConnection GetAuthenticationConnection();
 
         /// <summary>
         /// Adds a parameter with value of the correct provider type.

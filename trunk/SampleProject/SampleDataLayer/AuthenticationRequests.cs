@@ -32,7 +32,7 @@ namespace SampleDataLayer
         {
             bool success = false;
             DataTable requestTable = new DataTable();
-            using (IDbConnection conn = UserDataProvider.GetConnection())
+            using (IDbConnection conn = UserDataProvider.GetAuthenticationConnection())
             {
                 conn.Open();
                 IDbCommand cmd = conn.CreateCommand();

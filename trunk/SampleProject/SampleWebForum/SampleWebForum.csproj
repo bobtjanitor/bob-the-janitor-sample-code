@@ -65,6 +65,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authenticated\Authenticated.Master.cs">
+      <DependentUpon>Authenticated.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\Authenticated.Master.designer.cs">
+      <DependentUpon>Authenticated.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Authenticated\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -94,6 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NonAuthenticated.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Authenticated\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Authenticated\Authenticated.Master" />
+    <Content Include="Authenticated\Customers.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

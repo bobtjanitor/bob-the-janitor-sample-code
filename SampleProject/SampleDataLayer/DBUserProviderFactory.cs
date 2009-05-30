@@ -30,7 +30,7 @@ namespace SampleDataLayer
         /// Gets an <see cref="IDbConnection"/> for doing Authentication.
         /// </summary>
         /// <returns></returns>
-        public IDbConnection GetConnection()
+        public IDbConnection GetAuthenticationConnection()
         {
             IDbConnection connection =  _frameworkDBProviderFactory.CreateConnection();
             connection.ConnectionString = _authenticationSettings.ConnectionString;            

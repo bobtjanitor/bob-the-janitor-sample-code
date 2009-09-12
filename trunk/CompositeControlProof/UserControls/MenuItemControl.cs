@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace UserControls
 {
-    [DefaultProperty("Text")]
+    
     [ToolboxData("<{0}:MenuItemControl runat=server></{0}:MenuItemControl>")]
     public class MenuItemControl : WebControl
     {
@@ -58,7 +58,11 @@ namespace UserControls
         {
             get
             {
-                bool selected = (bool)ViewState["Selected"];
+                bool selected = false;
+                if (ViewState["Selected"]!=null)
+                {
+                    selected = (bool)ViewState["Selected"];
+                }
                 return selected;
             }
             set
@@ -67,19 +71,46 @@ namespace UserControls
             }
         }
 
-        protected override void RenderContents(HtmlTextWriter output)
+        protected override void CreateChildControls()
         {
-            output.RenderBeginTag(HtmlTextWriterTag.Div);
-            output.AddAttribute(HtmlTextWriterAttribute.Class, isSelected(Selected));    
-           
-            
-            output.Write(Text);
+            Controls.Clear();
         }
 
-        private string isSelected(bool selected)
+        protected override void Render(HtmlTextWriter writer)
+        {
+            writer.AddAttribute(HtmlTextWriterAttribute.Class, setCssClass());
+            writer.RenderBeginTag(HtmlTextWriterTag.Div);            
+            RenderContents(writer);
+            writer.RenderEndTag();
+        }
+
+        protected override void RenderContents(HtmlTextWriter output)
+        {
+            EnsureChildControls();
+            
+            buildContent(output);                            
+        }
+
+        private void buildContent(HtmlTextWriter output)
+        {
+            if (Selected)
+            {
+                output.Write(Text);
+            }
+            else
+            {
+                output.AddAttribute(HtmlTextWriterAttribute.Style, "Display:Block;Text-decoration:none;color:black;");
+                output.AddAttribute(HtmlTextWriterAttribute.Href, LinkURL);
+                output.RenderBeginTag(HtmlTextWriterTag.A);                
+                output.InnerWriter.Write(Text);
+                output.RenderEndTag();
+            }
+        }
+
+        private string setCssClass()
         {
             string className = "MenuItem";
-            if (selected)
+            if (Selected)
             {
                 className = "MenuItemSelected";
             }

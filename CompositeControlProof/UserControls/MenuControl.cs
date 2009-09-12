@@ -1,39 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Web;
+﻿using System.ComponentModel;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace UserControls
-{
-    [DefaultProperty("Text")]
-    [ToolboxData("<{0}:MenuControl runat=server></{0}:MenuControl>")]
+{    
+    [DefaultProperty("MenuItems"), ParseChildren(true, "MenuItems")]
+    [ToolboxData("<{0}:MenuControl runat=\"server\"></{0}:MenuControl>")]
     public class MenuControl : WebControl
-    {
-        [Bindable(true)]
-        [Category("Appearance")]
-        [DefaultValue("")]
-        [Localizable(true)]
-        public string Text
+    {        
+        [Category("Behavior"),Description("The item collection"), 
+            DesignerSerializationVisibility (DesignerSerializationVisibility.Content), 
+            PersistenceMode(PersistenceMode.InnerDefaultProperty)]
+        public MenuItmeControls MenuItems {get; set;}
+
+        protected override void Render(HtmlTextWriter writer)
         {
-            get
-            {
-                String s = (String)ViewState["Text"];
-                return ((s == null) ? String.Empty : s);
-            }
-
-            set
-            {
-                ViewState["Text"] = value;
-            }
+            writer.AddAttribute(HtmlTextWriterAttribute.Class, "Menu");
+            writer.RenderBeginTag(HtmlTextWriterTag.Div);
+            RenderContents(writer);
+            writer.RenderEndTag();
         }
-
+       
         protected override void RenderContents(HtmlTextWriter output)
         {
-            output.Write(Text);
+            foreach (MenuItemControl item in MenuItems)
+            {
+                item.RenderControl(output);
+            }            
         }
     }
 }

@@ -9,47 +9,48 @@ using SimpleDB.Objects;
 
 namespace SimpleDB.DAL
 {
-    public class ContactProxy
+    public class Proxy
     {
         private string PublicKey = String.Empty;
         private string SecretKey = String.Empty;
-        private string DomainName = String.Empty;
         public AmazonSimpleDBClient service{ get; set;}
+        private List<string> domains;
+        public List<string> Domains
+        {
+            get
+            {
+                if (domains==null)
+                {
+                    domains = GetDomains();
+                }
+                return domains;
+            }
+        }
 
-        public ContactProxy()
+        public Proxy()
         {
             PublicKey = ConfigurationManager.AppSettings["PublicKey"];
             SecretKey = ConfigurationManager.AppSettings["SecretKey"];
-            DomainName = "Contacts";
             service = new AmazonSimpleDBClient(PublicKey, SecretKey);
         }
 
-        public bool AddContact(Contact contact)
+        public List<string> GetDomains()
         {
-            PutAttributesRequest putRequest = new PutAttributesRequest();
-            List<ReplaceableAttribute> attributeList = new List<ReplaceableAttribute>
-               {
-                   new ReplaceableAttribute().WithName("Email").WithValue(contact.Email),
-                   new ReplaceableAttribute().WithName("Name").WithValue(contact.Name),
-                   new ReplaceableAttribute().WithName("Phone").WithValue(contact.Phone)
-               };
-            contact.ID = Guid.NewGuid();
-            bool success = false;
-            try
-            {
-                PutAttributesRequest action = new PutAttributesRequest().WithDomainName(DomainName).WithItemName(contact.ID.ToString());
-                action.Attribute = attributeList;
-                PutAttributesResponse response = service.PutAttributes(action);
-                success = true;
-            }
-            catch 
-            {
-                success = false;
-            }
-            
-            return success;
+            ListDomainsRequest ListDomainsAction = new ListDomainsRequest();
+            ListDomainsResponse response = service.ListDomains(ListDomainsAction);
+            return response.ListDomainsResult.DomainName;
         }
 
+        public void AddDomain(string domainName)
+        {
+            CreateDomainRequest myCreateDomainRequest = new CreateDomainRequest {DomainName = domainName};
+            CreateDomainResponse response = service.CreateDomain(myCreateDomainRequest);
+        }
 
+        public void DeleteDomain(string domainName)
+        {
+            DeleteDomainRequest request = new DeleteDomainRequest {DomainName = domainName};
+            DeleteDomainResponse response = service.DeleteDomain(request);
+        }
     }
 }

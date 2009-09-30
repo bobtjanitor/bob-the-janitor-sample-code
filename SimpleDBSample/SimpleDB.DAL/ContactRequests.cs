@@ -4,31 +4,42 @@ using System.Linq;
 using System.Text;
 using Amazon.SimpleDB.Model;
 using SimpleDB.Objects;
+using Attribute=Amazon.SimpleDB.Model.Attribute;
 
 namespace SimpleDB.DAL
 {
     public class ContactRequests
     {
-        private Proxy proxy;
-        public Proxy myProxy
+        private Proxy simpleDBProxy;
+        public Proxy SimpleDBProxy
         {
             get
             {
-                if (proxy==null)
+                if (simpleDBProxy==null)
                 {
-                    proxy = new Proxy();
+                    simpleDBProxy = new Proxy();
                 }
-                return proxy;
+                return simpleDBProxy;
             }
             set
             {
-                proxy = value;
+                simpleDBProxy = value;
             }
         }
+        const string DomainName = "Contacts";
+
+        public Contacts GetContacts()
+        {
+            GetAttributesRequest request = new GetAttributesRequest();
+            request.DomainName = DomainName;
+            GetAttributesResponse response = SimpleDBProxy.service.GetAttributes(request);
+            List<Attribute> attributeList = response.GetAttributesResult.Attribute;
+
+            throw new NotImplementedException("still working on this");
+        }
+
         public bool AddContact(Contact contact)
         {
-            PutAttributesRequest putRequest = new PutAttributesRequest();
-            string DomainName = "Contacts";
             List<ReplaceableAttribute> attributeList = new List<ReplaceableAttribute>
                {
                    new ReplaceableAttribute().WithName("Email").WithValue(contact.Email),
@@ -39,13 +50,13 @@ namespace SimpleDB.DAL
             bool success = false;
             try
             {
-                if (!myProxy.Domains.Contains(DomainName))
+                if (!SimpleDBProxy.Domains.Contains(DomainName))
                 {
-                    myProxy.AddDomain(DomainName);
+                    SimpleDBProxy.AddDomain(DomainName);
                 }
                 PutAttributesRequest action = new PutAttributesRequest().WithDomainName(DomainName).WithItemName(contact.ID.ToString());
                 action.Attribute = attributeList;
-                PutAttributesResponse response = myProxy.service.PutAttributes(action);
+                PutAttributesResponse response = SimpleDBProxy.service.PutAttributes(action);
                 success = true;
             }
             catch (Exception requestException)

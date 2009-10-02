@@ -18,13 +18,21 @@ namespace SimpleDB.DAL_Tests
         ///A test for AddContact
         ///</summary>
         [TestMethod()]
-        public void AddContact_WithValidContact_Test()
+        public void SaveContact_WithValidContact_Test()
         {
             ContactRequests target = new ContactRequests();
             Contact contact = new Contact() { Email = "test@test.com", Name = "test User", Phone = "555-555-5555" };
             bool expected = true;
-            bool actual = target.AddContact(contact);
+            bool actual = target.SaveContact(contact);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void GetContacts_Test()
+        {
+            ContactRequests target = new ContactRequests();
+            Contacts testContacts = target.GetContacts();
+            Assert.IsTrue(testContacts.Count>0);
         }
     }
 }

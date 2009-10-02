@@ -30,15 +30,28 @@ namespace SimpleDB.DAL
 
         public Contacts GetContacts()
         {
-            GetAttributesRequest request = new GetAttributesRequest();
-            request.DomainName = DomainName;
-            GetAttributesResponse response = SimpleDBProxy.service.GetAttributes(request);
-            List<Attribute> attributeList = response.GetAttributesResult.Attribute;
+            Contacts myContacts = new Contacts();
 
-            throw new NotImplementedException("still working on this");
+            SelectRequest request = new SelectRequest
+            {
+                SelectExpression = string.Format("SELECT * FROM {0} ", DomainName)
+            };
+            SelectResponse response = SimpleDBProxy.service.Select(request);
+
+            var contacts = from item in response.SelectResult.Item
+                             select new Contact()
+                                        {
+                                            Email = item.Attribute.GetValueByName("Email"),
+                                            Name = item.Attribute.GetValueByName("Name"),
+                                            Phone = item.Attribute.GetValueByName("Phone"),
+                                            ID =  item.Name
+                                        };
+            myContacts.AddRange(contacts);
+            return myContacts;
         }
 
-        public bool AddContact(Contact contact)
+       
+        public bool SaveContact(Contact contact)
         {
             List<ReplaceableAttribute> attributeList = new List<ReplaceableAttribute>
                {
@@ -46,7 +59,7 @@ namespace SimpleDB.DAL
                    new ReplaceableAttribute().WithName("Name").WithValue(contact.Name),
                    new ReplaceableAttribute().WithName("Phone").WithValue(contact.Phone)
                };
-            contact.ID = Guid.NewGuid();
+            contact.ID = Guid.NewGuid().ToString();
             bool success = false;
             try
             {
@@ -54,8 +67,12 @@ namespace SimpleDB.DAL
                 {
                     SimpleDBProxy.AddDomain(DomainName);
                 }
-                PutAttributesRequest action = new PutAttributesRequest().WithDomainName(DomainName).WithItemName(contact.ID.ToString());
-                action.Attribute = attributeList;
+                PutAttributesRequest action = new PutAttributesRequest
+                  {
+                      ItemName = contact.ID.ToString(),
+                      Attribute = attributeList,
+                      DomainName = DomainName
+                  };
                 PutAttributesResponse response = SimpleDBProxy.service.PutAttributes(action);
                 success = true;
             }
@@ -65,6 +82,16 @@ namespace SimpleDB.DAL
             }
 
             return success;
+        }
+    }
+
+    public static class simpleDBExtedors
+    {
+        public static string GetValueByName(this IList<Attribute> myAttributes, string name)
+        {
+            var myValue = from attribute in myAttributes where attribute.Name == name select attribute.Value;
+
+            return myValue.FirstOrDefault();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace SimpleDB.Objects
 {
     public class Contact
     {
-        public Guid ID { get; set; }
+        public string ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -16,6 +16,13 @@ namespace SimpleDB.Objects
 
     public class Contacts : Collection<Contact>
     {
-        
+
+        public void AddRange(IEnumerable<Contact> myContacts)
+        {
+            foreach (Contact contact in myContacts)
+            {
+                Add(contact);
+            }
+        }
     }
 }

@@ -71,6 +71,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleDB.BIZ\SimpleDB.BIZ.csproj">
+      <Project>{D6B62FB5-24A3-4235-B50E-19A74887DC47}</Project>
+      <Name>SimpleDB.BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleDB.Objects\SimpleDB.Objects.csproj">
+      <Project>{1C32B470-636C-499B-A1AE-7BE9EDAB1CF9}</Project>
+      <Name>SimpleDB.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,17 @@ namespace SimpleDB.BIZ
 {
     public class ContactsRequests
     {
+        public Contacts SearchContactsByName(string contactName)
+        {
+            Contacts myContact = new Contacts();
+
+            if (contactName.Length>0)
+            {
+                
+            }
+
+            return myContact;
+        }
         public Contacts GetContacts()
         {
             throw new NotSupportedException("this isn't done yet");

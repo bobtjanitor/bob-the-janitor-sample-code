@@ -35,4 +35,4 @@ namespace SimpleDB.DAL_Tests
             Assert.IsTrue(testContacts.Count>0);
         }
     }
-}
+} 

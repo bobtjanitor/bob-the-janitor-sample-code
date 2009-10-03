@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Amazon.SimpleDB.Model;
 using SimpleDB.Objects;
-using Attribute=Amazon.SimpleDB.Model.Attribute;
 
 namespace SimpleDB.DAL
 {
@@ -36,7 +34,7 @@ namespace SimpleDB.DAL
             {
                 SelectExpression = string.Format("SELECT * FROM {0} ", DomainName)
             };
-            SelectResponse response = SimpleDBProxy.service.Select(request);
+            SelectResponse response = SimpleDBProxy.Service.Select(request);
 
             var contacts = from item in response.SelectResult.Item
                              select new Contact()
@@ -58,7 +56,7 @@ namespace SimpleDB.DAL
             {
                 SelectExpression = string.Format("SELECT * FROM {0} where Name='{1}' ", DomainName, contactName)
             };
-            SelectResponse response = SimpleDBProxy.service.Select(request);
+            SelectResponse response = SimpleDBProxy.Service.Select(request);
 
             var contacts = from item in response.SelectResult.Item
                            select new Contact()
@@ -71,7 +69,6 @@ namespace SimpleDB.DAL
             myContacts.AddRange(contacts);
             return myContacts;
         }
-
        
         public bool SaveContact(Contact contact)
         {
@@ -95,7 +92,7 @@ namespace SimpleDB.DAL
                       Attribute = attributeList,
                       DomainName = DomainName
                   };
-                PutAttributesResponse response = SimpleDBProxy.service.PutAttributes(action);
+                PutAttributesResponse response = SimpleDBProxy.Service.PutAttributes(action);
                 success = true;
             }
             catch (Exception requestException)
@@ -105,15 +102,10 @@ namespace SimpleDB.DAL
 
             return success;
         }
-    }
 
-    public static class simpleDBExtedors
-    {
-        public static string GetValueByName(this IList<Attribute> myAttributes, string name)
+        public Contact GetContactsByID(string contactId)
         {
-            var myValue = from attribute in myAttributes where attribute.Name == name select attribute.Value;
-
-            return myValue.FirstOrDefault();
+            throw new NotImplementedException();
         }
     }
 }

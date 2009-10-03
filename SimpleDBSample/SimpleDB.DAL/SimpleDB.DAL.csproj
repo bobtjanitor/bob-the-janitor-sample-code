@@ -54,6 +54,7 @@
     <Compile Include="ContactData.cs" />
     <Compile Include="Proxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="simpleDBExtedors.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AmazonLibs\Amazon.SimpleDB.dll" />

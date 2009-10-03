@@ -9,7 +9,21 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <table>
+            <tr>
+                <td>
+                       Contact Name:
+                </td>
+                <td>
+                    <asp:TextBox ID="textContactName" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:Button ID="buttonSearch" runat="server" Text="Search" OnClick="buttonSearch_Click"/>
+                </td>
+            </tr>
+    </table>
     </div>
     </form>
 </body>

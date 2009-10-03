@@ -55,7 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactRequests_Tests.cs" />
+    <Compile Include="ContactData_Tests.cs" />
     <Compile Include="Proxy_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

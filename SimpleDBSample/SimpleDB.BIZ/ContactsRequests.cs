@@ -16,11 +16,13 @@ namespace SimpleDB.BIZ
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    Contact myContact = new Contact();
-                    myContact.ID = Guid.NewGuid().ToString();
-                    myContact.Name = "Contact " + i;
-                    myContact.Phone = "555-555-5555";
-                    myContact.Email = string.Format("Test{0}.Test@test.com", i);
+                    Contact myContact = new Contact
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Name = "Contact " + i,
+                        Phone = "555-555-5555",
+                        Email = string.Format("Test{0}.Test@test.com", i)
+                    };
                     myContacts.Add(myContact);
                 }
             }

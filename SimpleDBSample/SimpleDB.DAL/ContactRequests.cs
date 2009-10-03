@@ -50,6 +50,28 @@ namespace SimpleDB.DAL
             return myContacts;
         }
 
+        public Contacts GetContactsByName(string contactName)
+        {
+            Contacts myContacts = new Contacts();
+
+            SelectRequest request = new SelectRequest
+            {
+                SelectExpression = string.Format("SELECT * FROM {0} where Name='{1}' ", DomainName, contactName)
+            };
+            SelectResponse response = SimpleDBProxy.service.Select(request);
+
+            var contacts = from item in response.SelectResult.Item
+                           select new Contact()
+                           {
+                               Email = item.Attribute.GetValueByName("Email"),
+                               Name = item.Attribute.GetValueByName("Name"),
+                               Phone = item.Attribute.GetValueByName("Phone"),
+                               ID = item.Name
+                           };
+            myContacts.AddRange(contacts);
+            return myContacts;
+        }
+
        
         public bool SaveContact(Contact contact)
         {

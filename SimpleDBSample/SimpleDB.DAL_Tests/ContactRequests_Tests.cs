@@ -34,5 +34,29 @@ namespace SimpleDB.DAL_Tests
             Contacts testContacts = target.GetContacts();
             Assert.IsTrue(testContacts.Count>0);
         }
+
+        [TestMethod()]
+        public void SearchContactsByName_EmptyName_Test()
+        {
+            ContactRequests target = new ContactRequests();
+            Contacts testContacts = target.GetContactsByName("");
+            Assert.AreEqual(0,testContacts.Count);
+        }
+
+        [TestMethod()]
+        public void SearchContactsByName_InvalidName_Test()
+        {
+            ContactRequests target = new ContactRequests();
+            Contacts testContacts = target.GetContactsByName("something");
+            Assert.AreEqual(0, testContacts.Count);
+        }
+
+        [TestMethod()]
+        public void SearchContactsByName_ValidName_Test()
+        {
+            ContactRequests target = new ContactRequests();
+            Contacts testContacts = target.GetContactsByName("test User");
+            Assert.IsTrue(testContacts.Count>0);
+        }
     }
 } 

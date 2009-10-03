@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using SimpleDB.DAL;
 using SimpleDB.Objects;
 
@@ -7,13 +7,13 @@ namespace SimpleDB.DAL_Tests
     /// <summary>
     /// Summary description for ContactRequests_Tests
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ContactData_Tests
     {
         /// <summary>
         ///A test for AddContact
         ///</summary>
-        [TestMethod()]
+        [Test()]
         public void SaveContact_WithValidContact_Test()
         {
             ContactData target = new ContactData();
@@ -23,7 +23,7 @@ namespace SimpleDB.DAL_Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod()]
+        [Test()]
         public void GetContacts_Test()
         {
             ContactData target = new ContactData();
@@ -31,7 +31,7 @@ namespace SimpleDB.DAL_Tests
             Assert.IsTrue(testContacts.Count>0);
         }
 
-        [TestMethod()]
+        [Test()]
         public void SearchContactsByName_EmptyName_Test()
         {
             ContactData target = new ContactData();
@@ -39,7 +39,7 @@ namespace SimpleDB.DAL_Tests
             Assert.AreEqual(0,testContacts.Count);
         }
 
-        [TestMethod()]
+        [Test()]
         public void SearchContactsByName_InvalidName_Test()
         {
             ContactData target = new ContactData();
@@ -47,7 +47,7 @@ namespace SimpleDB.DAL_Tests
             Assert.AreEqual(0, testContacts.Count);
         }
 
-        [TestMethod()]
+        [Test()]
         public void SearchContactsByName_ValidName_Test()
         {
             ContactData target = new ContactData();

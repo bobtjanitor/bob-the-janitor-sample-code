@@ -58,6 +58,7 @@
     <Compile Include="ContactData_Tests.cs" />
     <Compile Include="Proxy_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleDBExtedors_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleDB.DAL\SimpleDB.DAL.csproj">

@@ -9,11 +9,20 @@ using SimpleDB.Objects;
 
 namespace SimpleDB.DAL
 {
-    public class Proxy
+    public interface IProxy
+    {
+        AmazonSimpleDBClient Service { get; set; }
+        List<string> Domains { get; }
+        List<string> GetDomains();
+        void AddDomain(string domainName);
+        void DeleteDomain(string domainName);
+    }
+
+    public class Proxy : IProxy
     {
         private string PublicKey = String.Empty;
         private string SecretKey = String.Empty;
-        public AmazonSimpleDBClient service{ get; set;}
+        public AmazonSimpleDBClient Service{ get; set;}
         private List<string> domains;
         public List<string> Domains
         {
@@ -31,26 +40,26 @@ namespace SimpleDB.DAL
         {
             PublicKey = ConfigurationManager.AppSettings["PublicKey"];
             SecretKey = ConfigurationManager.AppSettings["SecretKey"];
-            service = new AmazonSimpleDBClient(PublicKey, SecretKey);
+            Service = new AmazonSimpleDBClient(PublicKey, SecretKey);
         }
 
         public List<string> GetDomains()
         {
             ListDomainsRequest ListDomainsAction = new ListDomainsRequest();
-            ListDomainsResponse response = service.ListDomains(ListDomainsAction);
+            ListDomainsResponse response = Service.ListDomains(ListDomainsAction);
             return response.ListDomainsResult.DomainName;
         }
 
         public void AddDomain(string domainName)
         {
             CreateDomainRequest myCreateDomainRequest = new CreateDomainRequest {DomainName = domainName};
-            CreateDomainResponse response = service.CreateDomain(myCreateDomainRequest);
+            CreateDomainResponse response = Service.CreateDomain(myCreateDomainRequest);
         }
 
         public void DeleteDomain(string domainName)
         {
             DeleteDomainRequest request = new DeleteDomainRequest {DomainName = domainName};
-            DeleteDomainResponse response = service.DeleteDomain(request);
+            DeleteDomainResponse response = Service.DeleteDomain(request);
         }
     }
 }

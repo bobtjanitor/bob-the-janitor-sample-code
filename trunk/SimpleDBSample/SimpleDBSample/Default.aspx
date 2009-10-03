@@ -24,6 +24,11 @@
                 </td>
             </tr>
     </table>
+    <asp:DataGrid ID="gridContacts" runat="server" AutoGenerateColumns="true">
+        <Columns>
+            <asp:BoundColumn DataField="Name" HeaderText="Name"></asp:BoundColumn>
+        </Columns>
+    </asp:DataGrid>
     </div>
     </form>
 </body>

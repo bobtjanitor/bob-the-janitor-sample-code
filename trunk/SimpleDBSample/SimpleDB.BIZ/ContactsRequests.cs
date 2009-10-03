@@ -10,14 +10,22 @@ namespace SimpleDB.BIZ
     {
         public Contacts SearchContactsByName(string contactName)
         {
-            Contacts myContact = new Contacts();
+            Contacts myContacts = new Contacts();
 
             if (contactName.Length>0)
             {
-                
+                for (int i = 0; i < 10; i++)
+                {
+                    Contact myContact = new Contact();
+                    myContact.ID = Guid.NewGuid().ToString();
+                    myContact.Name = "Contact " + i;
+                    myContact.Phone = "555-555-5555";
+                    myContact.Email = string.Format("Test{0}.Test@test.com", i);
+                    myContacts.Add(myContact);
+                }
             }
 
-            return myContact;
+            return myContacts;
         }
         public Contacts GetContacts()
         {

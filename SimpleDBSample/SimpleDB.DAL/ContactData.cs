@@ -8,7 +8,7 @@ using Attribute=Amazon.SimpleDB.Model.Attribute;
 
 namespace SimpleDB.DAL
 {
-    public class ContactRequests
+    public class ContactData
     {
         private Proxy simpleDBProxy;
         public Proxy SimpleDBProxy

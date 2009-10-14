@@ -55,11 +55,6 @@ namespace SimpleDB.DAL_Tests
             Assert.IsTrue(testContacts.Count>0);
         }
 
-        [Test()]
-        public void GetContactByID_InvalidID_Test()
-        {
-            ContactData target = new ContactData();
-            Contact testContact = target.GetContactsByID("NonID");
-        }
+        
     }
 } 

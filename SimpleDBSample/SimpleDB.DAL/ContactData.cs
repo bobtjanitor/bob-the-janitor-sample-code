@@ -6,7 +6,7 @@ using SimpleDB.Objects;
 
 namespace SimpleDB.DAL
 {
-    public class ContactData
+    public class ContactData : IContactData
     {
         private Proxy simpleDBProxy;
         public Proxy SimpleDBProxy
@@ -88,7 +88,7 @@ namespace SimpleDB.DAL
                 }
                 PutAttributesRequest action = new PutAttributesRequest
                   {
-                      ItemName = contact.ID.ToString(),
+                      ItemName = contact.ID,
                       Attribute = attributeList,
                       DomainName = DomainName
                   };
@@ -101,11 +101,6 @@ namespace SimpleDB.DAL
             }
 
             return success;
-        }
-
-        public Contact GetContactsByID(string contactId)
-        {
-            throw new NotImplementedException();
         }
     }
 }

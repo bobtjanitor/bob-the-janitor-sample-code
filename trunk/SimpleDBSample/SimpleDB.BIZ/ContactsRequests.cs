@@ -8,23 +8,31 @@ namespace SimpleDB.BIZ
 {
     public class ContactsRequests
     {
+        private IContactData contactDataInterface;
+        public IContactData ContactDataInterface
+        {
+            get
+            {
+                if (contactDataInterface==null)
+                {
+                    contactDataInterface = DataFactories.GetContactInterface();
+                }
+                return contactDataInterface;
+            }
+            set
+            {
+                contactDataInterface = value;
+            }
+        }
+
+
         public Contacts SearchContactsByName(string contactName)
         {
             Contacts myContacts = new Contacts();
 
             if (contactName.Length>0)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    Contact myContact = new Contact
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Name = "Contact " + i,
-                        Phone = "555-555-5555",
-                        Email = string.Format("Test{0}.Test@test.com", i)
-                    };
-                    myContacts.Add(myContact);
-                }
+                myContacts = ContactDataInterface.GetContactsByName(contactName);
             }
 
             return myContacts;

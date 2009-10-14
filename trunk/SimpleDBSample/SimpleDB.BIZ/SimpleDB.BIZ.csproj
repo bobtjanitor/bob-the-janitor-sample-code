@@ -50,9 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactsRequests.cs" />
+    <Compile Include="DataFactories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleDB.DAL\SimpleDB.DAL.csproj">
+      <Project>{481C8157-E36D-497F-9A1F-F3D4EF133A8F}</Project>
+      <Name>SimpleDB.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleDB.Objects\SimpleDB.Objects.csproj">
       <Project>{1C32B470-636C-499B-A1AE-7BE9EDAB1CF9}</Project>
       <Name>SimpleDB.Objects</Name>

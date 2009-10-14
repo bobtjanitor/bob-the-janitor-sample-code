@@ -6,6 +6,13 @@ using System.Text;
 
 namespace SimpleDB.Objects
 {
+    public interface IContactData
+    {
+        Contacts GetContacts();
+        Contacts GetContactsByName(string contactName);
+        bool SaveContact(Contact contact);
+    }
+
     public class Contact
     {
         public string ID { get; set; }

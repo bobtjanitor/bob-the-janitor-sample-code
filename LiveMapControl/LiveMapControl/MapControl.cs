@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Web;
+﻿using System.ComponentModel;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,23 +12,27 @@ namespace LiveMapControl
         [Category("Appearance")]
         [DefaultValue("")]
         [Localizable(true)]
-        public string Text
+        public MapPoints MapPoints
         {
             get
             {
-                String s = (String)ViewState["Text"];
-                return ((s == null) ? "[" + this.ID + "]" : s);
+                MapPoints points = (MapPoints)ViewState["MapPoints"];
+                if (points == null)
+                {
+                    points = new MapPoints();
+                }
+                return points;
             }
 
             set
             {
-                ViewState["Text"] = value;
+                ViewState["MapPoints"] = value;
             }
         }
 
         protected override void RenderContents(HtmlTextWriter output)
         {
-            output.Write(Text);
+            //output.Write(Text);
         }
     }
 }

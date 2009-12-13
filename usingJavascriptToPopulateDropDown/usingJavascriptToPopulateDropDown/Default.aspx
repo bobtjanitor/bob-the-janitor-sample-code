@@ -7,14 +7,20 @@
     <script type="text/javascript" src="dropdown.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" enableviewstate="false">
     <div>
         <asp:ScriptManager ID="scriptManager" runat="server">
             <Services>
                 <asp:ServiceReference Path="/DataService.svc" />
             </Services>
         </asp:ScriptManager>
-        <select id="dropDownList" runat="server" style="width:200px;" onfocus="populateDropDown(this);"></select>        
+        <select 
+            id="dropDownList" 
+            runat="server" 
+            enableviewstate="false" 
+            style="width:200px;" 
+            onfocus="populateDropDown(this);">
+        </select>        
         <asp:Button ID="buttonGetValue" runat="server" Text="get value" OnClick="buttonGetValue_Click" />
         
         <asp:Literal ID="output" runat="server"></asp:Literal>

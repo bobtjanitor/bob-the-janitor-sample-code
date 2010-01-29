@@ -28,4 +28,43 @@ function setpopulateDropdown(controlId, value) {
     selectedOptionValue = value;
     populateDropDown(Control);
 }
+
+function populateCountry(dropdown) {
+    Control = dropdown;   
+    DataService.GetCountryData(populateCountry_onSuccess, onFailure)
+}
+
+function populateCountry_onSuccess(result) {
+    dropDownRequest_onSuccess(result);    
+}
+
+function populateStates(dropdown, countyControl) {
+    Control = dropdown;
+
+    var selectedCountry = "USA";
+
+    if (countyControl.options.length > 0) {
+        selectedCountry = countyControl.value;
+    }
+
+    DataService.GetStateData(selectedCountry, populateCountry_onSuccess, onFailure)
+}
+
+function showSuggestions(suggestCityControl, textCityControl) {
+
+    if (textCityControl.value.length > 0) {
+        suggestCityControl.style.display = "";
+    }
+
+}
+
+function setSuggestions(suggestCityControl, textCityControl) {
+    showSuggestions(suggestCityControl, textCityControl);
+    var opt = document.createElement("option");
+    opt.text = "Boise";
+    opt.value = "Boise";
+
+    suggestCityControl.options.add(opt);
+    
+}
  

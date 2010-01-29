@@ -22,6 +22,40 @@ public class DataService
         }
         return myItems;
     }
+
+    [OperationContract]
+    public Items GetCountryData()
+    {
+        Items myItems = new Items()
+                            {
+                                new Item(){Text = "US",Value = "USA"},
+                                new Item(){Text = "Canada",Value = "CAN"},
+                                new Item(){Text = "Mexico",Value = "MEX"}
+                            };        
+        return myItems;
+    }
+
+    [OperationContract]
+    public Items GetStateData(string country)
+    {
+        Items myItems = new Items();
+
+        switch (country)
+        {
+            case "USA":
+                myItems.Add(new Item(){Text = "ID",Value = "ID"});
+                break;
+            case "CAN":
+                myItems.Add(new Item() { Text = "AB", Value = "AB" });
+                break;
+            case "MEX":
+                myItems.Add(new Item() { Text = "QB", Value = "QB" });
+                break;
+        }
+        return myItems;
+    }
+
+
 }
 
 public class Item

@@ -8,12 +8,12 @@
 </head>
 <body>
     <form id="form1" runat="server" enableviewstate="false">
-    <div>
-        <asp:ScriptManager ID="scriptManager" runat="server">
+    <asp:ScriptManager ID="scriptManager1" runat="server">
             <Services>
                 <asp:ServiceReference Path="/DataService.svc" />
             </Services>
         </asp:ScriptManager>
+    <div>       
         <select 
             id="dropDownList" 
             runat="server" 
@@ -24,6 +24,37 @@
         <asp:Button ID="buttonGetValue" runat="server" Text="get value" OnClick="buttonGetValue_Click" />
         
         <asp:Literal ID="output" runat="server"></asp:Literal>
+    </div>
+    
+    <div>   
+         <select 
+            id="selectCountry" 
+            runat="server" 
+            enableviewstate="false" 
+            style="width:200px;" 
+            onfocus="populateCountry(this);">
+        </select>  
+        <input 
+            type="text" 
+            id="textCity" 
+            runat="server" 
+            enableviewstate="false"
+             />                    
+        <select 
+            multiple="true"           
+            size="5" 
+            id="selectCitySujest" 
+            runat="server" 
+            style="display:none;">
+            </select>
+        <select 
+            id="selectState" 
+            runat="server" 
+            enableviewstate="false" 
+            style="width:200px;">
+        </select>  
+       
+        
     </div>
     </form>
     

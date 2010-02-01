@@ -65,6 +65,11 @@ function setSuggestions(suggestCityControl, textCityControl) {
     opt.value = "Boise";
 
     suggestCityControl.options.add(opt);
-    
+
+}
+
+function getSuggestedCity(cityTextControl, suggestCityControl) {
+    var selected = suggestCityControl.value;
+    cityTextControl.value = selected;
 }
  

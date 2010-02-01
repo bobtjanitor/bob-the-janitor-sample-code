@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace usingJavascriptToPopulateDropDown
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -13,6 +13,7 @@ namespace usingJavascriptToPopulateDropDown
 
         private void setControlValues()
         {
+            selectCitySujest.Attributes["onclick"] = string.Format("getSuggestedCity(document.getElementById('{0}'),this)", textCity.ClientID);
             textCity.Attributes["onkeyup"] = string.Format("setSuggestions(document.getElementById('{0}'), this)", selectCitySujest.ClientID);
             textCity.Attributes["onfocus"] = string.Format("showSuggestions(document.getElementById('{0}'), this)", selectCitySujest.ClientID);
             selectState.Attributes["onfocus"] = string.Format("populateStates(this,document.getElementById('{0}'))",selectCountry.ClientID);

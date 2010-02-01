@@ -41,10 +41,10 @@
             enableviewstate="false"
              />                    
         <select 
-            multiple="true"           
-            size="5" 
             id="selectCitySujest" 
+            multiple="true" 
             runat="server" 
+            size="5" 
             style="display:none;">
             </select>
         <select 
@@ -53,8 +53,6 @@
             enableviewstate="false" 
             style="width:200px;">
         </select>  
-       
-        
     </div>
     </form>
     

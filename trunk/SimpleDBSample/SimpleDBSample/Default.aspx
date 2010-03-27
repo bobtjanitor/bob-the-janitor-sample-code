@@ -12,6 +12,49 @@
         <table>
             <tr>
                 <td>
+                    Contact Name
+                </td>
+                <td>
+                    <asp:TextBox ID="TextName" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email 
+                </td>
+                <td>
+                    <asp:TextBox ID="TextEmail" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phone 
+                </td>
+                <td>
+                    <asp:TextBox ID="TextPhone" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:Button ID="buttonAddContact" Text="Add New Contact" runat="server" OnClick="buttonAddContact_Click" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="display:none;">
+        <table>            
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:Button ID="buttonShowAllContacts" runat="server" Text="Search" OnClick="buttonShowAll_Click"/>
+                </td>
+            </tr>
+    </table>
+    </div>
+    <div style="display:none;">
+        <table>
+            <tr>
+                <td>
                        Contact Name:
                 </td>
                 <td>
@@ -24,12 +67,13 @@
                 </td>
             </tr>
     </table>
+     </div>
     <asp:DataGrid ID="gridContacts" runat="server" AutoGenerateColumns="true">
         <Columns>
             <asp:BoundColumn DataField="Name" HeaderText="Name"></asp:BoundColumn>
         </Columns>
     </asp:DataGrid>
-    </div>
+   
     </form>
 </body>
 </html>

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SimpleDB.Objects;
 
 namespace SimpleDB.BIZ
 {
-    public class ContactsRequests
+    public class ContactsRequests : IContactsRequests
     {
         private IContactData contactDataInterface;
         public IContactData ContactDataInterface
@@ -39,12 +36,13 @@ namespace SimpleDB.BIZ
         }
         public Contacts GetContacts()
         {
-            throw new NotSupportedException("this isn't done yet");
+            Contacts myContacts = ContactDataInterface.GetContacts();
+            return myContacts;
         }
 
         public bool AddContact(Contact newContact)
         {
-            throw new NotImplementedException("this isn't done yet");
+            return ContactDataInterface.SaveContact(newContact);
         }
     }
 }

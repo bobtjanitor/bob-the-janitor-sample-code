@@ -69,7 +69,14 @@ namespace SimpleDB.DAL
             myContacts.AddRange(contacts);
             return myContacts;
         }
-       
+
+        /// <summary>
+        /// Saves the contact.
+        /// </summary>
+        /// <param name="contact">The contact to be saved.</param>
+        /// <returns>
+        /// A true or false result of the successful saving this contact
+        /// </returns>
         public bool SaveContact(Contact contact)
         {
             List<ReplaceableAttribute> attributeList = new List<ReplaceableAttribute>
@@ -77,6 +84,7 @@ namespace SimpleDB.DAL
                    new ReplaceableAttribute().WithName("Email").WithValue(contact.Email),
                    new ReplaceableAttribute().WithName("Name").WithValue(contact.Name),
                    new ReplaceableAttribute().WithName("Phone").WithValue(contact.Phone)
+
                };
             contact.ID = Guid.NewGuid().ToString();
             bool success = false;

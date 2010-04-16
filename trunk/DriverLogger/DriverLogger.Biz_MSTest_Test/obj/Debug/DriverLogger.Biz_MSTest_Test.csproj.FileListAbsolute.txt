@@ -1,0 +1,5 @@
+C:\Development\DriverLogger\DriverLogger.Biz_MSTest_Test\bin\Debug\DriverLogger.Biz_MSTest_Test.dll
+C:\Development\DriverLogger\DriverLogger.Biz_MSTest_Test\bin\Debug\DriverLogger.Biz_MSTest_Test.pdb
+C:\Development\DriverLogger\DriverLogger.Biz_MSTest_Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\DriverLogger\DriverLogger.Biz_MSTest_Test\obj\Debug\DriverLogger.Biz_MSTest_Test.dll
+C:\Development\DriverLogger\DriverLogger.Biz_MSTest_Test\obj\Debug\DriverLogger.Biz_MSTest_Test.pdb

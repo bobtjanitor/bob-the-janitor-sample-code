@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="CDFB9F3F-EFDB-47B4-8910-687CFCB5A061" ModuleId="DriverLogger.Biz_MSTest_Test" />
+  <Module PersistentId="8C076F41-5A2A-486F-96DD-20CE5E3D5AAD" ModuleId="DriverLogger.Biz_NUnit_Test" />
+  <Module PersistentId="08AD9291-4ECF-4F94-B0AE-4C2B7825F823" ModuleId="DriverLogger.Biz" />
+</Modules>

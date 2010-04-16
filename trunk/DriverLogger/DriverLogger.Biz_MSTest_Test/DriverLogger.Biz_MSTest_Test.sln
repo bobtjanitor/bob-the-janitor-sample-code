@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverLogger.Biz_MSTest_Test", "DriverLogger.Biz_MSTest_Test.csproj", "{CDFB9F3F-EFDB-47B4-8910-687CFCB5A061}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5BED69FF-9AC3-4904-8526-6EDD0191CC6B}"
+	ProjectSection(SolutionItems) = preProject
+		DriverLogger.Biz_MSTest_Test.vsmdi = DriverLogger.Biz_MSTest_Test.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverLogger.Biz", "..\DriverLogger.Biz\DriverLogger.Biz.csproj", "{08AD9291-4ECF-4F94-B0AE-4C2B7825F823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverLogger.Biz_NUnit_Test", "..\DriverLogger.Biz_NUnit_Test\DriverLogger.Biz_NUnit_Test.csproj", "{8C076F41-5A2A-486F-96DD-20CE5E3D5AAD}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DriverLogger.Biz_MSTest_Test.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDFB9F3F-EFDB-47B4-8910-687CFCB5A061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFB9F3F-EFDB-47B4-8910-687CFCB5A061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFB9F3F-EFDB-47B4-8910-687CFCB5A061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFB9F3F-EFDB-47B4-8910-687CFCB5A061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08AD9291-4ECF-4F94-B0AE-4C2B7825F823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08AD9291-4ECF-4F94-B0AE-4C2B7825F823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08AD9291-4ECF-4F94-B0AE-4C2B7825F823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08AD9291-4ECF-4F94-B0AE-4C2B7825F823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C076F41-5A2A-486F-96DD-20CE5E3D5AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C076F41-5A2A-486F-96DD-20CE5E3D5AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C076F41-5A2A-486F-96DD-20CE5E3D5AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C076F41-5A2A-486F-96DD-20CE5E3D5AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

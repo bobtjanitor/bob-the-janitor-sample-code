@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustMockDal", "..\JustMockD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustMockDal_Tests", "JustMockDal_Tests\JustMockDal_Tests.csproj", "{A297A9CC-718C-44D7-A5E1-1A80AC9042D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustMockDemoApp_Tests", "..\JustMockDemoApp_Tests\JustMockDemoApp_Tests.csproj", "{61515E14-468F-4B1F-B3A5-5482671619BF}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -35,6 +37,10 @@ Global
 		{A297A9CC-718C-44D7-A5E1-1A80AC9042D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A297A9CC-718C-44D7-A5E1-1A80AC9042D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A297A9CC-718C-44D7-A5E1-1A80AC9042D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61515E14-468F-4B1F-B3A5-5482671619BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61515E14-468F-4B1F-B3A5-5482671619BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61515E14-468F-4B1F-B3A5-5482671619BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61515E14-468F-4B1F-B3A5-5482671619BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

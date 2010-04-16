@@ -1,0 +1,46 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="CDFB9F3F-EFDB-47B4-8910-687CFCB5A061/f:SaveCurrentLog_Tests.cs" caret="0" fromTop="0" />
+      <File id="8C076F41-5A2A-486F-96DD-20CE5E3D5AAD/f:SaveCurrentLog_Tests.cs" caret="412" fromTop="19" />
+      <File id="08AD9291-4ECF-4F94-B0AE-4C2B7825F823/f:SaveCurrentLog.cs" caret="387" fromTop="13" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="08AD9291-4ECF-4F94-B0AE-4C2B7825F823/f:SaveCurrentLog.cs" caret="114" fromTop="4" />
+      <File id="CDFB9F3F-EFDB-47B4-8910-687CFCB5A061/f:SaveCurrentLog_Tests.cs" caret="0" fromTop="0" />
+      <File id="8C076F41-5A2A-486F-96DD-20CE5E3D5AAD/f:SaveCurrentLog_Tests.cs" caret="412" fromTop="19" />
+      <File id="08AD9291-4ECF-4F94-B0AE-4C2B7825F823/f:SaveCurrentLog.cs" caret="379" fromTop="13" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.2\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="0" />
+      <Item value="NUnit.Framework" priority="0" />
+      <Item value="TestFixture" priority="0" />
+      <Item value="public" priority="2" />
+      <Item value="SaveCurrentLog_Tests`0" priority="0" />
+      <Item value="SetUp" priority="0" />
+      <Item value="void" priority="1" />
+      <Item value="target" priority="0" />
+      <Item value="new" priority="0" />
+      <Item value="SaveCurrentLog" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

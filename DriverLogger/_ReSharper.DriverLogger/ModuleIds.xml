@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="70004352-BE1B-4920-8F52-38AA388B4B54" ModuleId="DriverLogger" />
+  <Module PersistentId="08AD9291-4ECF-4F94-B0AE-4C2B7825F823" ModuleId="DriverLogger.Biz" />
+</Modules>

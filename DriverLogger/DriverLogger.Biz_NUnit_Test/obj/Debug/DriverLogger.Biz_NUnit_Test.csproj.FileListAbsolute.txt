@@ -1,0 +1,9 @@
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\DriverLogger.Biz_NUnit_Test.dll
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\DriverLogger.Biz_NUnit_Test.pdb
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\DriverLogger.Biz.dll
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\nunit.framework.dll
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\DriverLogger.Biz.pdb
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\bin\Debug\nunit.framework.xml
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\obj\Debug\DriverLogger.Biz_NUnit_Test.dll
+C:\Development\DriverLogger\DriverLogger.Biz_NUnit_Test\obj\Debug\DriverLogger.Biz_NUnit_Test.pdb

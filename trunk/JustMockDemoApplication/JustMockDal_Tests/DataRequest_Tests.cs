@@ -18,6 +18,11 @@ namespace JustMockDal_Tests
         private DataRequest target;
         private bool SqlConnectionOpened;
 
+        public void SqlConnectionOpenedCalled()
+        {
+            SqlConnectionOpened = true;
+        }
+
         [SetUp]
         public void Setup()
         {
@@ -25,13 +30,10 @@ namespace JustMockDal_Tests
             target = new DataRequest();
             
             var mockSqlConnection = Mock.Create<SqlConnection>();
-            Mock.Arrange(() => mockSqlConnection.Open()).DoNothing();
+            Mock.Arrange(() => mockSqlConnection.Open()).DoInstead(SqlConnectionOpenedCalled);
             target.Connection = mockSqlConnection;
         }
 
-        /// <summary>
-        ///A test for GetUserList
-        ///</summary>
         [Test]
         public void GetUserList_Test()
         {           

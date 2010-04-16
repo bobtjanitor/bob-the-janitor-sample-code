@@ -1,0 +1,27 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:testclass.html" caret="258" fromTop="7" />
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:javascriptCode.js" caret="74" fromTop="2" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:testclass.html" caret="134" fromTop="3" />
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:testclass.html" caret="340" fromTop="11" />
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:testclass.html" caret="258" fromTop="7" />
+      <File id="79E61BE8-469B-4AF9-BCD4-8166395F3E68/f:javascriptCode.js" caret="74" fromTop="2" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>

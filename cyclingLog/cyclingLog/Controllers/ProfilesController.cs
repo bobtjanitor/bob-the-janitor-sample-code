@@ -31,5 +31,11 @@ namespace cyclingLog.Controllers
             return View(list);
         }
 
+        public ActionResult Detail(int id)
+        {
+            ProfileModel profile = ProfilesRepository.GetProfileById(id).AsProfileModel();
+            return View(profile);
+        }
+
     }
 }

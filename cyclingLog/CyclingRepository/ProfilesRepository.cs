@@ -10,5 +10,10 @@ namespace CyclingRepository
         {
             throw new NotImplementedException();
         }
+
+        public Profile GetProfileById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

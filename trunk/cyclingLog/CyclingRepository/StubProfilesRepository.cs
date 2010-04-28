@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DomainModels;
@@ -8,9 +9,7 @@ namespace CyclingRepository
 {
     public class StubProfilesRepository : IProfilesRepository
     {
-        public Profiles GetProfileList()
-        {
-            Profiles list = new Profiles()
+        readonly Profiles _list = new Profiles()
                                 {
                                     new Profile()
                                         {
@@ -31,7 +30,15 @@ namespace CyclingRepository
                                             Description = "The Old Man"
                                         }
                                 };
-            return list;
+        public Profiles GetProfileList()
+        {
+            return _list;
+        }
+
+        public Profile GetProfileById(int id)
+        {
+            Profile profile = (from item in _list where item.Id == id select item).DefaultIfEmpty(new Profile()).First();
+            return profile;
         }
     }
 

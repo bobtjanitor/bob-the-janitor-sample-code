@@ -1,7 +1,7 @@
 <%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<List<ProfileModel>>" MasterPageFile="~/Views/Shared/Site.Master" %>
 <%@ Import Namespace="cyclingLog.Models" %>
-<asp:Content runat="server" ID="Content" ContentPlaceHolderID="TitleContent">
-list of Rider profiles
+<asp:Content runat="server" ID="Content" ContentPlaceHolderID="headerContent">
+<title>list of Rider profiles</title>
 </asp:Content>
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
 <table>
@@ -10,7 +10,7 @@ list of Rider profiles
         {
           %>
             <tr>
-                <td><%=profile.Name %> </td>
+                <td><%=Html.ActionLink(profile.Name, "Detail/" + profile.Id)%></td>
                 <td><%=profile.Description %> </td>
             </tr>
           <%

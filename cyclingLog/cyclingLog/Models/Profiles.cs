@@ -1,22 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using DomainModels;
 
 namespace cyclingLog.Models
 {
-    public class ProfileModel
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public string Description { get; set; }
+    public class ProfileModel : Profile
+    {       
         public List<RouteModel> RouteList { get; set; }
     }
 
-    public class RouteModel
+    public class RouteModel : Route
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public double Distance { get; set; }
-
     }
 }

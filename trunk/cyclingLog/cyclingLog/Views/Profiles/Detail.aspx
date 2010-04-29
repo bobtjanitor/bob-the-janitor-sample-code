@@ -22,16 +22,43 @@
             </tr>
             <tr>
                 <td class="lable">Location</td>
-                <td><%=Model.Name %></td>
+                <td><%=Model.Location %></td>
             </tr>
             <tr>
-                <td colspan="2"  class="lable" style="text-align:center">Description</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align:center"><%=Model.Description %></td>
-            </tr>
+                <td class="lable">Description</td>
+                <td><%=Model.Description %></td>
+            </tr>            
         </table>
     </div>
     <br style="clear:both" />
+</div>
+<div id="grid" style="width:100%;">
+    <h3>Routes</h3>
+    <table  width="100%">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Length</th>
+            <th>Last Time Ridden</th>
+        </tr>
+        <%
+            for(int x=0;x<Model.RouteList.Count;x++) 
+            {
+                string rowStyle = "gridRow";
+                if (x%2==0)
+                {
+                    rowStyle = "gridRowAlt";
+                }
+                %>
+                <tr class="<%=rowStyle %>">
+                    <td><%=Model.RouteList[x].Name%></td>
+                    <td><%=Model.RouteList[x].Location%></td>
+                    <td><%=Model.RouteList[x].Length%></td>
+                    <td><%=Model.RouteList[x].LastTimeRidden%></td>
+                </tr>
+                <%
+            }
+        %>
+    </table>
 </div>
 </asp:Content>

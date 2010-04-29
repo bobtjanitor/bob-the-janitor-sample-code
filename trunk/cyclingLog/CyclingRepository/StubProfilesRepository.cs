@@ -15,18 +15,21 @@ namespace CyclingRepository
                                         {
                                             Id = 1,
                                             Name = "Bob The janitor",
+                                            Location="Caldwell, ID",
                                             Description = "The first Rider"
                                         },
                                         new Profile()
                                         {
                                             Id = 2,
                                             Name = "JoJo",
+                                            Location="Caldwell, ID",
                                             Description = "Not into long rides"
                                         },
                                         new Profile()
                                         {
                                             Id = 3,
                                             Name = "Mr. Burns",
+                                            Location="Kuna, ID",
                                             Description = "The Old Man"
                                         }
                                 };

@@ -11,8 +11,11 @@
     <div class="page">
 
         <div id="header">
-            <div id="title">
-                <h1>My MVC Application</h1>
+            <div style="float:left;">
+                <img src="/images/cycling-logo.jpg" alt="cycling title" />
+            </div>
+            <div style="float:left;" id="title">
+                <h1 style="font-style:italic;font-family:Arial Greek;">URode</h1>
             </div>
               
             <div id="logindisplay">
@@ -27,7 +30,7 @@
             
             </div>
         </div>
-
+        <br style="clear:both;" />
         <div id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 

@@ -18,7 +18,8 @@ namespace cyclingLog
             {
                 Description = profile.Description,
                 Id = profile.Id,
-                Name = profile.Name
+                Name = profile.Name,
+                Location = profile.Location
             };
             return item;
         }

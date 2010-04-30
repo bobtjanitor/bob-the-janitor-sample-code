@@ -23,5 +23,19 @@ namespace cyclingLog
             };
             return item;
         }
+
+        public static List<RouteModel> AsRouteModelList(this IList<Route> list)
+        {
+            var modelList = from item in list
+                            select new RouteModel()
+                                       {
+                                           Distance = item.Distance,
+                                           Id = item.Id,
+                                           LastTimeRidden = item.LastTimeRidden,
+                                           Location = item.Location,
+                                           Name = item.Name
+                                       };
+            return modelList.ToList();
+        }
     }
 }

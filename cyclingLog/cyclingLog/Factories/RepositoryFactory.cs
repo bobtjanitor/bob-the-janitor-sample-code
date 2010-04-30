@@ -1,13 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Castle.Core;
-using Castle.Core.Resource;
-using Castle.Windsor;
-using Castle.Windsor.Configuration.Interpreters;
-using CyclingRepository;
+﻿using CyclingRepository;
 using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Factories
@@ -17,6 +8,11 @@ namespace cyclingLog.Factories
         public static IProfilesRepository GetProfilesRepository()
         {
             return new StubProfilesRepository();
+        }
+
+        public static IRoutesRepository GetRoutesRepository()
+        {
+            return new StubRoutesRepository();
         }
     }
 }

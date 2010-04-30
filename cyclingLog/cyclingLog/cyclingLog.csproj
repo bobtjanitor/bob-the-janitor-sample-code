@@ -103,6 +103,9 @@
     <Content Include="ExternalLibs\Castle.Windsor.dll" />
     <Content Include="ExternalLibs\log4net.dll" />
     <Content Include="Global.asax" />
+    <Content Include="Images\cycling-logo.jpg" />
+    <Content Include="Images\cycling.jpg" />
+    <Content Include="Images\mountain-biking.jpg" />
     <Content Include="Views\Profiles\Detail.aspx" />
     <Content Include="Views\Profiles\Index.aspx" />
     <Content Include="Web.config" />
@@ -132,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CyclingRepository\CyclingRepository.csproj">

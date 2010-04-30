@@ -53,7 +53,7 @@
                 <tr class="<%=rowStyle %>">
                     <td><%=Model.RouteList[x].Name%></td>
                     <td><%=Model.RouteList[x].Location%></td>
-                    <td><%=Model.RouteList[x].Length%></td>
+                    <td><%=Model.RouteList[x].Distance%></td>
                     <td><%=Model.RouteList[x].LastTimeRidden%></td>
                 </tr>
                 <%

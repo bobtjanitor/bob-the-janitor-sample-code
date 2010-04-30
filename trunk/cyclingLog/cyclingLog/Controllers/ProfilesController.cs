@@ -22,6 +22,21 @@ namespace cyclingLog.Controllers
             set { _profilesRepository = value; }
         }
 
+        private IRoutesRepository _routesRepository;
+
+        public IRoutesRepository RoutesRepository
+        {
+            get
+            {
+                if (_routesRepository == null)
+                {
+                    _routesRepository = RepositoryFactory.GetRoutesRepository();
+                }
+                return _routesRepository;
+            }
+            set { _routesRepository = value; }
+        }
+
         //
         // GET: /Profiles/
 
@@ -34,6 +49,7 @@ namespace cyclingLog.Controllers
         public ActionResult Detail(int id)
         {
             ProfileModel profile = ProfilesRepository.GetProfileById(id).AsProfileModel();
+            profile.RouteList = RoutesRepository.GetUsersRoutes(id).AsRouteModelList();
             return View(profile);
         }
 

@@ -6,8 +6,13 @@ using DomainModels;
 namespace cyclingLog.Models
 {
     public class ProfileModel : Profile
-    {       
-        public List<RouteModel> RouteList { get; set; }
+    {
+        private List<RouteModel> _routeList=new List<RouteModel>();
+        public List<RouteModel> RouteList
+        {
+            get { return _routeList; }
+            set { _routeList = value; }
+        }
     }
 
     public class RouteModel : Route

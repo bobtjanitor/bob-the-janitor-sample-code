@@ -234,9 +234,33 @@ table th
 {
   padding: 6px 5px;
   text-align: left;
-  background-color: #e8eef4; 
-  border: solid 1px #e8eef4;   
+  background-color: #cce1e5; 
+  border: solid 1px #e8eef4;
+  cursor:default;   
 }
+
+#grid table tr.gridRow
+{
+    background-color:#f0f0f0;
+
+}
+#grid table tr.gridRowAlt
+{
+    background-color:#E9E9E9;
+}
+
+#grid table tr:hover
+{
+    background-color:#E0E0E0;
+    cursor:pointer;
+}
+
+#grid a
+{
+    text-decoration:none;
+    display:block;
+}
+
 
 /* MISC  
 ----------------------------------------------------------*/

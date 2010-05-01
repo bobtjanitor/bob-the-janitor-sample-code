@@ -110,6 +110,7 @@
     <Content Include="Views\Profiles\Detail.aspx" />
     <Content Include="Views\Profiles\Index.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
+    <Content Include="Views\Shared\ProfileGridView.ascx" />
     <Content Include="Views\Shared\RouteGridView.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

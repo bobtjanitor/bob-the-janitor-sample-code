@@ -24,6 +24,20 @@ namespace cyclingLog
             return item;
         }
 
+        public static RouteModel AsRouteModel(this Route route)
+        {
+            RouteModel routeModel = new RouteModel
+                                        {
+                                            Distance = route.Distance,
+                                            LastTimeRidden = route.LastTimeRidden,
+                                            Id = route.Id,
+                                            Location = route.Location,
+                                            Name = route.Name,
+                                            RouteCoordinates = route.RouteCoordinates
+                                        };
+            return routeModel;
+        }
+
         public static List<RouteModel> AsRouteModelList(this IList<Route> list)
         {
             var modelList = from item in list

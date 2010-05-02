@@ -97,6 +97,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Profiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Route\MapWebHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ExternalLibs\Castle.Core.dll" />
@@ -108,7 +109,7 @@
     <Content Include="Images\cycling.jpg" />
     <Content Include="Images\mountain-biking.jpg" />
     <Content Include="Views\Profiles\Detail.aspx" />
-    <Content Include="Views\Profiles\Index.aspx" />
+    <Content Include="Views\Route\Index.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
     <Content Include="Views\Shared\ProfileGridView.ascx" />
     <Content Include="Views\Shared\RouteGridView.ascx" />

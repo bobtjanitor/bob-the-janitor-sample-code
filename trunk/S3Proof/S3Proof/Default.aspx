@@ -11,6 +11,12 @@
     <div id="DivlistOfImages" runat="server" enableviewstate="false">
         
     </div>
+    <div style="width:300px; border: 2px solid black; "></div>
+    <div>
+        <p>Upload image</p>
+        <asp:FileUpload ID="imageUpload" runat="server" />
+        <asp:Button ID="buttonuploadImage" runat="server" Text="Upload Image" OnClick="buttonuploadImage_click" />
+    </div>
     </form>
 </body>
 </html>

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{00000000-0000-0000-0000-000000000000}") = "S3Proof", "S3Proof\S3Proof.csproj", "{6C934F7B-9D51-4FF2-8C1D-F446D863C049}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3Proof", "S3Proof\S3Proof.csproj", "{6C934F7B-9D51-4FF2-8C1D-F446D863C049}"
 EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

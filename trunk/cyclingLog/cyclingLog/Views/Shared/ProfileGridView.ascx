@@ -17,7 +17,7 @@
                 }
                 %>
                 <tr class="<%=rowStyle %>">
-                    <td><%=Html.ActionLink(Model[x].Name, "/Detail/" + Model[x].Id, "Profiles")%></td>
+                    <td><%=Html.ActionLink(Model[x].Name, "/Detail/" +  Model[x].Id.ToString(), "Profiles")%></td>
                     <td><%=Html.ActionLink(Model[x].Location, "/Detail/" + Model[x].Id, "Profiles")%></td>
                     <td><%=Html.ActionLink(Model[x].Description, "/Detail/" + Model[x].Id, "Profiles")%></td>
                 </tr>

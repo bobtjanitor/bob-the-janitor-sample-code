@@ -13,21 +13,21 @@ namespace CyclingRepository
                                 {
                                     new Profile()
                                         {
-                                            Id = 1,
+                                            Id = new Guid(),
                                             Name = "Bob The janitor",
                                             Location="Caldwell, ID",
                                             Description = "The first Rider"
                                         },
                                         new Profile()
                                         {
-                                            Id = 2,
+                                            Id = new Guid(),
                                             Name = "JoJo",
                                             Location="Caldwell, ID",
                                             Description = "Not into long rides"
                                         },
                                         new Profile()
                                         {
-                                            Id = 3,
+                                            Id = new Guid(),
                                             Name = "Mr. Burns",
                                             Location="Kuna, ID",
                                             Description = "The Old Man"
@@ -38,7 +38,7 @@ namespace CyclingRepository
             return _list;
         }
 
-        public Profile GetProfileById(int id)
+        public Profile GetProfileById(Guid id)
         {
             Profile profile = (from item in _list where item.Id == id select item).DefaultIfEmpty(new Profile()).First();
             return profile;

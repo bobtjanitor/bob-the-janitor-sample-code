@@ -109,7 +109,7 @@
     <Content Include="Images\cycling.jpg" />
     <Content Include="Images\mountain-biking.jpg" />
     <Content Include="Views\Profiles\Detail.aspx" />
-    <Content Include="Views\Route\Index.aspx" />
+    <Content Include="Views\Profiles\Index.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
     <Content Include="Views\Shared\ProfileGridView.ascx" />
     <Content Include="Views\Shared\RouteGridView.ascx" />

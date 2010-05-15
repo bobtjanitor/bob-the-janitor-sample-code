@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 
 namespace DomainModels.RepositoryInterfaces
 {
     public interface IRoutesRepository
     {
-        List<Route> GetUsersRoutes(int userId);
+        List<Route> GetUsersRoutes(Guid userId);
         Route GetRouteById(int routeId);
     }
 }

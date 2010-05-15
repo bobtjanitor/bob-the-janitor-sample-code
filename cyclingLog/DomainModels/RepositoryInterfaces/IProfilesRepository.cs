@@ -1,8 +1,10 @@
-﻿namespace DomainModels.RepositoryInterfaces
+﻿using System;
+
+namespace DomainModels.RepositoryInterfaces
 {
     public interface IProfilesRepository
     {
         Profiles GetProfileList();
-        Profile GetProfileById(int id);
+        Profile GetProfileById(Guid id);
     }
 }

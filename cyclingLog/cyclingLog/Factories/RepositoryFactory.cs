@@ -7,7 +7,7 @@ namespace cyclingLog.Factories
     {
         public static IProfilesRepository GetProfilesRepository()
         {
-            return new StubProfilesRepository();
+            return new ProfilesRepository();
         }
 
         public static IRoutesRepository GetRoutesRepository()

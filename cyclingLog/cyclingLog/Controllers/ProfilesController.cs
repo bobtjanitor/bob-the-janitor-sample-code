@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using cyclingLog.Factories;
 using cyclingLog.Models;
@@ -46,7 +47,7 @@ namespace cyclingLog.Controllers
             return View(list);
         }
 
-        public ActionResult Detail(int id)
+        public ActionResult Detail(Guid id)
         {
             ProfileModel profile = ProfilesRepository.GetProfileById(id).AsProfileModel();
             profile.RouteList = RoutesRepository.GetUsersRoutes(id).AsRouteModelList();

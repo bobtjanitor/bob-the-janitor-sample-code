@@ -8,7 +8,7 @@ namespace CyclingRepository
 {
     public class RoutesRepository : IRoutesRepository
     {
-        public List<Route> GetUsersRoutes(int userId)
+        public List<Route> GetUsersRoutes(Guid userId)
         {
             throw new NotImplementedException();
         }
@@ -104,7 +104,7 @@ namespace CyclingRepository
                                                Name="Park Loop"
                                            }
                                    };
-        public List<Route> GetUsersRoutes(int userId)
+        public List<Route> GetUsersRoutes(Guid userId)
         {
             return stubData;
         }

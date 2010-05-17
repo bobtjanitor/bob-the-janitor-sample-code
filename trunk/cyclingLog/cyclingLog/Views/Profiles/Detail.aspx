@@ -12,7 +12,7 @@
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
 <div>
     <div style="float:left">
-        <img src="/images/mountain-biking.jpg" alt="Profile Image" />
+        <img src="http://s3.amazonaws.com/URodeProfileImages/<%=Model.Id %>.jpg" alt="Profile Image" />
     </div>
     <div style="float:left">
         <table>

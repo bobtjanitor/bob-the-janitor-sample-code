@@ -24,7 +24,7 @@ namespace CyclingRepository
                 var list = from item in response.SelectResult.Item
                            select new Profile()
                                       {
-                                          Id = Guid.Parse(item.Name), 
+                                          Id = Guid.Parse(item.Attribute.GetValueByName("Id")), 
                                           Description = item.Attribute.GetValueByName("Description"),
                                           Location = item.Attribute.GetValueByName("Location"),
                                           Name = item.Attribute.GetValueByName("Name")
@@ -42,13 +42,15 @@ namespace CyclingRepository
         {
             Profile profile;
             using (AmazonSimpleDBClient client = new AmazonSimpleDBClient(_publicKey, _secretKey))
-            {
-                SelectRequest request = new SelectRequest { SelectExpression = string.Format("SELECT * FROM Profiles where Name = '{0}'",id) };
+            {                
+                SelectRequest request =
+                    new SelectRequest().WithSelectExpression(string.Format("SELECT * FROM Profiles where Id = '{0}'",id));
+
                 SelectResponse response = client.Select(request);
                 profile = (from item in response.SelectResult.Item
                            select new Profile()
                            {
-                               Id = Guid.Parse(item.Name),
+                               Id = Guid.Parse(item.Attribute.GetValueByName("Id")),
                                Description = item.Attribute.GetValueByName("Description"),
                                Location = item.Attribute.GetValueByName("Location"),
                                Name = item.Attribute.GetValueByName("Name")

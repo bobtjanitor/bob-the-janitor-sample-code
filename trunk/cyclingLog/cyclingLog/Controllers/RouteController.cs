@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using cyclingLog.Factories;
 using cyclingLog.Models;
 using DomainModels.RepositoryInterfaces;
@@ -21,7 +22,7 @@ namespace cyclingLog.Controllers
             set { _routeRepositoryInterface = value; }
         }
 
-        public ActionResult Detail(int id)
+        public ActionResult Detail(Guid id)
         {
             RouteModel route = RouteRepositoryInterface.GetRouteById(id).AsRouteModel();
             return View(route);

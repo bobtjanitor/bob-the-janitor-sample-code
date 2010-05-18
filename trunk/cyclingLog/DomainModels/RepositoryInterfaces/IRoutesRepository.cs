@@ -6,6 +6,6 @@ namespace DomainModels.RepositoryInterfaces
     public interface IRoutesRepository
     {
         List<Route> GetUsersRoutes(Guid userId);
-        Route GetRouteById(int routeId);
+        Route GetRouteById(Guid routeId);
     }
 }

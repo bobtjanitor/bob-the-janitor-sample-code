@@ -13,7 +13,7 @@ namespace CyclingRepository
             throw new NotImplementedException();
         }
 
-        public Route GetRouteById(int routeId)
+        public Route GetRouteById(Guid routeId)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +25,7 @@ namespace CyclingRepository
                                    {
                                        new Route()
                                            {
-                                               Id = 1,
+                                               Id = new Guid(),
                                                Distance = 8.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-4),
                                                Location = "Caldwell, Id",
@@ -81,7 +81,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = 2,
+                                               Id = new Guid(),
                                                Distance = 6.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-14),
                                                Location = "Caldwell, Id",
@@ -89,7 +89,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = 3,
+                                               Id = new Guid(),
                                                Distance = 8.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-4),
                                                Location = "Caldwell, Id",
@@ -97,7 +97,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = 4,
+                                               Id = new Guid(),
                                                Distance = 6.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-14),
                                                Location = "Caldwell, Id",
@@ -109,7 +109,7 @@ namespace CyclingRepository
             return stubData;
         }
 
-        public Route GetRouteById(int routeId)
+        public Route GetRouteById(Guid routeId)
         {
             return (from route in stubData where route.Id == routeId select route).DefaultIfEmpty(new Route()).First();
         }

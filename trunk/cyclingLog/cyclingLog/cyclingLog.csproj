@@ -114,6 +114,7 @@
     <Content Include="Views\Profiles\Detail.aspx" />
     <Content Include="Views\Profiles\Index.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
+    <Content Include="Views\Shared\MasterHeader.ascx" />
     <Content Include="Views\Shared\ProfileGridView.ascx" />
     <Content Include="Views\Shared\RouteGridView.ascx" />
     <Content Include="Web.config" />
@@ -153,6 +154,9 @@
       <Project>{CD2A2CFB-7F9C-4944-9247-317E210F4948}</Project>
       <Name>DomainModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NonAuth.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

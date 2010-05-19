@@ -1,8 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using cyclingLog.Views.Route;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 using System.Web.Mvc;
 using DomainModels;
 using System.Collections.Generic;

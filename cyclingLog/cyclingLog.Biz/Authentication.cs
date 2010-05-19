@@ -6,7 +6,15 @@ using CyclingRepository;
 
 namespace cyclingLog.Biz
 {
-    public class Authentication
+    public interface IAuthentication
+    {
+        string Username { get; set; }
+        string Password { get; set; }
+        List<string> ValidationErrors { get; set; }
+        bool Authenticate();
+    }
+
+    public class Authentication : IAuthentication
     {
         public string Username{get;set;}
         public string Password { get; set; }

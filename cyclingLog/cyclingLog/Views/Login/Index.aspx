@@ -1,4 +1,4 @@
-<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" MasterPageFile="~/Views/Shared/NonAuth.Master" %>
+<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<List<string>>"  MasterPageFile="~/Views/Shared/NonAuth.Master" %>
 
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
@@ -11,13 +11,25 @@
                 <th colspan="2">
                     Logon
                 </th>
+                <td rowspan="5">
+                    <ul>
+                        <% if (Model!=null)
+                        {	
+                             foreach (string error in Model)
+                             {
+                                %><li><%=error %></li><%
+                             }  
+                        }
+                        %>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td class="formLabel">
                     Username:
                 </td>
                 <td>
-                    <input id="textInput" type="text"/>
+                    <%=Html.TextBox("Username") %>
                 </td>
             </tr>
             <tr>
@@ -25,7 +37,7 @@
                     password:
                 </td>
                 <td>
-                    <input id="textPassword" type="password"/>
+                    <%=Html.Password("PassWord") %>
                 </td>
             </tr>
             <tr>

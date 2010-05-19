@@ -86,6 +86,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\AuthenticationFactory.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Extenders.cs" />
@@ -146,6 +147,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cyclingLog.Biz\cyclingLog.Biz.csproj">
+      <Project>{01427A43-4CAF-4619-814D-05F398C41B70}</Project>
+      <Name>cyclingLog.Biz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CyclingRepository\CyclingRepository.csproj">
       <Project>{9ABA7A53-9078-4080-85B0-3BCFD23E9AB1}</Project>
       <Name>CyclingRepository</Name>

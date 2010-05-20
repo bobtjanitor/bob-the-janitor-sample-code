@@ -53,6 +53,7 @@
     <Compile Include="AuthentiactionRepository.cs" />
     <Compile Include="RoutesRepository.cs" />
     <Compile Include="SimpleDBExtedors.cs" />
+    <Compile Include="SimpleDBRepositoryBase.cs" />
     <Compile Include="StubProfilesRepository.cs" />
     <Compile Include="ProfilesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

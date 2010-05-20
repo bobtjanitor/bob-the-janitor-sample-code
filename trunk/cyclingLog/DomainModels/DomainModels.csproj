@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RepositoryInterfaces\IAuthentiactionRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRoutesRepository.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Profile.cs" />

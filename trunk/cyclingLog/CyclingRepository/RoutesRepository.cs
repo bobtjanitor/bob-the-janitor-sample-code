@@ -6,7 +6,7 @@ using DomainModels.RepositoryInterfaces;
 
 namespace CyclingRepository
 {
-    public class RoutesRepository : IRoutesRepository
+    public class RoutesRepository : SimpleDBRepositoryBase, IRoutesRepository
     {
         public List<Route> GetUsersRoutes(Guid userId)
         {

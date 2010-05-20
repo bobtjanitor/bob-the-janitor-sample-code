@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CyclingRepository;
+using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Biz
 {
@@ -11,6 +9,7 @@ namespace cyclingLog.Biz
         string Username { get; set; }
         string Password { get; set; }
         List<string> ValidationErrors { get; set; }
+        Guid AuthenticatedUserId { get; set; }
         bool Authenticate();
     }
 
@@ -40,8 +39,11 @@ namespace cyclingLog.Biz
             set { _authenticationRepositoryInterface = value; }
         }
 
+        public Guid AuthenticatedUserId { get; set; }
+
         public bool Authenticate()
         {
+            bool success = false;
             if (string.IsNullOrWhiteSpace(Username))
             {
                 ValidationErrors.Add("Username Required");
@@ -51,7 +53,21 @@ namespace cyclingLog.Biz
             {
                 ValidationErrors.Add("Password Required");
             }
-            return ValidationErrors.Count==0;
+
+            if (ValidationErrors.Count==0)
+            {
+                success = AuthenticationRepositoryInterface.CheckAuthentication(Username, Password);
+                if(success)
+                {
+                    AuthenticatedUserId = AuthenticationRepositoryInterface.AuthenticatedUser;
+                }
+                else
+                {
+                    ValidationErrors.Add("Invalid Username/Password");
+                }
+            }
+
+            return success;
         }
     }
 }

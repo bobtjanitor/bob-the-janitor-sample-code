@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using Amazon.SimpleDB.Model;
 using DomainModels;
@@ -8,10 +7,9 @@ using Amazon.SimpleDB;
 
 namespace CyclingRepository
 {
-    public class ProfilesRepository : IProfilesRepository
+    public class ProfilesRepository :SimpleDBRepositoryBase, IProfilesRepository
     {
-        private readonly string _publicKey = ConfigurationManager.AppSettings["PublicKey"];
-        private readonly string _secretKey = ConfigurationManager.AppSettings["SecretKey"];
+        
         public Profiles GetProfileList()
         {
             Profiles profiles = new Profiles();

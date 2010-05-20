@@ -1,4 +1,5 @@
 ﻿using CyclingRepository;
+using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Biz
 {

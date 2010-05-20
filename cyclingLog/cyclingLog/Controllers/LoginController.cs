@@ -35,7 +35,7 @@ namespace cyclingLog.Controllers
             ActionResult result;
             if (success)
             {
-                result = RedirectToAction("Index","Profiles"); 
+                result = RedirectToAction("Detail/" + AuthenticationInterface.AuthenticatedUserId, "Profiles"); 
             }
             else
             {

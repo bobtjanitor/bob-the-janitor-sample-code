@@ -3,4 +3,9 @@
     public class Objects
     {
     }
+
+    public class mock
+    {
+        
+    }
 }

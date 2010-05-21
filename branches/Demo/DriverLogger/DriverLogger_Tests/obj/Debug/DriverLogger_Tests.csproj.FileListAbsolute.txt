@@ -1,0 +1,8 @@
+C:\Development\DriverLogger\DriverLogger_Tests\bin\Debug\DriverLogger_Tests.dll.config
+C:\Development\DriverLogger\DriverLogger_Tests\bin\Debug\DriverLogger_Tests.dll
+C:\Development\DriverLogger\DriverLogger_Tests\bin\Debug\DriverLogger_Tests.pdb
+C:\Development\DriverLogger\DriverLogger_Tests\bin\Debug\DriverLogger.dll
+C:\Development\DriverLogger\DriverLogger_Tests\bin\Debug\DriverLogger.pdb
+C:\Development\DriverLogger\DriverLogger_Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\DriverLogger\DriverLogger_Tests\obj\Debug\DriverLogger_Tests.dll
+C:\Development\DriverLogger\DriverLogger_Tests\obj\Debug\DriverLogger_Tests.pdb

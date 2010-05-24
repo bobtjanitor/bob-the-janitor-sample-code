@@ -69,7 +69,9 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -114,6 +116,7 @@
     <Content Include="Views\Login\Index.aspx" />
     <Content Include="Views\Profiles\Detail.aspx" />
     <Content Include="Views\Profiles\Index.aspx" />
+    <Content Include="Views\Route\AddRoute.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
     <Content Include="Views\Shared\MasterHeader.ascx" />
     <Content Include="Views\Shared\ProfileGridView.ascx" />
@@ -143,9 +146,7 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\cyclingLog.Biz\cyclingLog.Biz.csproj">
       <Project>{01427A43-4CAF-4619-814D-05F398C41B70}</Project>

@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using cyclingLog.Factories;
 using cyclingLog.Models;
+using DomainModels;
 using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Controllers
@@ -28,5 +29,17 @@ namespace cyclingLog.Controllers
             return View(route);
         }
 
+        public ActionResult AddRoute()
+        {
+            Route newRoute = new Route();
+            newRoute.Id = Guid.NewGuid();
+            return View(newRoute);
+        }
+
+        public ActionResult AddRoute(Route newRoute)
+        {
+            
+            return View(newRoute);
+        }
     }
 }

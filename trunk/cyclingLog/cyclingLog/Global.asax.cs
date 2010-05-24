@@ -20,7 +20,8 @@ namespace cyclingLog
                 new { controller = "Profiles", action = "Index", id="" });
 
             routes.MapRoute("Profile", "{controller}/{action}/{id}",
-                            new {controller = "Profiles", action = "Detail", id = @"\d+"});
+                            new {controller = "Profiles", action = "Detail", id = ""});
+
 
         }
 

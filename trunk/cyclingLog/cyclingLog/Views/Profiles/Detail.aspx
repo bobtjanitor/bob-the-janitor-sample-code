@@ -33,4 +33,5 @@
     <br style="clear:both" />
 </div>
 <%Html.RenderPartial("RouteGridView",Model.RouteList); %>
+<%=Html.ActionLink("[Add Route]","AddRoute","Route") %>
 </asp:Content>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using cyclingLog.Factories;
 using cyclingLog.Models;
@@ -31,14 +32,13 @@ namespace cyclingLog.Controllers
 
         public ActionResult AddRoute()
         {
-            Route newRoute = new Route();
-            newRoute.Id = Guid.NewGuid();
+            Route newRoute = new Route {Id = Guid.NewGuid()};
             return View(newRoute);
         }
 
         public ActionResult AddRoute(Route newRoute)
         {
-            
+            List<string> errors =  
             return View(newRoute);
         }
     }

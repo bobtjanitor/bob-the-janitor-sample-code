@@ -13,10 +13,10 @@ namespace ObserverDemo
 
         public void Notify(T newState)
         {
-            foreach (var obverver in Subscribers.Values)
+            foreach (var observer in Subscribers.Values)
             {
-                obverver.State = newState;
-                obverver.Update();
+                observer.State = newState;
+                observer.Update();
             }
         }
     }

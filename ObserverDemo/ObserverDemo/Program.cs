@@ -41,11 +41,31 @@ namespace ObserverDemo
     public class SaveLocation : ISubscriber<Location>
     {
         public ILocationReposigtory LocationRepository = new FakeLocationRepository();
+        public static EventManager<string> ErrorHandler = new EventManager<string>();
+
         public Location State{get;set;}
+
+        public SaveLocation()
+        {
+            ErrorHandler.Subscribers.Add("ErrorMailer",new ErrorMailer());
+        }
 
         public void Update()
         {
             bool success = LocationRepository.SaveLocation(State);
+            if (!success)
+            {
+                ErrorHandler.Notify("Failed to save location");
+            }
+        }
+    }
+
+    public class ErrorMailer : ISubscriber<string>
+    {
+        public string State { get; set; }
+        public void Update()
+        {
+            //some code to email the error
         }
     }
 }

@@ -119,6 +119,9 @@
     <Content Include="Views\Profiles\Index.aspx" />
     <Content Include="Views\Route\AddRoute.aspx" />
     <Content Include="Views\Route\Detail.aspx" />
+    <Content Include="Views\Route\UpdateRoute.aspx" />
+    <Content Include="Views\Shared\AddUpdateRoute.ascx" />
+    <Content Include="Views\Shared\Errors.ascx" />
     <Content Include="Views\Shared\MasterHeader.ascx" />
     <Content Include="Views\Shared\ProfileGridView.ascx" />
     <Content Include="Views\Shared\RouteGridView.ascx" />

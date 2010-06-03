@@ -18,7 +18,7 @@
           }
 
           function AddRoute() {
-          <%=Html.AddRouteToMap("map", Model.RouteCoordinates) %>
+          <%=Html.AddRouteToMap("map", Model.RouteCoordinates)%>
              
           }  
 

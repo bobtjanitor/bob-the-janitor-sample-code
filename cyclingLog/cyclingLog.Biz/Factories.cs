@@ -15,5 +15,10 @@ namespace cyclingLog.Biz
         {
             return new RoutesRepository();
         }
+
+        public static IRouteRepository GetRouteRepository()
+        {
+            return new RouteRepository();
+        }
     }
 }

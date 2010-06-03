@@ -8,7 +8,20 @@ namespace cyclingLog.Biz
 {
     public class RouteRequests : IRouteRequests
     {
-        public IRouteRepository RouteRepositoryInterface { get; set; }
+        private IRouteRepository _routeRepositoryInterface;
+        public IRouteRepository RouteRepositoryInterface
+        {
+            get
+            {
+                if (_routeRepositoryInterface==null)
+                {
+                    _routeRepositoryInterface = Factories.GetRouteRepository();
+                }
+                return _routeRepositoryInterface;
+            }
+            set { _routeRepositoryInterface = value; }
+        }
+
         private IRoutesRepository _routesRepositoryInterface;
         public IRoutesRepository RoutesRepositoryInterface
         {

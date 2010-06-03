@@ -51,7 +51,7 @@ namespace cyclingLog.Controllers
             return View(newRoute);
         }
 
-        public ActionResult AddRoute(Route newRoute)
+        public ActionResult UpdateRoute(Route newRoute)
         {
             RouteRequestsInterface.AddRoute(newRoute);
             List<string> errors = RouteRequestsInterface.Errors;

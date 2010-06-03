@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DomainModels;
+using DomainModels.BizInterfaces;
+using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Biz
 {
-    public class RouteRequests
+    public class RouteRequests : IRouteRequests
     {
         public IRouteRepository RouteRepositoryInterface { get; set; }
 
@@ -44,10 +46,5 @@ namespace cyclingLog.Biz
 
             return Errors.Count == 0;
         }
-    }
-
-    public interface IRouteRepository
-    {
-        bool AddUpdateRoute(Route route);
     }
 }

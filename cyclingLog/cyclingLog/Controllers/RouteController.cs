@@ -38,7 +38,7 @@ namespace cyclingLog.Controllers
 
         public ActionResult AddRoute(Route newRoute)
         {
-            List<string> errors =  
+           // List<string> errors =  
             return View(newRoute);
         }
     }

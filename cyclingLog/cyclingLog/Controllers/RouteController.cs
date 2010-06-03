@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using cyclingLog.Factories;
 using cyclingLog.Models;
 using DomainModels;
+using DomainModels.BizInterfaces;
 using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Controllers
@@ -24,6 +25,20 @@ namespace cyclingLog.Controllers
             set { _routeRepositoryInterface = value; }
         }
 
+        private IRouteRequests _routeRequestsInterface;
+        public IRouteRequests RouteRequestsInterface
+        {
+            get
+            {
+                if (_routeRequestsInterface==null)
+                {
+                    _routeRequestsInterface = RouteFactory.GetRouteRequests();
+                }
+                return _routeRequestsInterface;
+            }
+            set { _routeRequestsInterface = value; }
+        }
+
         public ActionResult Detail(Guid id)
         {
             RouteModel route = RouteRepositoryInterface.GetRouteById(id).AsRouteModel();
@@ -38,7 +53,9 @@ namespace cyclingLog.Controllers
 
         public ActionResult AddRoute(Route newRoute)
         {
-           // List<string> errors =  
+            RouteRequestsInterface.AddRoute(newRoute);
+            List<string> errors = RouteRequestsInterface.Errors;
+            ViewData["Errors"] = errors;
             return View(newRoute);
         }
     }

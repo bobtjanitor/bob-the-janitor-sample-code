@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthentiactionRepository.cs" />
+    <Compile Include="RouteRepository.cs" />
     <Compile Include="RoutesRepository.cs" />
     <Compile Include="SimpleDBExtedors.cs" />
     <Compile Include="SimpleDBRepositoryBase.cs" />

@@ -1,4 +1,5 @@
-﻿using CyclingRepository;
+﻿using System;
+using CyclingRepository;
 using DomainModels.RepositoryInterfaces;
 
 namespace cyclingLog.Biz
@@ -8,6 +9,11 @@ namespace cyclingLog.Biz
         public static IAuthentiactionRepository GetAuthenticationRepository()
         {
             return new AuthentiactionRepository();
+        }
+
+        public static IRoutesRepository GetRoutesRepositoryInterface()
+        {
+            return new RoutesRepository();
         }
     }
 }

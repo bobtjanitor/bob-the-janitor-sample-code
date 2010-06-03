@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DomainModels;
 using DomainModels.BizInterfaces;
 using DomainModels.RepositoryInterfaces;
@@ -11,6 +9,19 @@ namespace cyclingLog.Biz
     public class RouteRequests : IRouteRequests
     {
         public IRouteRepository RouteRepositoryInterface { get; set; }
+        private IRoutesRepository _routesRepositoryInterface;
+        public IRoutesRepository RoutesRepositoryInterface
+        {
+            get
+            {
+                if (_routesRepositoryInterface==null)
+                {
+                    _routesRepositoryInterface = Factories.GetRoutesRepositoryInterface();
+                }
+                return _routesRepositoryInterface;
+            }
+            set { _routesRepositoryInterface = value; }
+        }
 
         private List<string> _errors = new List<string>();
         public List<string> Errors
@@ -19,8 +30,25 @@ namespace cyclingLog.Biz
             set { _errors = value; }
         }
 
+        public Route GetRouteById(Guid id)
+        {
+            Errors.Clear();
+            Route route = new Route();
+            if (id == new Guid())
+            {
+                Errors.Add("Invalid route Id");
+            }
+            else
+            {
+                route = RoutesRepositoryInterface.GetRouteById(id);
+            }
+            return route;
+
+        }
+            
         public bool AddRoute(Route route)
         {
+            Errors.Clear();
             if (string.IsNullOrWhiteSpace(route.Name))
             {
                 Errors.Add("Name is required");

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using cyclingLog.Biz;
 using DomainModels;
+using DomainModels.RepositoryInterfaces;
 using NUnit.Framework;
 
 namespace cyclingLog.Biz_Tests
@@ -26,7 +27,7 @@ namespace cyclingLog.Biz_Tests
         [Test]
         public void AddRoute_ValidRouteReturnsNoError_Test()
         {
-            
+            mockRouteRepository.AddUpdateRouteReturnValue = true;
             target.AddRoute(testRoute);
             Assert.AreEqual(0,target.Errors.Count());
         }
@@ -34,6 +35,7 @@ namespace cyclingLog.Biz_Tests
         [Test]
         public void AddRoute_ValidRouteReturnsTrue_Test()
         {
+            mockRouteRepository.AddUpdateRouteReturnValue = true;
             bool actual = target.AddRoute(testRoute);
             Assert.AreEqual(true, actual);
         }

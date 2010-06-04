@@ -11,6 +11,11 @@ namespace DomainModels
         public string Location { get; set; }
         public DateTime LastTimeRidden { get; set; }
         public IList<LatLonCoordinate> RouteCoordinates { get; set; } 
+
+        public Route()
+        {
+            RouteCoordinates = new List<LatLonCoordinate>();
+        }
     }
 
     public struct LatLonCoordinate

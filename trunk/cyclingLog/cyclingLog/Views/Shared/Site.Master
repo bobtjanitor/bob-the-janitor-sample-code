@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <asp:ContentPlaceHolder ID="headerContent" runat="server" />
-    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.3.2-vsdoc.js"></script>
 </head>
 
 <body>

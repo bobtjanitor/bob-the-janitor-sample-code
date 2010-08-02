@@ -1,6 +1,6 @@
-<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<cyclingLog.Models.RouteModel>" MasterPageFile="~/Views/Shared/Site.Master" %>
+<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<cyclingLog.Models.RouteModel>" MasterPageFile="~/Views/Shared/NonAuth.Master" %>
 <%@ Import Namespace="cyclingLog.Views.Route" %>
-<asp:Content runat="server" ID="Content" ContentPlaceHolderID="headerContent">
+<asp:Content runat="server" ID="Content" ContentPlaceHolderID="head">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
       <script type="text/javascript">

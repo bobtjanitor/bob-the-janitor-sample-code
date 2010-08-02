@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<cyclingLog.Models.ProfileModel>" MasterPageFile="~/Views/Shared/Site.Master" %>
+<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<cyclingLog.Models.ProfileModel>" MasterPageFile="~/Views/Shared/NonAuth.Master" %>
 <asp:Content runat="server" ID="Content" ContentPlaceHolderID="headerContent">
 <style type="text/css">
     td.lable

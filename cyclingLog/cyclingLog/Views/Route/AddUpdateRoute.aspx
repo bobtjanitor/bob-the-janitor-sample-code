@@ -1,6 +1,6 @@
-<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<DomainModels.Route>" MasterPageFile="~/Views/Shared/Site.Master" %>
+<%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<DomainModels.Route>" MasterPageFile="~/Views/Shared/NonAuth.Master" %>
 <%@ Import Namespace="DomainModels" %>
-<asp:Content runat="server" ID="Content" ContentPlaceHolderID="headerContent"></asp:Content>
+<asp:Content runat="server" ID="Content" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
     <%using (Html.BeginForm("UpdateRoute", "Route"))
       {

@@ -39,6 +39,14 @@ namespace CyclingRepository_Tests
             Assert.IsTrue(success);
         }
 
+        [Test]
+        public void AddUpdateRoute_InvalidId_Intergration_Test()
+        {
+            testRoute = new Route() { Distance = 10, LastTimeRidden = DateTime.Today, Location = "Boise", Name = "test route" };
+            bool success = target.AddUpdateRoute(testRoute);
+            Assert.IsTrue(success);
+        }
+
 
     }
 }

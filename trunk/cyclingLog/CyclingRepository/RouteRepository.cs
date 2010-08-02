@@ -15,9 +15,11 @@ namespace CyclingRepository
             bool success = true;
             using (AmazonSimpleDBClient client = new AmazonSimpleDBClient(_publicKey, _secretKey))
             {
-                PutAttributesRequest request = new PutAttributesRequest();
-                request.DomainName = DomainName;
-                request.ItemName = route.Id.ToString();
+                PutAttributesRequest request = new PutAttributesRequest
+                                                   {
+                                                       DomainName = DomainName,
+                                                       ItemName = route.Id.ToString()
+                                                   };
                 request.Attribute.Add(new ReplaceableAttribute() { Name = "Name", Replace = true, Value = route.Name });
                 request.Attribute.Add(new ReplaceableAttribute() { Name = "Distance", Replace = true, Value = route.Distance.ToString() });
                 request.Attribute.Add(new ReplaceableAttribute() { Name = "Id", Replace = true, Value = route.Id.ToString() });
@@ -25,7 +27,7 @@ namespace CyclingRepository
                 request.Attribute.Add(new ReplaceableAttribute() { Name = "Location", Replace = true, Value = route.Location });
                 try
                 {
-                    client.PutAttributes(request);
+                    PutAttributesResponse response = client.PutAttributes(request);
                 }
                 catch(Exception repositoryError)
                 {

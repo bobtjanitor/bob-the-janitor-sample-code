@@ -8,5 +8,6 @@ namespace DomainModels.BizInterfaces
         IRouteRepository RouteRepositoryInterface { get; set; }
         List<string> Errors { get; set; }
         bool AddRoute(Route route);
+        Routes GetRoutes();
     }
 }

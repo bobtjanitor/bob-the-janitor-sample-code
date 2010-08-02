@@ -81,11 +81,16 @@ namespace cyclingLog.Biz
             {
                 if (!RouteRepositoryInterface.AddUpdateRoute(route))
                 {
-                    Errors.Add("An error occured saving this route.");
+                    Errors.Add("An error occurred saving this route.");
                 }
             }
 
             return Errors.Count == 0;
+        }
+
+        public Routes GetRoutes()
+        {
+            return RoutesRepositoryInterface.GetAllRoutes();
         }
     }
 }

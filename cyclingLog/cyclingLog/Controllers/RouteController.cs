@@ -45,6 +45,12 @@ namespace cyclingLog.Controllers
             return View(route);
         }
 
+        public ActionResult RouteList()
+        {
+            IList<RouteModel> routes = RouteRequestsInterface.GetRoutes().AsRouteModelList();
+            return View(routes);
+        }
+
         public ActionResult AddRoute()
         {
             Route newRoute = new Route {Id = Guid.NewGuid()};
@@ -63,7 +69,7 @@ namespace cyclingLog.Controllers
             return View("AddUpdateRoute",newRoute);
         }
 
-        public ActionResult UpdateCoordinate(LatLonCoordinate latLonCoordinate )
+        public ActionResult AddCoordinate(LatLonCoordinate latLonCoordinate )
         {            
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using cyclingLog.Biz;
@@ -14,6 +15,7 @@ namespace cyclingLog.Biz_Tests
         private RouteRequests target;
         private Route testRoute;
         private MockRouteRepository mockRouteRepository;
+        private MockRoutesRepository _mockRoutesRepository;
 
         [SetUp]
         public void Setup()
@@ -22,6 +24,8 @@ namespace cyclingLog.Biz_Tests
             testRoute = new Route {Name = "test route", Location = "test location", Id = Guid.NewGuid()};
             mockRouteRepository = new MockRouteRepository();
             target.RouteRepositoryInterface = mockRouteRepository;
+            _mockRoutesRepository = new MockRoutesRepository();
+            target.RoutesRepositoryInterface = _mockRoutesRepository;
         }
 
         [Test]
@@ -124,6 +128,41 @@ namespace cyclingLog.Biz_Tests
             Assert.AreEqual(false, actual);
         }
 
+        [Test]
+        public void GetRoutes_CallsRoutesRepositoryForAListOfRoutes_Test()
+        {
+            target.GetRoutes();
+            Assert.AreEqual(1,_mockRoutesRepository.GetAllRoutesCalledCount);
+        }
+
+    }
+
+    public class MockRoutesRepository : IRoutesRepository
+    {
+        public List<Route> GetUsersRoutesReturnValue = new List<Route>();
+        public int GetUsersRoutesCalledCount=0;
+        public Route GetRouteByIdReturnValue=new Route();
+        public int GetRouteByIdCalledCount=0;
+        public Routes GetAllRoutesReturnValue=new Routes();
+        public int GetAllRoutesCalledCount;
+
+        public List<Route> GetUsersRoutes(Guid userId)
+        {
+            GetUsersRoutesCalledCount++;
+            return GetUsersRoutesReturnValue;           
+        }
+
+        public Route GetRouteById(Guid routeId)
+        {
+            GetRouteByIdCalledCount++;
+            return GetRouteByIdReturnValue;
+        }
+
+        public Routes GetAllRoutes()
+        {
+            GetAllRoutesCalledCount++;
+            return GetAllRoutesReturnValue;
+        }
     }
 
     public class MockRouteRepository : IRouteRepository

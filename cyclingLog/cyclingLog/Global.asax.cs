@@ -12,7 +12,7 @@ namespace cyclingLog
             routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Login", action = "Index", id = "" });
+                new { controller = "Route", action = "RouteList", id = "" });
 
             routes.MapRoute(
                 "Profiles",                                              // Route name

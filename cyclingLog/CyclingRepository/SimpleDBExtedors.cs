@@ -1,7 +1,8 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Amazon.SimpleDB.Model;
+using Attribute = Amazon.SimpleDB.Model.Attribute;
 
 namespace CyclingRepository
 {
@@ -15,6 +16,24 @@ namespace CyclingRepository
                              select attribute.Value).DefaultIfEmpty(string.Empty).FirstOrDefault();
            return myValue;
        }
+
+
+        public static double GetDoubleValueByName(this IList<Attribute> myAttributes, string name)
+        {
+            double value = 0;
+            string stringValue = myAttributes.GetValueByName(name);
+            double.TryParse(stringValue, out value);
+            return value;
+        }
+
+        public static DateTime GetDateTimeValueByName(this IList<Attribute> myAttributes, string name )
+        {
+            DateTime dateTime;
+            string stringValue = myAttributes.GetValueByName(name);
+            DateTime.TryParse(stringValue, out dateTime);
+
+            return dateTime;
+        }
 
    }
 }

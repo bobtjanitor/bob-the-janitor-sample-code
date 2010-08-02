@@ -7,5 +7,6 @@ namespace DomainModels.RepositoryInterfaces
     {
         List<Route> GetUsersRoutes(Guid userId);
         Route GetRouteById(Guid routeId);
+        Routes GetAllRoutes();
     }
 }

@@ -21,10 +21,7 @@
         </tr>
     </table>
     <%
-      }%>
-    <%=Html.Partial("Errors",ViewData["Errors"])%>
-
-    <%
+      }
         if(ViewData["IsUpdate"]!=null )
         {
             %>
@@ -61,11 +58,19 @@
     <script type ="text/javascript">
         $(document).ready(
         function () {
-            
+            var routeId = '<%=Model.Id %>';
         }
         )
 
         function AddRouteCoordinate(lat, lon) {
+
+            $.ajax(
+            {
+                type: "POST",
+                url: "/RouteService.svc/AddCord",
+                data: {"lat":lat, "lon":lon, "id":id },
+
+            })
             var ratesTable = $("#RoutePointsTable").get()[0];
             var rowCount = ratesTable.rows.length;
             var row = ratesTable.insertRow(rowCount);

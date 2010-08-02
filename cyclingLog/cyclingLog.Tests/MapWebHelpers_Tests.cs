@@ -1,9 +1,9 @@
 ﻿using System.Text.RegularExpressions;
 using cyclingLog.Views.Route;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web.Mvc;
 using DomainModels;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace cyclingLog.Tests
 {
@@ -11,10 +11,10 @@ namespace cyclingLog.Tests
     ///This is a test class for MapWebHelpers_Tests and is intended
     ///to contain all MapWebHelpers_Tests Unit Tests
     ///</summary>
-    [TestClass()]
+    [TestFixture()]
     public class MapWebHelpers_Tests
     {
-        [TestMethod()]
+        [Test]
         public void AddRouteToMap_ReturnsAddingRouteToTheMapNamePassedIn_Test()
         {
             HtmlHelper helper = null; 
@@ -25,7 +25,7 @@ namespace cyclingLog.Tests
             Assert.IsTrue(actual.Contains(mapName + ".GetDirections(route);"));
         }
 
-        [TestMethod()]
+        [Test]
         public void AddRouteToMap_AddsAVELatLongWithTheCordsPassedIn_Test()
         {
             HtmlHelper helper = null;
@@ -43,7 +43,7 @@ namespace cyclingLog.Tests
             Assert.IsTrue(actual.Contains("new VELatLong(12, 10)"));
         }
 
-        [TestMethod()]
+        [Test]
         public void AddRouteToMap_AddsAVELatLongForEachofTheCordsPassedIn_Test()
         {
             HtmlHelper helper = null;

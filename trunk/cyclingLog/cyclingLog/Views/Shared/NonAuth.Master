@@ -9,8 +9,32 @@
 </head>
 <body>
     <div class="page">
-        <div id="header">
-            <%Html.RenderPartial("MasterHeader"); %>
+         <div id="header">
+            <%
+                Html.RenderPartial("MasterHeader");%>
+              
+            <div id="logindisplay">
+                &nbsp;
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu"> 
+                  
+                    <%
+                    if (ViewData["Athenticated"] != null)
+                    {                
+                    %>           
+                    <li><%=Html.ActionLink("Profiles", "Index", "Profiles")%></li>
+                    <%
+                    }else
+                    {
+                    %>
+                    <li><%=Html.ActionLink("Login", "Index", "Login")%></li>
+                    <%}   %>
+                </ul>
+            
+            </div>
         </div>
         <br style="clear:both;" />
         <div id="main">

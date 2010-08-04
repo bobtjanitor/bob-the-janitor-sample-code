@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="cyclingLog.Controllers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -19,19 +20,20 @@
             
             <div id="menucontainer">
             
-                <ul id="menu"> 
-                  
+                <ul id="menu">
+                  <li><%=Html.ActionLink("Routes", "RouteList", "Route")%></li> 
+                  <li>
                     <%
-                    if (ViewData["Athenticated"] != null)
-                    {                
-                    %>           
-                    <li><%=Html.ActionLink("Profiles", "Index", "Profiles")%></li>
-                    <%
-                    }else
+                        if (ViewData["AuthUserGuid"] != null)
+                        {
+                    %><%=Html.ActionLink("Profile", "Detail", new { controller = "Profiles", id = Guid.Parse(ViewData["AuthUserGuid"].ToString()) })%><%
+                    }
+                    else
                     {
+                    %><%=Html.ActionLink("Login", "Index", "Login")%><%
+                    }   
                     %>
-                    <li><%=Html.ActionLink("Login", "Index", "Login")%></li>
-                    <%}   %>
+                 </li>   
                 </ul>
             
             </div>

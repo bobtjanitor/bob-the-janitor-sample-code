@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Web.Mvc;
+using System.Web.Security;
 using cyclingLog.Biz;
 using cyclingLog.Models;
 
@@ -23,6 +24,7 @@ namespace cyclingLog.Controllers
 
         public ActionResult Index()
         {
+            ViewData["AuthUserGuid"] = Request.ServerVariables.Get("AUTH_USER");
             return View();
         }
 
@@ -35,6 +37,8 @@ namespace cyclingLog.Controllers
             ActionResult result;
             if (success)
             {
+                FormsAuthentication.SetAuthCookie(AuthenticationInterface.AuthenticatedUserId.ToString(), false);
+
                 result = RedirectToAction("Detail/" + AuthenticationInterface.AuthenticatedUserId, "Profiles"); 
             }
             else

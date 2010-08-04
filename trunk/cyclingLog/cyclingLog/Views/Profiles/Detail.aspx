@@ -1,5 +1,5 @@
 <%@ Page Title="" Language="C#" Inherits="System.Web.Mvc.ViewPage<cyclingLog.Models.ProfileModel>" MasterPageFile="~/Views/Shared/NonAuth.Master" %>
-<asp:Content runat="server" ID="Content" ContentPlaceHolderID="headerContent">
+<asp:Content runat="server" ID="Content" ContentPlaceHolderID="head">
 <style type="text/css">
     td.lable
     {

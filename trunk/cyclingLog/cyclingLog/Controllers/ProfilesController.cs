@@ -43,12 +43,14 @@ namespace cyclingLog.Controllers
 
         public ActionResult Index()
         {
+            ViewData["AuthUserGuid"] = Request.ServerVariables.Get("AUTH_USER");
             List<ProfileModel> list = ProfilesRepository.GetProfileList().AsProfileModelList();
             return View(list);
         }
 
         public ActionResult Detail(Guid id)
         {
+            ViewData["AuthUserGuid"] = Request.ServerVariables.Get("AUTH_USER");
             ProfileModel profile = ProfilesRepository.GetProfileById(id).AsProfileModel();
             profile.RouteList = RoutesRepository.GetUsersRoutes(id).AsRouteModelList();
             return View(profile);

@@ -158,7 +158,9 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Profiles\Web.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cyclingLog.Biz\cyclingLog.Biz.csproj">
       <Project>{01427A43-4CAF-4619-814D-05F398C41B70}</Project>

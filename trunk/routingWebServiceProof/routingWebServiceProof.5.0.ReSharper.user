@@ -1,0 +1,106 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">False</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="5AFA6460-4B80-4462-A513-AB271129A61E/f:Program.cs" caret="810" fromTop="21" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="1276" fromTop="31" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="137" fromTop="3" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="468" fromTop="4" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="1294" fromTop="19" />
+      <File id="5AFA6460-4B80-4462-A513-AB271129A61E/f:Program.cs" caret="121" fromTop="3" />
+      <File id="5AFA6460-4B80-4462-A513-AB271129A61E/f:Program.cs" caret="855" fromTop="20" />
+      <File id="5AFA6460-4B80-4462-A513-AB271129A61E/f:Program.cs" caret="533" fromTop="14" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="659" fromTop="10" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="883" fromTop="19" />
+      <File id="E62B694B-39D7-482B-9741-D3BA99984CB2/f:Program.cs" caret="1317" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.4\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="1" />
+      <Item value="routingWebServiceProof.RoutingWebService" priority="0" />
+      <Item value="RoutingServiceClient`0" priority="0" />
+      <Item value="client" priority="3" />
+      <Item value="new" priority="8" />
+      <Item value="RoutingServiceClient" priority="0" />
+      <Item value="RouteRequest`0" priority="0" />
+      <Item value="request" priority="10" />
+      <Item value="RouteRequest" priority="0" />
+      <Item value="RouteLocation" priority="1" />
+      <Item value="City" priority="0" />
+      <Item value="State" priority="0" />
+      <Item value="returnValue" priority="2" />
+      <Item value="foreach" priority="0" />
+      <Item value="Console`0" priority="4" />
+      <Item value="error" priority="0" />
+      <Item value="SearchingProof.Searching" priority="0" />
+      <Item value="LoadSearchClient`0" priority="0" />
+      <Item value="LoadSearchClient" priority="0" />
+      <Item value="LoadSearchRequest" priority="0" />
+      <Item value="LoadSearchCriteria" priority="0" />
+      <Item value="OriginCity" priority="0" />
+      <Item value="OriginState" priority="0" />
+      <Item value="EquipmentType" priority="0" />
+      <Item value="result" priority="1" />
+      <Item value="Count`1" priority="1" />
+      <Item value="All" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:routingWebServiceProof.RoutingWebService.RoutingServiceClient">
+      <Item value="GetRoute`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:routingWebServiceProof.RoutingWebService.RouteRequest">
+      <Item value="UserName" priority="0" />
+      <Item value="Password" priority="0" />
+      <Item value="IntegrationId" priority="0" />
+      <Item value="MilesPerGallon" priority="0" />
+      <Item value="Locations" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:routingWebServiceProof.RoutingWebService.RouteReturn">
+      <Item value="AverageFuelPrice" priority="0" />
+      <Item value="Errors" priority="0" />
+      <Item value="EstimatedFuelCost" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="4" />
+      <Item value="ReadKey`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:routingWebServiceProof.RoutingWebService.Error">
+      <Item value="ErrorMessage" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SearchingProof.Searching.LoadSearchClient">
+      <Item value="GetLoadSearchResults`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SearchingProof.Searching.LoadSearchRequest">
+      <Item value="Criteria" priority="1" />
+      <Item value="IntegrationId" priority="0" />
+      <Item value="UserName" priority="0" />
+      <Item value="Password" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SearchingProof.Searching.LoadSearchReturn">
+      <Item value="Errors" priority="0" />
+      <Item value="SearchResults" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SearchingProof.Searching.LoadSearchCriteria">
+      <Item value="LoadType" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

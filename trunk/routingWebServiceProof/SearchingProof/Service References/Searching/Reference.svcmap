@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ab8651af-adf7-49d7-9587-7a80d7eb5b6e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webservices.truckstop.com/v2/searching/LoadSearch.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoadSearch.wsdl" MetadataType="Wsdl" ID="a67f58ad-73b5-4ece-a53a-d3db9d0abcb9" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?wsdl" />
+    <MetadataFile FileName="LoadSearch.xsd" MetadataType="Schema" ID="db61c852-5c8a-4c22-95f1-b74db2550b51" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd3" />
+    <MetadataFile FileName="LoadSearch1.xsd" MetadataType="Schema" ID="0c3859f0-e82c-4621-89aa-b4ad05d56e4d" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoadSearch2.xsd" MetadataType="Schema" ID="06cd7dca-ec89-41e4-b136-4836771ead06" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd1" />
+    <MetadataFile FileName="LoadSearch3.xsd" MetadataType="Schema" ID="fa3cba6b-1b2b-4f11-b15d-9ecc8945714b" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd4" />
+    <MetadataFile FileName="LoadSearch4.xsd" MetadataType="Schema" ID="2acd94c1-f564-4169-b98a-79a83f6d20d4" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd5" />
+    <MetadataFile FileName="LoadSearch5.xsd" MetadataType="Schema" ID="0faa36cc-a74f-467e-9c21-8dcc3a69decc" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoadSearch.disco" MetadataType="Disco" ID="2a36bec1-1b0b-4f42-a8bb-e78353b3a0cb" SourceId="1" SourceUrl="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

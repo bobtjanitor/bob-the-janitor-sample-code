@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="LoadType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Full">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Partial">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LoadType" nillable="true" type="tns:LoadType" />
+  <xs:complexType name="ArrayOfError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfError" nillable="true" type="tns:ArrayOfError" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
+</xs:schema>

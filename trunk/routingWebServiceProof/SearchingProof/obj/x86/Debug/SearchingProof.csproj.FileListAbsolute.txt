@@ -1,0 +1,6 @@
+C:\Development\routingWebServiceProof\SearchingProof\bin\Debug\SearchingProof.exe.config
+C:\Development\routingWebServiceProof\SearchingProof\bin\Debug\SearchingProof.exe
+C:\Development\routingWebServiceProof\SearchingProof\bin\Debug\SearchingProof.pdb
+C:\Development\routingWebServiceProof\SearchingProof\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Development\routingWebServiceProof\SearchingProof\obj\x86\Debug\SearchingProof.exe
+C:\Development\routingWebServiceProof\SearchingProof\obj\x86\Debug\SearchingProof.pdb

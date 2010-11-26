@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://webservices.truckstop.com/v2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoadSearch" targetNamespace="http://webservices.truckstop.com/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://webservices.truckstop.com/v2/Imports">
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd0" namespace="http://webservices.truckstop.com/v2" />
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServices.Searching" />
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WebServices" />
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" />
+      <xsd:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/WebServices.Objects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoadSearch_GetLoadSearchResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadSearchResults" />
+  </wsdl:message>
+  <wsdl:message name="ILoadSearch_GetLoadSearchResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadSearchResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoadSearch_GetLoadSearchDetailResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadSearchDetailResult" />
+  </wsdl:message>
+  <wsdl:message name="ILoadSearch_GetLoadSearchDetailResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadSearchDetailResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILoadSearch">
+    <wsdl:operation name="GetLoadSearchResults">
+      <wsdl:input wsaw:Action="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchResults" message="tns:ILoadSearch_GetLoadSearchResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchResultsResponse" message="tns:ILoadSearch_GetLoadSearchResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoadSearchDetailResult">
+      <wsdl:input wsaw:Action="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchDetailResult" message="tns:ILoadSearch_GetLoadSearchDetailResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchDetailResultResponse" message="tns:ILoadSearch_GetLoadSearchDetailResult_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILoadSearch" type="tns:ILoadSearch">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoadSearchResults">
+      <soap:operation soapAction="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoadSearchDetailResult">
+      <soap:operation soapAction="http://webservices.truckstop.com/v2/ILoadSearch/GetLoadSearchDetailResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoadSearch">
+    <wsdl:port name="BasicHttpBinding_ILoadSearch" binding="tns:BasicHttpBinding_ILoadSearch">
+      <soap:address location="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

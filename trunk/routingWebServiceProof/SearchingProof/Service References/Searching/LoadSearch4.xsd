@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebServices.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebServices.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WebServices" />
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" />
+  <xs:complexType name="LoadSearchReturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/WebServices" base="q1:ReturnBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SearchResults" nillable="true" type="tns:ArrayOfLoadSearchItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadSearchReturn" nillable="true" type="tns:LoadSearchReturn" />
+  <xs:complexType name="ArrayOfLoadSearchItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoadSearchItem" nillable="true" type="tns:LoadSearchItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoadSearchItem" nillable="true" type="tns:ArrayOfLoadSearchItem" />
+  <xs:complexType name="LoadSearchItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationCity" nillable="true" type="xs:string" />
+      <xs:element name="DestinationDistance" type="xs:int" />
+      <xs:element minOccurs="0" name="DestinationState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Equipment" nillable="true" type="xs:string" />
+      <xs:element name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" name="LoadType" type="q2:LoadType" />
+      <xs:element minOccurs="0" name="Miles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginCity" nillable="true" type="xs:string" />
+      <xs:element name="OriginDistance" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PickUpDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointOfContactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadSearchItem" nillable="true" type="tns:LoadSearchItem" />
+  <xs:complexType name="LoadDetailReturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/WebServices" base="q3:ReturnBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LoadDetail" nillable="true" type="tns:LoadDetailResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadDetailReturn" nillable="true" type="tns:LoadDetailReturn" />
+  <xs:complexType name="LoadDetailResult">
+    <xs:sequence>
+      <xs:element name="Bond" type="xs:int" />
+      <xs:element minOccurs="0" name="Credit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOTNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Entered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Equipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelCost" nillable="true" type="xs:string" />
+      <xs:element name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" name="LoadType" type="q4:LoadType" />
+      <xs:element minOccurs="0" name="MCNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mileage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PickupDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PickupTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointOfContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointOfContactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stops" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TMCNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TruckCompanyState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadDetailResult" nillable="true" type="tns:LoadDetailResult" />
+</xs:schema>

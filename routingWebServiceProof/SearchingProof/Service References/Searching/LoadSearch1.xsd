@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.truckstop.com/v2" elementFormDefault="qualified" targetNamespace="http://webservices.truckstop.com/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServices.Searching" />
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/WebServices.Objects" />
+  <xs:element name="GetLoadSearchResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebServices.Searching" minOccurs="0" name="searchRequest" nillable="true" type="q1:LoadSearchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoadSearchResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebServices.Objects" minOccurs="0" name="GetLoadSearchResultsResult" nillable="true" type="q2:LoadSearchReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoadSearchDetailResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WebServices.Searching" minOccurs="0" name="detailRequest" nillable="true" type="q3:LoadDetailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoadSearchDetailResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WebServices.Objects" minOccurs="0" name="GetLoadSearchDetailResultResult" nillable="true" type="q4:LoadDetailReturn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebServices.Searching" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebServices.Searching" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WebServices" />
+  <xs:import schemaLocation="http://webservices.truckstop.com/V2/Searching/LoadSearch.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" />
+  <xs:complexType name="LoadSearchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/WebServices" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="tns:LoadSearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadSearchRequest" nillable="true" type="tns:LoadSearchRequest" />
+  <xs:complexType name="LoadSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DestinationCity" nillable="true" type="xs:string" />
+      <xs:element name="DestinationRange" type="xs:int" />
+      <xs:element minOccurs="0" name="DestinationState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" name="LoadType" type="q2:LoadType" />
+      <xs:element minOccurs="0" name="OriginCity" nillable="true" type="xs:string" />
+      <xs:element name="OriginLatitude" type="xs:int" />
+      <xs:element name="OriginLongitude" type="xs:int" />
+      <xs:element name="OriginRange" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginState" nillable="true" type="xs:string" />
+      <xs:element name="PickupDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadSearchCriteria" nillable="true" type="tns:LoadSearchCriteria" />
+  <xs:complexType name="LoadDetailRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/WebServices" base="q3:RequestBase">
+        <xs:sequence>
+          <xs:element name="LoadId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadDetailRequest" nillable="true" type="tns:LoadDetailRequest" />
+</xs:schema>

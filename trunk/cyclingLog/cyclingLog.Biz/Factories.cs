@@ -13,7 +13,7 @@ namespace cyclingLog.Biz
 
         public static IRoutesRepository GetRoutesRepositoryInterface()
         {
-            return new RoutesRepository();
+            return new StubRoutesRepository();
         }
 
         public static IRouteRepository GetRouteRepository()

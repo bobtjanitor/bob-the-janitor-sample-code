@@ -85,7 +85,7 @@ namespace CyclingRepository
                                    {
                                        new Route()
                                            {
-                                               Id = new Guid(),
+                                               Id = new Guid("6fa89d9e-b230-44c3-ad34-2f7bc1ef736c"),
                                                Distance = 8.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-4),
                                                Location = "Caldwell, Id",
@@ -141,7 +141,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = new Guid(),
+                                               Id = new Guid("6fa89d9e-b230-44c3-ad34-2f7bc1ef7361"),
                                                Distance = 6.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-14),
                                                Location = "Caldwell, Id",
@@ -149,7 +149,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = new Guid(),
+                                               Id = new Guid("6fa89d9e-b230-44c3-ad34-2f7bc1ef7363"),
                                                Distance = 8.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-4),
                                                Location = "Caldwell, Id",
@@ -157,7 +157,7 @@ namespace CyclingRepository
                                            },
                                            new Route()
                                            {
-                                               Id = new Guid(),
+                                               Id = new Guid("6fa89d9e-b230-44c3-ad34-2f7bc1ef733c"),
                                                Distance = 6.4,
                                                LastTimeRidden = DateTime.Now.AddDays(-14),
                                                Location = "Caldwell, Id",
@@ -176,7 +176,12 @@ namespace CyclingRepository
 
         public Routes GetAllRoutes()
         {
-            throw new NotImplementedException();
+            Routes routes = new Routes();
+            foreach (Route route in stubData)
+            {
+                routes.Add(route);
+            }
+            return routes;
         }
     }
 }

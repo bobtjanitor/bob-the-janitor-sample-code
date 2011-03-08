@@ -134,13 +134,13 @@ namespace Tools_Tests
         /// <summary>
         ///A test for SendMail
         ///</summary>
-        [TestMethod()]
-        public void SendMail_ReturnsTrueWithValidEmail_Test()
-        {
-            bool expected = true; 
-            bool actual = target.SendMail();
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestMethod()]
+        //public void SendMail_ReturnsTrueWithValidEmail_Test()
+        //{
+        //    bool expected = true; 
+        //    bool actual = target.SendMail();
+        //    Assert.AreEqual(expected, actual);
+        //}
 
     }
 }

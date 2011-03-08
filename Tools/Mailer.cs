@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
+using System.Net.Mail;
 
 namespace Tools
 {
@@ -10,6 +11,20 @@ namespace Tools
         public string From { get; set; }
         public string Body { get; set; }
         public IList<string> Errors { get; set; }
+
+        private SmtpClient _smtpClient;
+        public SmtpClient SmtpClient
+        {
+            get
+            {
+                if (_smtpClient==null)
+                {
+                    _smtpClient = new SmtpClient();
+                }
+                return _smtpClient;
+            }
+            set { _smtpClient = value; }
+        }
 
         private string _smtpServer;
         public string SmtpServer
@@ -55,6 +70,7 @@ namespace Tools
 
         public bool SendMail()
         {
+            
             return false;
         }
     }

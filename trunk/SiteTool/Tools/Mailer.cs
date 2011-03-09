@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Net;
 using System.Net.Mail;
 
 namespace Tools
@@ -10,16 +12,21 @@ namespace Tools
         public string To { get; set; }
         public string From { get; set; }
         public string Body { get; set; }
-        public IList<string> Errors { get; set; }
+        private IList<string> _errors = new List<string>();
+        public IList<string> Errors
+        {
+            get { return _errors; }
+            set { _errors = value; }
+        }
 
-        private SmtpClient _smtpClient;
-        public SmtpClient SmtpClient
+        private ISmtpClientProxy _smtpClient;
+        public ISmtpClientProxy SmtpClient
         {
             get
             {
                 if (_smtpClient==null)
                 {
-                    _smtpClient = new SmtpClient();
+                    _smtpClient = new SmtpClientProxy();
                 }
                 return _smtpClient;
             }
@@ -70,8 +77,56 @@ namespace Tools
 
         public bool SendMail()
         {
-            
-            return false;
+            bool success = true;
+            try
+            {
+                SmtpClient.Host = SmtpServer;
+                if (!string.IsNullOrEmpty(SmtpUser))
+                {
+                    SmtpClient.Credentials = new NetworkCredential(SmtpUser, SmtpPassword);
+                }
+
+                MailMessage message = new MailMessage(From, To)
+                                          {
+                                              Subject = Subject,
+                                              Body = Body
+                                          };
+
+                SmtpClient.Send(message);
+            }
+            catch(Exception mailException)
+            {
+                Errors.Add(mailException.Message);
+                success = false;
+            }
+            finally
+            {
+                SmtpClient.Dispose();
+            }
+           
+            return success;
+        }
+    }
+
+    public interface ISmtpClientProxy
+    {
+        void Send(MailMessage message);
+        void Dispose();
+        string Host { get; set; }
+        ICredentialsByHost Credentials { get; set; }
+    }
+
+    public class SmtpClientProxy : SmtpClient, ISmtpClientProxy
+    {       
+        public new void Send(MailMessage message)
+        {
+            base.Send(message);
+        }
+
+        public ICredentialsByHost Credentials
+        {
+            get { return base.Credentials; }
+            set { base.Credentials = value; }
         }
     }
 }

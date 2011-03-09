@@ -1,4 +1,9 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using Moq;
 using Tools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -8,12 +13,24 @@ namespace Tools_Tests
     [TestClass()]
     public class Mailer_Tests
     {
-        private Mailer target; 
+        private Mailer target;
+        private Mock<ISmtpClientProxy> SmtpClientContext;
 
         [TestInitialize()]
         public void MyTestInitialize()
         {
-            target = new Mailer(); 
+            target = new Mailer()
+                         {
+                             SmtpServer = "Invalid", 
+                             SmtpUser = string.Empty, 
+                             SmtpPassword = "Invalid",
+                             From = "Invalid@invalid.com",
+                             To = "Invalid@invalid.com", 
+                         };
+            SmtpClientContext = new Mock<ISmtpClientProxy>();
+            SmtpClientContext.SetupAllProperties();
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Verifiable("called send");
+            target.SmtpClient = SmtpClientContext.Object;
         }
 
         /// <summary>
@@ -106,6 +123,16 @@ namespace Tools_Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        public void SmtpUser_ReturnsAppSettingWhenNotSet_Test()
+        {
+            string expected = "Test Server";
+            ConfigurationManager.AppSettings["SmtpUser"] = expected;
+            target.SmtpUser = string.Empty;
+            string actual = target.SmtpUser;
+            Assert.AreEqual(expected, actual);
+        }
+
         /// <summary>
         ///A test for Subject
         ///</summary>
@@ -131,16 +158,92 @@ namespace Tools_Tests
         }
 
 
-        /// <summary>
-        ///A test for SendMail
-        ///</summary>
-        //[TestMethod()]
-        //public void SendMail_ReturnsTrueWithValidEmail_Test()
-        //{
-        //    bool expected = true; 
-        //    bool actual = target.SendMail();
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [TestMethod()]
+        public void SendMail_SetsSmtpServer_Test()
+        {
+            string expected = "Test Server";
+            target.SmtpServer = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, target.SmtpClient.Host);
+        }
+
+        [TestMethod()]
+        public void SendMail_SetsSmtpUserIfHasUser_Test()
+        {
+            string expected = "Test User";
+            target.SmtpUser = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, ((NetworkCredential)target.SmtpClient.Credentials).UserName);
+        }
+        [TestMethod()]
+        public void SendMail_SetsSmtpPasswordIfHasUser_Test()
+        {
+            string expected = "Test User";
+            target.SmtpUser = "something";
+            target.SmtpPassword = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, ((NetworkCredential)target.SmtpClient.Credentials).Password);
+        }
+
+        [TestMethod()]
+        public void SendMail_HasNoCredintialsIfHasNoUser_Test()
+        {
+            target.SendMail();
+            Assert.IsNull(target.SmtpClient.Credentials);
+        }
+
+        [TestMethod()]
+        public void SendMail_SetsSubject_Test()
+        {
+            MailMessage testMessage = new MailMessage();
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Callback<MailMessage>(c => testMessage = c);
+            string expected = "Test Subject";
+            target.Subject = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, testMessage.Subject);
+        }
+
+        [TestMethod()]
+        public void SendMail_SetsTo_Test()
+        {
+            MailMessage testMessage = new MailMessage();
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Callback<MailMessage>(c => testMessage = c);
+            string expected = "Test@Test.com";
+            target.To = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, testMessage.To.First().Address);
+        }
+
+        [TestMethod()]
+        public void SendMail_SetsFrom_Test()
+        {
+            MailMessage testMessage = new MailMessage();
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Callback<MailMessage>(c => testMessage = c);
+            string expected = "Test@Test.com";
+            target.From = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, testMessage.From.Address);
+        }
+
+        [TestMethod()]
+        public void SendMail_SetsBody_Test()
+        {
+            MailMessage testMessage = new MailMessage();
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Callback<MailMessage>(c => testMessage = c);
+            string expected = "Test@Test.com";
+            target.Body = expected;
+            target.SendMail();
+            Assert.AreEqual(expected, testMessage.Body);
+        }
+
+        [TestMethod()]
+        public void SendMail_ReturnsErrorForFailedSend_Test()
+        {
+            string expected = "Test@Test.com";
+            SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Throws(new Exception(expected));
+            target.SendMail();
+            Assert.AreEqual(expected, target.Errors.First());
+        }
 
     }
 }

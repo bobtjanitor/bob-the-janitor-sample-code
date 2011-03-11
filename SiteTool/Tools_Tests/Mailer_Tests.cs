@@ -14,7 +14,7 @@ namespace Tools_Tests
     public class Mailer_Tests
     {
         private Mailer target;
-        private Mock<ISmtpClientProxy> SmtpClientContext;
+        private Mock<IEmailClientProxy> SmtpClientContext;
 
         [TestInitialize()]
         public void MyTestInitialize()
@@ -27,10 +27,10 @@ namespace Tools_Tests
                              From = "Invalid@invalid.com",
                              To = "Invalid@invalid.com", 
                          };
-            SmtpClientContext = new Mock<ISmtpClientProxy>();
+            SmtpClientContext = new Mock<IEmailClientProxy>();
             SmtpClientContext.SetupAllProperties();
             SmtpClientContext.Setup(x => x.Send(It.IsAny<MailMessage>())).Verifiable("called send");
-            target.SmtpClient = SmtpClientContext.Object;
+            target.MailClient = SmtpClientContext.Object;
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Tools_Tests
             string expected = "Test Server";
             target.SmtpServer = expected;
             target.SendMail();
-            Assert.AreEqual(expected, target.SmtpClient.Host);
+            Assert.AreEqual(expected, target.MailClient.Host);
         }
 
         [TestMethod()]
@@ -173,7 +173,7 @@ namespace Tools_Tests
             string expected = "Test User";
             target.SmtpUser = expected;
             target.SendMail();
-            Assert.AreEqual(expected, ((NetworkCredential)target.SmtpClient.Credentials).UserName);
+            Assert.AreEqual(expected, ((NetworkCredential)target.MailClient.Credentials).UserName);
         }
         [TestMethod()]
         public void SendMail_SetsSmtpPasswordIfHasUser_Test()
@@ -182,14 +182,14 @@ namespace Tools_Tests
             target.SmtpUser = "something";
             target.SmtpPassword = expected;
             target.SendMail();
-            Assert.AreEqual(expected, ((NetworkCredential)target.SmtpClient.Credentials).Password);
+            Assert.AreEqual(expected, ((NetworkCredential)target.MailClient.Credentials).Password);
         }
 
         [TestMethod()]
         public void SendMail_HasNoCredintialsIfHasNoUser_Test()
         {
             target.SendMail();
-            Assert.IsNull(target.SmtpClient.Credentials);
+            Assert.IsNull(target.MailClient.Credentials);
         }
 
         [TestMethod()]

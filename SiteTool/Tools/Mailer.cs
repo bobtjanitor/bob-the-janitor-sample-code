@@ -19,18 +19,18 @@ namespace Tools
             set { _errors = value; }
         }
 
-        private ISmtpClientProxy _smtpClient;
-        public ISmtpClientProxy SmtpClient
+        private IEmailClientProxy _mailClient;
+        public IEmailClientProxy MailClient
         {
             get
             {
-                if (_smtpClient==null)
+                if (_mailClient==null)
                 {
-                    _smtpClient = new SmtpClientProxy();
+                    _mailClient = ClientFactory.GetEmailClient();
                 }
-                return _smtpClient;
+                return _mailClient;
             }
-            set { _smtpClient = value; }
+            set { _mailClient = value; }
         }
 
         private string _smtpServer;
@@ -83,16 +83,16 @@ namespace Tools
             bool success = true;
             try
             {
-                SmtpClient.Host = SmtpServer;
-                SmtpClient.EnableSsl = UseSSL;
+                MailClient.Host = SmtpServer;
+                MailClient.EnableSsl = UseSSL;
                 if (Port.HasValue)
                 {
-                    SmtpClient.Port = Port.Value;
+                    MailClient.Port = Port.Value;
                 }
                 
                 if (!string.IsNullOrEmpty(SmtpUser))
                 {
-                    SmtpClient.Credentials = new NetworkCredential(SmtpUser, SmtpPassword);
+                    MailClient.Credentials = new NetworkCredential(SmtpUser, SmtpPassword);
                 }
 
                 MailMessage message = new MailMessage(From, To)
@@ -101,7 +101,7 @@ namespace Tools
                                               Body = Body
                                           };
 
-                SmtpClient.Send(message);
+                MailClient.Send(message);
             }
             catch(Exception mailException)
             {
@@ -110,34 +110,10 @@ namespace Tools
             }
             finally
             {
-                SmtpClient.Dispose();
+                MailClient.Dispose();
             }
            
             return success;
-        }
-    }
-
-    public interface ISmtpClientProxy
-    {
-        void Send(MailMessage message);
-        void Dispose();
-        string Host { get; set; }
-        ICredentialsByHost Credentials { get; set; }
-        bool EnableSsl { get; set; }
-        int Port { get; set; }
-    }
-
-    public class SmtpClientProxy : SmtpClient, ISmtpClientProxy
-    {       
-        public new void Send(MailMessage message)
-        {
-            base.Send(message);
-        }
-
-        public new ICredentialsByHost Credentials
-        {
-            get { return base.Credentials; }
-            set { base.Credentials = value; }
         }
     }
 }

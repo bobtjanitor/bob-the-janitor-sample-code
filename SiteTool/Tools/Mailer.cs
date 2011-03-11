@@ -75,12 +75,21 @@ namespace Tools
             set { _smtpPassword = value; }
         }
 
+        public bool UseSSL { get; set; }
+        public int? Port { get; set; }
+
         public bool SendMail()
         {
             bool success = true;
             try
             {
                 SmtpClient.Host = SmtpServer;
+                SmtpClient.EnableSsl = UseSSL;
+                if (Port.HasValue)
+                {
+                    SmtpClient.Port = Port.Value;
+                }
+                
                 if (!string.IsNullOrEmpty(SmtpUser))
                 {
                     SmtpClient.Credentials = new NetworkCredential(SmtpUser, SmtpPassword);
@@ -114,6 +123,8 @@ namespace Tools
         void Dispose();
         string Host { get; set; }
         ICredentialsByHost Credentials { get; set; }
+        bool EnableSsl { get; set; }
+        int Port { get; set; }
     }
 
     public class SmtpClientProxy : SmtpClient, ISmtpClientProxy
@@ -123,7 +134,7 @@ namespace Tools
             base.Send(message);
         }
 
-        public ICredentialsByHost Credentials
+        public new ICredentialsByHost Credentials
         {
             get { return base.Credentials; }
             set { base.Credentials = value; }

@@ -246,4 +246,59 @@ namespace Tools_Tests
         }
 
     }
+
+    [TestClass]
+    public class Mailer_Intergration_Tests
+    {
+        private Mailer target;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            target = new Mailer();
+            //target.SmtpServer = "smtp.server.com";
+        }
+
+        [TestMethod]
+        public void SendMail_SendsAnEmail_Intergration_Test()
+        {
+            target.Subject = "Test message";
+            target.To = "bobtjanitor@gmail.com";
+            target.From = "bobtjanitor@gmail.com";
+            target.Body = "test body";
+            //custom port for the smtp server I'm using
+            target.Port = 587;
+            target.UseSSL = true;
+            bool actual = target.SendMail();
+            Assert.IsTrue(actual);
+        }
+
+        [TestMethod]
+        public void SendMail_SendsAnEmailWithOutErrors_Intergration_Test()
+        {
+            target.Subject = "Test message";
+            target.To = "bobtjanitor@gmail.com";
+            target.From = "bobtjanitor@gmail.com";
+            target.Body = "test body";
+            //custom port for the smtp server I'm using
+            target.Port = 587;
+            target.UseSSL = true;
+            target.SendMail();
+            Assert.AreEqual(0,target.Errors.Count);
+        }
+
+        [TestMethod]
+        public void SendMail_HandleErrors_Intergration_Test()
+        {
+            target.Subject = "Test message";
+            target.To = "bobtjanitor@gmail.com";
+            target.From = "bobtjanitor@gmail.com";
+            target.Body = "test body";
+            //custom port for the smtp server I'm using
+            target.Port = 587;
+            target.UseSSL = false;
+            target.SendMail();
+            Assert.AreEqual(0, target.Errors.Count);
+        }
+    }
 }

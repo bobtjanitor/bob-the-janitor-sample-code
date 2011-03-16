@@ -188,6 +188,8 @@ namespace Tools_Tests
         [TestMethod()]
         public void SendMail_HasNoCredintialsIfHasNoUser_Test()
         {
+            target.SmtpUser = string.Empty;
+            ConfigurationManager.AppSettings["SmtpUser"] = string.Empty;
             target.SendMail();
             Assert.IsNull(target.MailClient.Credentials);
         }
@@ -298,7 +300,7 @@ namespace Tools_Tests
             target.Port = 587;
             target.UseSSL = false;
             target.SendMail();
-            Assert.AreEqual(0, target.Errors.Count);
+            Assert.AreEqual(1, target.Errors.Count);
         }
     }
 }

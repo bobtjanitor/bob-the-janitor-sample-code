@@ -75,7 +75,20 @@ namespace Tools
             set { _smtpPassword = value; }
         }
 
-        public bool UseSSL { get; set; }
+        private bool? _useSSL;
+        public bool? UseSSL
+        {
+            get
+            {
+                if (!_useSSL.HasValue)
+                {
+                    _useSSL = ConfigurationManager.AppSettings["SmtpUseSSL"]== "true";
+                }
+                return _useSSL;
+            }
+            set { _useSSL = value; }
+        }
+
         public int? Port { get; set; }
 
         public bool SendMail()
@@ -84,7 +97,11 @@ namespace Tools
             try
             {
                 MailClient.Host = SmtpServer;
-                MailClient.EnableSsl = UseSSL;
+                if (UseSSL.HasValue)
+                {
+                    MailClient.EnableSsl = UseSSL.Value;
+                }
+                
                 if (Port.HasValue)
                 {
                     MailClient.Port = Port.Value;

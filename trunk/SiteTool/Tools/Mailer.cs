@@ -89,7 +89,20 @@ namespace Tools
             set { _useSSL = value; }
         }
 
-        public int? Port { get; set; }
+        private int? _port;
+        public int? Port
+        {
+            get
+            {
+                int port;
+                if (!_port.HasValue && int.TryParse(ConfigurationManager.AppSettings["SmtpPort"],out port))
+                {
+                    _port = port;
+                }
+                return _port;
+            }
+            set { _port = value; }
+        }
 
         public bool SendMail()
         {

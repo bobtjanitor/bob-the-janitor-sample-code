@@ -9,6 +9,10 @@ namespace Tools
         string From { get; set; }
         string Body { get; set; }
         IList<string> Errors { get; set; }
+        string SmtpServer { get; set; }
+        string SmtpUser { get; set; }
+        bool? UseSSL { get; set; }
+        int? Port { get; set; }
         bool SendMail();
     }
 }

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<project name="FluentMigratorProof" xmlns="http://nant.sourceforge.net/release/0.90/nant.xsd" default="migrate-Production">
+  <loadtasks assembly="./FluentMigrator.NAnt.dll" />
+  <target name="Reset" description="Migrate the database to the base version">
+    <migrate
+    database="sql"
+    connection="Data Source=DevBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxxx;"
+    namespace="FluentMigratorProof"
+    target="./FluentMigratorProof.dll"
+    task="rollback:all"
+    />
+  </target>
+  <target name="migrate-Production" description="Migrate the database to the latest version">
+    <migrate
+    database="sql"
+    connection="Data Source=Production\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxxx;"
+    namespace="FluentMigratorProof"
+    target="./FluentMigratorProof.dll"
+    profile="Production"
+    />
+  </target>
+  <target name="migrate-Development" description="Migrate the database to the latest version">
+    <migrate
+    database="sql"
+    connection="Data Source=DevBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxx;"
+    namespace="FluentMigratorProof"
+    target="./FluentMigratorProof"
+    profile="Development"
+    />
+  </target>
+</project>
+

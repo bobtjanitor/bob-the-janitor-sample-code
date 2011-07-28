@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeRequests_Tests.cs" />
+    <Compile Include="Behavioral\When_Requesting_Employees_From_Seattle_Washington_Tests.cs" />
+    <Compile Include="Behavioral\EmployeeRequests_Context.cs" />
+    <Compile Include="UnitTest\EmployeeRequests_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

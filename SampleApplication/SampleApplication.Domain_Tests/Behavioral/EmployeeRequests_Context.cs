@@ -15,7 +15,7 @@ namespace SampleApplication.Domain_Tests.Behavioral
         public void Setup()
         {
             Context();
-            Becouse();
+            Because();
         }
 
         public virtual void Context()
@@ -23,7 +23,7 @@ namespace SampleApplication.Domain_Tests.Behavioral
             Target = new EmployeeRequests();
         }
 
-        public virtual void Becouse()
+        public virtual void Because()
         {
             
         }

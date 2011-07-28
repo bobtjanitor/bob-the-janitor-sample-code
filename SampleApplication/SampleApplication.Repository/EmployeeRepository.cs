@@ -25,7 +25,7 @@ namespace SampleApplication.Repository
         {
             var result = Entities.vEmployees
                 .Where(x => x.City == city && x.StateProvinceName == state)
-                .Select(x => new EmployeeDvr() {City = x.City, State = x.StateProvinceName});
+                .Select(x => new EmployeeDvr() {City = x.City, State = x.StateProvinceName, EmployeeName = x.FirstName});
             return result.ToList();
         }
     }

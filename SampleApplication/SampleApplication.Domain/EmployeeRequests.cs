@@ -42,6 +42,11 @@ namespace SampleApplication.Domain
             {
                 Errors.Add("Invalid State");
             }
+            if (Errors.Count == 0)
+            {
+                var result = EmployeeRepository.GetEmployeeByCityState(city, state);
+                employees.AddRange(result);
+            }
 
             return employees;
         }

@@ -20,7 +20,7 @@ namespace SampleApplication.Repository_Tests
         }
 
         [Test]
-        public void GettingEmployeesFromSpecifiedCityAndStateOnlyReturnsEmployeesFromTheir_Test()
+        public void GettingEmployeesFromSpecifiedCityAndStateOnlyReturnsEmployeesFromThere_Test()
         {
             var actaul = target.GetEmployeeByCityState(City, State);
             var filtered = actaul.Where(x => x.City == City && x.State == State).ToList();
@@ -46,6 +46,13 @@ namespace SampleApplication.Repository_Tests
         {
             var actaul = target.GetEmployeeByCityState(City, State);
             Assert.AreEqual(State, actaul[0].State);
+        }
+
+        [Test]
+        public void ReturnsEmployeesName_Test()
+        {
+            var actual = target.GetEmployeeByCityState(City, State);
+            Assert.AreNotEqual(null, actual[0].EmployeeName);
         }
     }
 }

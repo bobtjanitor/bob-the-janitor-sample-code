@@ -18,8 +18,7 @@ namespace SampleApplication.Domain_Tests
         {
             target = new EmployeeRequests();
             MockEmployeeRepository = new Mock<IEmployeeRepository>();
-            MockEmployeeRepository.Setup(x => x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>())).Returns<List<EmployeeDvr>>(
-                x => new List<EmployeeDvr>() {new EmployeeDvr() {City = "Seattle", State = "Washington"}});
+            MockEmployeeRepository.Setup(x => x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>())).Returns(new List<EmployeeDvr>() {new EmployeeDvr() {City = "Seattle", State = "Washington", EmployeeName = "bob"}});
             target.EmployeeRepository = MockEmployeeRepository.Object;
         }
 
@@ -29,6 +28,14 @@ namespace SampleApplication.Domain_Tests
             target.GetEmployeeByLocation(string.Empty, "Washington");
             var actual = target.Errors.Where(x => x.Contains("Invalid City"));
             Assert.AreEqual(1,actual.Count());
+        }
+
+        [Test]
+        public void ReturnsErrorForEmptyState_Test()
+        {
+            target.GetEmployeeByLocation("Seattle", string.Empty);
+            var actual = target.Errors.Where(x => x.Contains("Invalid State"));
+            Assert.AreEqual(1, actual.Count());
         }
 
         [Test]

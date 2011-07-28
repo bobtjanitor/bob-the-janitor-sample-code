@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SampleApplication.Objects.Dvrs;
 using SampleApplication.Repository;
 
@@ -13,7 +12,7 @@ namespace SampleApplication.Domain
         public IList<string> Errors
         {
             get { return _errors; }
-            set { _errors = value; }
+            protected set { _errors = value; }
         }
 
         public IEmployeeRepository EmployeeRepository

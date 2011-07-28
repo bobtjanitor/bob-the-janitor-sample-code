@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\ProjectBuildFiles\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,8 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EmployeeRepository_Intergration_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApplication.Objects\SampleApplication.Objects.csproj">
+      <Project>{C3A8EF48-9116-4316-9929-C4E3776B00F3}</Project>
+      <Name>SampleApplication.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApplication.Repository\SampleApplication.Repository.csproj">
+      <Project>{45D2F9E2-AE9D-48AE-9F81-7F4997F012E5}</Project>
+      <Name>SampleApplication.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

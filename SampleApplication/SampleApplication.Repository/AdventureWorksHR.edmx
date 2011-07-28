@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AdventureWorksHRModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="AdventureWorksHRModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="AdventureWorksHRModelStoreContainer">
           <EntitySet Name="Department" EntityType="AdventureWorksHRModel.Store.Department" store:Type="Tables" Schema="HumanResources" />
           <EntitySet Name="Employee" EntityType="AdventureWorksHRModel.Store.Employee" store:Type="Tables" Schema="HumanResources" />
@@ -433,8 +433,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AdventureWorksHRModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -938,7 +937,7 @@
         <EntityTypeShape EntityType="AdventureWorksHRModel.EmployeeDepartmentHistory" Width="1.5" PointX="6" PointY="5.125" Height="2.2496956380208335" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.EmployeePayHistory" Width="1.5" PointX="3" PointY="8.375" Height="1.9210009765624996" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.JobCandidate" Width="1.5" PointX="3" PointY="11" Height="1.7566536458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployee" Width="1.5" PointX="8.75" PointY="0.75" Height="3.7288216145833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployee" Width="1.5" PointX="8.75" PointY="0.75" Height="3.7288216145833326" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployeeDepartment" Width="1.5" PointX="5.75" PointY="0.75" Height="2.5783902994791674" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployeeDepartmentHistory" Width="1.5" PointX="8.75" PointY="5.75" Height="2.7427376302083317" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.vJobCandidate" Width="1.5" PointX="5.75" PointY="8.75" Height="3.5644742838541674" IsExpanded="true" />

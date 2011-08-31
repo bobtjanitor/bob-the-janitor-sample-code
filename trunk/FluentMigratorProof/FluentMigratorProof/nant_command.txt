@@ -1,0 +1,5 @@
+﻿//Running the whatever target was specified as the Default target
+..\BuildFiles\ant\NAnt.exe -buildfile:ProofBuild.nant.build
+
+//Running the migrate-Development target
+..\BuildFiles\ant\NAnt.exe -buildfile:ProofBuild.nant.build migrate-Development

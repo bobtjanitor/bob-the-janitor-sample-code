@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace FluentMigratorProof
+namespace FluentMigratorProof.Profiles
 {
     [Profile("Development")]
     public class DevelopmentProfile : Migration
@@ -14,21 +14,6 @@ namespace FluentMigratorProof
         public override void Down()
         {
             Execute.Sql("DELETE FROM `Users` WHERE Name = 'TestUser'");
-        }
-    }
-
-    [Profile("Production")]
-    public class ProductionProfile : Migration
-    {
-        public override void Up()
-        {
-
-            
-        }
-
-        public override void Down()
-        {
-            
         }
     }
 }

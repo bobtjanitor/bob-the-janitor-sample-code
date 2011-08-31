@@ -51,14 +51,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddUserTables.cs" />
-    <Compile Include="DevelopmentProfile.cs" />
+    <Compile Include="Profiles\DevelopmentProfile.cs" />
     <Compile Include="MigrationExtensions.cs" />
+    <Compile Include="Profiles\ProductionProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ProofBuild.nant.build">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nant_command.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

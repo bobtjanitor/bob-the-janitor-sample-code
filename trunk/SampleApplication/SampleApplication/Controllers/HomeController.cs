@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using SampleApplication.Models;
 
 namespace SampleApplication.Controllers
 {
@@ -11,6 +8,12 @@ namespace SampleApplication.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult UpdatePartial()
+        {
+            var model = new PartialModel() {Text = "was updated"};
+            return View("Partial", model);
         }
 
     }

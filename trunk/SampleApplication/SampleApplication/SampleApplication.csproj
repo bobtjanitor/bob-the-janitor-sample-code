@@ -110,7 +110,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Home\Partial.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\index.cshtml" />
   </ItemGroup>

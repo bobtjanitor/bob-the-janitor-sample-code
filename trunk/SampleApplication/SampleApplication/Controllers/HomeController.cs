@@ -12,7 +12,7 @@ namespace SampleApplication.Controllers
 
         public ActionResult UpdatePartial()
         {
-            var model = new PartialModel() {Text = "was updated"};
+            var model = new PartialModel {Text = "was updated"};
             return View("Partial", model);
         }
 

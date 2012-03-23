@@ -1,0 +1,39 @@
+﻿@model SampleApplication.Models.BasicDemoModel
+
+@{
+    ViewBag.Title = "Basic Demo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Basic Form Demo</h2>
+@using (Html.BeginForm("Index", "BasicDemo"))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(x => x.Name)</td>
+            <td>
+                @Html.TextBoxFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name, "*")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Email)</td>
+            <td>
+                @Html.TextBoxFor(x => x.Email)
+                @Html.ValidationMessageFor(x => x.Email, "*")
+            </td>
+        </tr>
+        @{
+            Html.RenderPartial("Address", Model);
+        }
+    </table>
+    if (!string.IsNullOrWhiteSpace(Model.Message))
+    {
+        <h2>@Model.Message</h2>
+    }
+    if (!ViewContext.ViewData.ModelState.IsValid)
+    {
+        @Html.ValidationSummary()
+    }
+    <input type="submit" title="Submit Form"/>
+}

@@ -5,24 +5,4 @@
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Content</h2>
-
-<div id="UpdateableContent">
-    @{ Html.RenderPartial("Partial",new PartialModel{Text = "Before Clicked"}); }
-</div>
-
-
-<h2>More Content</h2>
-
-
-
-<script type="text/javascript">
-function UpdateView() {
-    var model = { };
-    $.post("/home/UpdatePartial",
-        model,
-        function (data) {
-            $("#UpdateableContent").html(data);
-        });
-}
-</script>
+<h2>MVC Sample Demo App</h2>

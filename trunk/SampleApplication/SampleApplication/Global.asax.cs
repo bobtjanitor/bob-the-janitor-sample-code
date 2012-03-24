@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using SampleApplication.CustomViewEngine;
 
 namespace SampleApplication
 {
@@ -32,6 +33,14 @@ namespace SampleApplication
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new WebFormViewEngine());
+            ViewEngines.Engines.Add(new RazorViewEngine());
+            ViewEngines.Engines.Add(new XsltViewEngine
+                                        {
+                                            ViewLocationFormats = new [] { "~/Views/{1}/{0}.xslt", "~/Views/Shared/{0}.xslt" },
+                                            PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.xslt", "~/Views/Shared/{0}.xslt" }
+                                        });
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);

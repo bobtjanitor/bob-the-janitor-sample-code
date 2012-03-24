@@ -9,7 +9,10 @@
     <body>
         <ul class="menu">
             <li>@Html.ActionLink("Basic Form Demo","index","BasicDemo" )</li>
-            <li>Ajax Form Demo</li>
+            <li>@Html.ActionLink("Simple Ajax Demo", "Simple", "AjaxDemo")</li>
+            <li>@Html.ActionLink("Form Ajax Demo", "Form", "AjaxDemo")</li>
+            <li>@Html.ActionLink("Custom ActionResult Demo", "index", "CustomActionDemo")</li>
+            <li>@Html.ActionLink("Custom View Enmgine Demo", "TransformedView", "CustomViewEngine")</li>
         </ul>
         @RenderBody()
     </body>

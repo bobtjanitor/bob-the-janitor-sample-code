@@ -1,0 +1,20 @@
+﻿@model SampleApplication.Models.BasicDemoModel
+
+@{
+    ViewBag.Title = "Submitting a form with ajax";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Submitting a form with ajax</h2>
+<div id="formDiv">
+    @{
+        Html.RenderPartial("PartialForm", Model);
+    }
+</div>
+
+<script type="text/javascript">
+    function PostFormWithAjax() {
+        var model = $("#AjaxForm").serialize();
+        $.post("/AjaxDemo/form", model, function(data) { $("#formDiv").html(data); });
+    }
+</script>

@@ -2,8 +2,6 @@
 
 namespace SampleApplication.Models
 {
-
-
     public class BasicDemoModel
     {
         public int Id;
@@ -18,7 +16,6 @@ namespace SampleApplication.Models
         [Required]        
         public string State { get; set; }
         [Required]
-        [RegularExpression(@"^\d[5]$", ErrorMessage = "Zip Code must have exactly 5 numbers")]
         [Display(Name = "Zip")]
         public int ZipCode { get; set; }
         public string Message { get; set; }

@@ -8,17 +8,18 @@ class SettingsController < Rho::RhoController
   
   def index
     @msg = @params['msg']
-    @price = "1.23"
     render
   end
   
   def Products
 	@msg = @params['msg']
+
 	render
   end
 
   def ProductDetail
     @msg = @params['msg']
+    @price = "1.23"
     render
   end
 

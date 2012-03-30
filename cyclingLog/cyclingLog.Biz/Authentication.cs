@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DomainModels.RepositoryInterfaces;
 
@@ -41,8 +42,17 @@ namespace cyclingLog.Biz
 
         public Guid AuthenticatedUserId { get; set; }
 
+        private IList<string> _errors = new List<string>();
+        public IList<string> Errors
+        {
+            get { return _errors; }
+            set { _errors = value; }
+        }
+
         public bool Authenticate()
         {
+            //Errors.Clear();
+            Errors.Add("Error");
             bool success = false;
             if (string.IsNullOrWhiteSpace(Username))
             {

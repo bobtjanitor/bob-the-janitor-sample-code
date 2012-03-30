@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDBSample", "SimpleDBSample\SimpleDBSample.csproj", "{CCAF4376-337E-41EF-BD87-2E8AA8D952EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.BIZ", "SimpleDB.BIZ\SimpleDB.BIZ.csproj", "{D6B62FB5-24A3-4235-B50E-19A74887DC47}"

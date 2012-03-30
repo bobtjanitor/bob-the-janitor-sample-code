@@ -20,14 +20,25 @@ namespace cyclingLog.Biz_Tests
             target.AuthenticationRepositoryInterface = mockAuthentiactionRepository;
         }
 
-        //[Test]
-        //public void Authenticate_MissingUserNameAddsError_Test()
-        //{
-        //    target.Username = string.Empty;
-        //    target.Authenticate();
-        //    var result = from error in target.ValidationErrors where error.Contains("Username Required") select error;
-        //    Assert.AreEqual(1,result.Count());
-        //}
+        [Test]
+        public void Authenticate_MissingUserNameAddsError_Test()
+        {
+            target.Username = string.Empty;
+            target.Authenticate();
+            var result = from error in target.ValidationErrors where error.Contains("Username Required") select error;
+            Assert.AreEqual(1, result.Count());
+        }
+
+        [Test]
+        public void Authenticate_clearsErrorsWhenCalled_Test()
+        {
+            target.Username = string.Empty;
+            target.Authenticate();
+            var actaul = target.Errors.Count();
+            Assert.AreEqual(1, actaul);
+            target.Authenticate();
+            Assert.AreEqual(1, actaul);
+        }
 
         //[Test]
         //public void Authenticate_MissingUserNameRetuensFalse_Test()

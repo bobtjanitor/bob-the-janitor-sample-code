@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <project name="FluentMigratorProof" xmlns="http://nant.sourceforge.net/release/0.90/nant.xsd" default="migrate-Production">
-  <loadtasks assembly="./FluentMigrator.NAnt.dll" />
+  <loadtasks assembly="./bin/FluentMigrator.NAnt.dll" />
   <target name="Reset" description="Migrate the database to the base version">
     <migrate
     database="sql"
-    connection="Data Source=DevBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxxx;"
+    connection="Data Source=BOBSBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=zxasqw12;"
     namespace="FluentMigratorProof"
-    target="./FluentMigratorProof.dll"
+    target="./bin/FluentMigratorProof.dll"
     task="rollback:all"
     />
   </target>
   <target name="migrate-Production" description="Migrate the database to the latest version">
     <migrate
     database="sql"
-    connection="Data Source=Production\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxxx;"
+    connection="Data Source=BOBSBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=zxasqw12;"
     namespace="FluentMigratorProof"
-    target="./FluentMigratorProof.dll"
+    target="./bin/FluentMigratorProof.dll"
     profile="Production"
     />
   </target>
   <target name="migrate-Development" description="Migrate the database to the latest version">
     <migrate
     database="sql"
-    connection="Data Source=DevBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=xxxxxx;"
+    connection="Data Source=BOBSBOX\SQLEXPRESS;Initial Catalog=FluentMigratorProof;User Id=BuildUser;Password=zxasqw12;"
     namespace="FluentMigratorProof"
-    target="./FluentMigratorProof"
+    target="./bin/FluentMigratorProof.dll"
     profile="Development"
     />
   </target>

@@ -2,161 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="2591dc46-5ad8-4a73-bd77-ce881d696055" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/storemanager.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/Rhodes.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/classes.dex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/extensions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/RhoClassFactory.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/alert.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/bluetooth.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/callbacks.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/camera.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/datetimepicker.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/event.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/fileapi.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/geolocation.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/logconf.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/logger.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/mapview.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/menu.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/nativebar.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/nativeview.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/navbar.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/phonebook.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/rhoconf.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/rhodes.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/ringtones.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/signature.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/socketimpl.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/splashscreen.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/sslimpl.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes/webview.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0/librhodes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release/4.4.0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs/release" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/libs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/rhodes.ap_" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/target/storemanager-debug.apk" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/target" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/AndroidR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/Capabilities.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/NativeLibraries.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/Push.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/RhodesSRC_build.files" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/include/rhocaps.inc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/include" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon/icon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/btn_check_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/btn_check_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/btn_radio_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/btn_radio_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/disclosure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android/ic_menu_more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/android" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/backButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/blueButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/grayButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/disclosure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/disclosure_detail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/backButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/blueButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/chevron.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/grayButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/listArrowSel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/listGroup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/on_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/pinstripes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/selection.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/toggle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/toggleOn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/toolButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/toolbar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch/whiteButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/jqtouch" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/radiobutton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/select.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone/switch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iphone" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/iui-logo-touch-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/listArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/listArrowDown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/listArrowSel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/listGroup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/pinstripes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/right_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/selection.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/toggle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/toggleOn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/toolButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/toolButton_new.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/toolbar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/whiteButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/ProductDetail.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/Products.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/home.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/home.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/index.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/index.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/login.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/login.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/reset.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/reset.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/wait.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Settings/wait.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/application.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/browser_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/index.bb.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/index.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/layout.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/loading.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/tmp/include/genconfig.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/android.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/blackberry.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/iphone.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/windows_mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/IUI_LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch/jqtouch-iphone.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch/jqtouch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch/jqtouch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch/jqtouch.transitions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jqtouch/jquery.1.3.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/rho.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/rhogeolocation-wm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/rhogeolocation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rhoconfig.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Rhodes.jar" afterPath="$PROJECT_DIR$/bin/Rhodes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rhodes.ap_" afterPath="$PROJECT_DIR$/bin/rhodes.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/target/storemanager-debug.apk" afterPath="$PROJECT_DIR$/bin/target/storemanager-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Settings/controller.rb" afterPath="$PROJECT_DIR$/app/Settings/controller.rb" />
     </list>
     <ignored path="storemanager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -183,7 +33,7 @@
       <file leaf-file-name="home.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Settings/home.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,7 +42,7 @@
       <file leaf-file-name="index.bb.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Settings/index.bb.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -201,7 +51,7 @@
       <file leaf-file-name="index.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Settings/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="6" selection-start="1" selection-end="803" vertical-scroll-proportion="-18.961538">
+            <state line="29" column="6" selection-start="1" selection-end="803" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -210,7 +60,7 @@
       <file leaf-file-name="index.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="6" selection-start="0" selection-end="896" vertical-scroll-proportion="-17.0">
+            <state line="26" column="6" selection-start="0" selection-end="896" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -219,7 +69,7 @@
       <file leaf-file-name="layout.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -228,7 +78,7 @@
       <file leaf-file-name="Products.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Settings/Products.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="6" selection-start="578" selection-end="578" vertical-scroll-proportion="-11.115385">
+            <state line="17" column="6" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -237,7 +87,7 @@
       <file leaf-file-name="controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Settings/controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="19" selection-start="229" selection-end="229" vertical-scroll-proportion="0.41262135">
+            <state line="21" column="19" selection-start="349" selection-end="349" vertical-scroll-proportion="0.026771653">
               <folding />
             </state>
           </provider>
@@ -246,7 +96,7 @@
       <file leaf-file-name="login.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Settings/login.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -329,99 +179,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jqtouch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
       <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="ruby.project.structure" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -459,7 +227,7 @@
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <configuration useDefault="true">C:\Documents and Settings\adminrichard\Application Data\Subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\richard\Application Data\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
@@ -494,15 +262,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="778" extended-state="6" />
+    <frame x="-4" y="-4" width="1288" height="780" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2281399" sideWeight="0.6722818" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17488076" sideWeight="0.6722818" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -510,6 +277,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -548,11 +316,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Settings/index.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="6" selection-start="1" selection-end="803" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
+        <state line="81" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.9440789" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Settings/home.erb">
@@ -562,30 +328,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Settings/index.bb.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Settings/index.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="6" selection-start="1" selection-end="803" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="6" selection-start="0" selection-end="896" vertical-scroll-proportion="-17.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Settings/Products.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="578" selection-end="578" vertical-scroll-proportion="-11.115385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.9440789">
-          <folding />
-        </state>
+        <state line="26" column="6" selection-start="0" selection-end="896" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/layout.erb">
@@ -593,23 +346,24 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Settings/ProductDetail.erb">
+    <entry file="file://$PROJECT_DIR$/app/Settings/Products.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="6" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Settings/login.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Settings/ProductDetail.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="17" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Settings/controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="229" selection-end="229" vertical-scroll-proportion="0.41262135">
+        <state line="21" column="19" selection-start="349" selection-end="349" vertical-scroll-proportion="0.026771653">
           <folding />
         </state>
       </provider>

@@ -44,6 +44,7 @@
                 <UC:MenuItemControl id="myItem1" runat="server" Selected="true" LinkURL="http://google.com" Text="to Google"></UC:MenuItemControl>
                 <UC:MenuItemControl id="myItem2" runat="server" LinkURL="http://bing.com" Text="to Bing"></UC:MenuItemControl>
                 <UC:MenuItemControl id="myItem3" runat="server" LinkURL="http://yahoo.com" Text="to Yahoo"></UC:MenuItemControl>                                
+                <UC:MenuItemControl id="myItem4" LinkURL="http://msn.com" runat="server" Text="to msn"></UC:MenuItemControl>                                
             </MenuItems>            
         </UC:MenuControl>
     </form>

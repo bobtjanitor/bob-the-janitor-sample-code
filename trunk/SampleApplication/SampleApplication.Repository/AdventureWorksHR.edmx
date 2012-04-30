@@ -6,22 +6,18 @@
     <edmx:StorageModels>
     <Schema Namespace="AdventureWorksHRModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="AdventureWorksHRModelStoreContainer">
-          <EntitySet Name="Department" EntityType="AdventureWorksHRModel.Store.Department" store:Type="Tables" Schema="HumanResources" />
           <EntitySet Name="Employee" EntityType="AdventureWorksHRModel.Store.Employee" store:Type="Tables" Schema="HumanResources" />
-          <EntitySet Name="EmployeeAddress" EntityType="AdventureWorksHRModel.Store.EmployeeAddress" store:Type="Tables" Schema="HumanResources" />
-          <EntitySet Name="EmployeeDepartmentHistory" EntityType="AdventureWorksHRModel.Store.EmployeeDepartmentHistory" store:Type="Tables" Schema="HumanResources" />
-          <EntitySet Name="EmployeePayHistory" EntityType="AdventureWorksHRModel.Store.EmployeePayHistory" store:Type="Tables" Schema="HumanResources" />
-          <EntitySet Name="JobCandidate" EntityType="AdventureWorksHRModel.Store.JobCandidate" store:Type="Tables" Schema="HumanResources" />
           <EntitySet Name="vEmployee" EntityType="AdventureWorksHRModel.Store.vEmployee" store:Type="Views" store:Schema="HumanResources" store:Name="vEmployee">
             <DefiningQuery>SELECT 
-      [vEmployee].[EmployeeID] AS [EmployeeID], 
+      [vEmployee].[BusinessEntityID] AS [BusinessEntityID], 
       [vEmployee].[Title] AS [Title], 
       [vEmployee].[FirstName] AS [FirstName], 
       [vEmployee].[MiddleName] AS [MiddleName], 
       [vEmployee].[LastName] AS [LastName], 
       [vEmployee].[Suffix] AS [Suffix], 
       [vEmployee].[JobTitle] AS [JobTitle], 
-      [vEmployee].[Phone] AS [Phone], 
+      [vEmployee].[PhoneNumber] AS [PhoneNumber], 
+      [vEmployee].[PhoneNumberType] AS [PhoneNumberType], 
       [vEmployee].[EmailAddress] AS [EmailAddress], 
       [vEmployee].[EmailPromotion] AS [EmailPromotion], 
       [vEmployee].[AddressLine1] AS [AddressLine1], 
@@ -33,135 +29,23 @@
       [vEmployee].[AdditionalContactInfo] AS [AdditionalContactInfo]
       FROM [HumanResources].[vEmployee] AS [vEmployee]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vEmployeeDepartment" EntityType="AdventureWorksHRModel.Store.vEmployeeDepartment" store:Type="Views" store:Schema="HumanResources" store:Name="vEmployeeDepartment">
-            <DefiningQuery>SELECT 
-      [vEmployeeDepartment].[EmployeeID] AS [EmployeeID], 
-      [vEmployeeDepartment].[Title] AS [Title], 
-      [vEmployeeDepartment].[FirstName] AS [FirstName], 
-      [vEmployeeDepartment].[MiddleName] AS [MiddleName], 
-      [vEmployeeDepartment].[LastName] AS [LastName], 
-      [vEmployeeDepartment].[Suffix] AS [Suffix], 
-      [vEmployeeDepartment].[JobTitle] AS [JobTitle], 
-      [vEmployeeDepartment].[Department] AS [Department], 
-      [vEmployeeDepartment].[GroupName] AS [GroupName], 
-      [vEmployeeDepartment].[StartDate] AS [StartDate]
-      FROM [HumanResources].[vEmployeeDepartment] AS [vEmployeeDepartment]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vEmployeeDepartmentHistory" EntityType="AdventureWorksHRModel.Store.vEmployeeDepartmentHistory" store:Type="Views" store:Schema="HumanResources" store:Name="vEmployeeDepartmentHistory">
-            <DefiningQuery>SELECT 
-      [vEmployeeDepartmentHistory].[EmployeeID] AS [EmployeeID], 
-      [vEmployeeDepartmentHistory].[Title] AS [Title], 
-      [vEmployeeDepartmentHistory].[FirstName] AS [FirstName], 
-      [vEmployeeDepartmentHistory].[MiddleName] AS [MiddleName], 
-      [vEmployeeDepartmentHistory].[LastName] AS [LastName], 
-      [vEmployeeDepartmentHistory].[Suffix] AS [Suffix], 
-      [vEmployeeDepartmentHistory].[Shift] AS [Shift], 
-      [vEmployeeDepartmentHistory].[Department] AS [Department], 
-      [vEmployeeDepartmentHistory].[GroupName] AS [GroupName], 
-      [vEmployeeDepartmentHistory].[StartDate] AS [StartDate], 
-      [vEmployeeDepartmentHistory].[EndDate] AS [EndDate]
-      FROM [HumanResources].[vEmployeeDepartmentHistory] AS [vEmployeeDepartmentHistory]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vJobCandidate" EntityType="AdventureWorksHRModel.Store.vJobCandidate" store:Type="Views" store:Schema="HumanResources" store:Name="vJobCandidate">
-            <DefiningQuery>SELECT 
-      [vJobCandidate].[JobCandidateID] AS [JobCandidateID], 
-      [vJobCandidate].[EmployeeID] AS [EmployeeID], 
-      [vJobCandidate].[Name.Prefix] AS [Name.Prefix], 
-      [vJobCandidate].[Name.First] AS [Name.First], 
-      [vJobCandidate].[Name.Middle] AS [Name.Middle], 
-      [vJobCandidate].[Name.Last] AS [Name.Last], 
-      [vJobCandidate].[Name.Suffix] AS [Name.Suffix], 
-      [vJobCandidate].[Skills] AS [Skills], 
-      [vJobCandidate].[Addr.Type] AS [Addr.Type], 
-      [vJobCandidate].[Addr.Loc.CountryRegion] AS [Addr.Loc.CountryRegion], 
-      [vJobCandidate].[Addr.Loc.State] AS [Addr.Loc.State], 
-      [vJobCandidate].[Addr.Loc.City] AS [Addr.Loc.City], 
-      [vJobCandidate].[Addr.PostalCode] AS [Addr.PostalCode], 
-      [vJobCandidate].[EMail] AS [EMail], 
-      [vJobCandidate].[WebSite] AS [WebSite], 
-      [vJobCandidate].[ModifiedDate] AS [ModifiedDate]
-      FROM [HumanResources].[vJobCandidate] AS [vJobCandidate]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vJobCandidateEducation" EntityType="AdventureWorksHRModel.Store.vJobCandidateEducation" store:Type="Views" store:Schema="HumanResources" store:Name="vJobCandidateEducation">
-            <DefiningQuery>SELECT 
-      [vJobCandidateEducation].[JobCandidateID] AS [JobCandidateID], 
-      [vJobCandidateEducation].[Edu.Level] AS [Edu.Level], 
-      [vJobCandidateEducation].[Edu.StartDate] AS [Edu.StartDate], 
-      [vJobCandidateEducation].[Edu.EndDate] AS [Edu.EndDate], 
-      [vJobCandidateEducation].[Edu.Degree] AS [Edu.Degree], 
-      [vJobCandidateEducation].[Edu.Major] AS [Edu.Major], 
-      [vJobCandidateEducation].[Edu.Minor] AS [Edu.Minor], 
-      [vJobCandidateEducation].[Edu.GPA] AS [Edu.GPA], 
-      [vJobCandidateEducation].[Edu.GPAScale] AS [Edu.GPAScale], 
-      [vJobCandidateEducation].[Edu.School] AS [Edu.School], 
-      [vJobCandidateEducation].[Edu.Loc.CountryRegion] AS [Edu.Loc.CountryRegion], 
-      [vJobCandidateEducation].[Edu.Loc.State] AS [Edu.Loc.State], 
-      [vJobCandidateEducation].[Edu.Loc.City] AS [Edu.Loc.City]
-      FROM [HumanResources].[vJobCandidateEducation] AS [vJobCandidateEducation]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vJobCandidateEmployment" EntityType="AdventureWorksHRModel.Store.vJobCandidateEmployment" store:Type="Views" store:Schema="HumanResources" store:Name="vJobCandidateEmployment">
-            <DefiningQuery>SELECT 
-      [vJobCandidateEmployment].[JobCandidateID] AS [JobCandidateID], 
-      [vJobCandidateEmployment].[Emp.StartDate] AS [Emp.StartDate], 
-      [vJobCandidateEmployment].[Emp.EndDate] AS [Emp.EndDate], 
-      [vJobCandidateEmployment].[Emp.OrgName] AS [Emp.OrgName], 
-      [vJobCandidateEmployment].[Emp.JobTitle] AS [Emp.JobTitle], 
-      [vJobCandidateEmployment].[Emp.Responsibility] AS [Emp.Responsibility], 
-      [vJobCandidateEmployment].[Emp.FunctionCategory] AS [Emp.FunctionCategory], 
-      [vJobCandidateEmployment].[Emp.IndustryCategory] AS [Emp.IndustryCategory], 
-      [vJobCandidateEmployment].[Emp.Loc.CountryRegion] AS [Emp.Loc.CountryRegion], 
-      [vJobCandidateEmployment].[Emp.Loc.State] AS [Emp.Loc.State], 
-      [vJobCandidateEmployment].[Emp.Loc.City] AS [Emp.Loc.City]
-      FROM [HumanResources].[vJobCandidateEmployment] AS [vJobCandidateEmployment]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_Employee_Employee_ManagerID" Association="AdventureWorksHRModel.Store.FK_Employee_Employee_ManagerID">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Employee1" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeAddress_Employee_EmployeeID" Association="AdventureWorksHRModel.Store.FK_EmployeeAddress_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="EmployeeAddress" EntitySet="EmployeeAddress" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeDepartmentHistory_Department_DepartmentID" Association="AdventureWorksHRModel.Store.FK_EmployeeDepartmentHistory_Department_DepartmentID">
-            <End Role="Department" EntitySet="Department" />
-            <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeDepartmentHistory_Employee_EmployeeID" Association="AdventureWorksHRModel.Store.FK_EmployeeDepartmentHistory_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeePayHistory_Employee_EmployeeID" Association="AdventureWorksHRModel.Store.FK_EmployeePayHistory_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="EmployeePayHistory" EntitySet="EmployeePayHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_JobCandidate_Employee_EmployeeID" Association="AdventureWorksHRModel.Store.FK_JobCandidate_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="JobCandidate" EntitySet="JobCandidate" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Department">
-          <Key>
-            <PropertyRef Name="DepartmentID" />
-          </Key>
-          <Property Name="DepartmentID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6005: The data type 'hierarchyid' is not supported; the column 'OrganizationNode' in table 'AdventureWorks.HumanResources.Employee' was excluded.
+      -->
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="BusinessEntityID" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
           <Property Name="NationalIDNumber" Type="nvarchar" Nullable="false" MaxLength="15" />
-          <Property Name="ContactID" Type="int" Nullable="false" />
           <Property Name="LoginID" Type="nvarchar" Nullable="false" MaxLength="256" />
-          <Property Name="ManagerID" Type="int" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="OrganizationLevel" Type="smallint" StoreGeneratedPattern="Computed" />
+          <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="BirthDate" Type="date" Nullable="false" />
           <Property Name="MaritalStatus" Type="nchar" Nullable="false" MaxLength="1" />
           <Property Name="Gender" Type="nchar" Nullable="false" MaxLength="1" />
-          <Property Name="HireDate" Type="datetime" Nullable="false" />
+          <Property Name="HireDate" Type="date" Nullable="false" />
           <Property Name="SalariedFlag" Type="bit" Nullable="false" />
           <Property Name="VacationHours" Type="smallint" Nullable="false" />
           <Property Name="SickLeaveHours" Type="smallint" Nullable="false" />
@@ -169,56 +53,12 @@
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="EmployeeAddress">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="AddressID" />
-          </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="AddressID" Type="int" Nullable="false" />
-          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EmployeeDepartmentHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="DepartmentID" />
-            <PropertyRef Name="ShiftID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="DepartmentID" Type="smallint" Nullable="false" />
-          <Property Name="ShiftID" Type="tinyint" Nullable="false" />
-          <Property Name="StartDate" Type="datetime" Nullable="false" />
-          <Property Name="EndDate" Type="datetime" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EmployeePayHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="RateChangeDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="RateChangeDate" Type="datetime" Nullable="false" />
-          <Property Name="Rate" Type="money" Nullable="false" />
-          <Property Name="PayFrequency" Type="tinyint" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="JobCandidate">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="int" />
-          <Property Name="Resume" Type="xml" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'AdventureWorks.HumanResources.vEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vEmployee">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="BusinessEntityID" />
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="JobTitle" />
@@ -229,14 +69,15 @@
             <PropertyRef Name="PostalCode" />
             <PropertyRef Name="CountryRegionName" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="8" />
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
           <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" />
+          <Property Name="PhoneNumberType" Type="nvarchar" MaxLength="50" />
           <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
           <Property Name="EmailPromotion" Type="int" Nullable="false" />
           <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="60" />
@@ -247,323 +88,37 @@
           <Property Name="CountryRegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="AdditionalContactInfo" Type="xml" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'AdventureWorks.HumanResources.vEmployeeDepartment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="vEmployeeDepartment">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="JobTitle" />
-            <PropertyRef Name="Department" />
-            <PropertyRef Name="GroupName" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="8" />
-          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
-          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
-          <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Department" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="StartDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'AdventureWorks.HumanResources.vEmployeeDepartmentHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="vEmployeeDepartmentHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="Shift" />
-            <PropertyRef Name="Department" />
-            <PropertyRef Name="GroupName" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="8" />
-          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
-          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
-          <Property Name="Shift" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Department" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="StartDate" Type="datetime" Nullable="false" />
-          <Property Name="EndDate" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'AdventureWorks.HumanResources.vJobCandidate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="vJobCandidate">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-            <PropertyRef Name="ModifiedDate" />
-          </Key>
-          <Property Name="JobCandidateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="int" />
-          <Property Name="Name.Prefix" Type="nvarchar" MaxLength="30" />
-          <Property Name="Name.First" Type="nvarchar" MaxLength="30" />
-          <Property Name="Name.Middle" Type="nvarchar" MaxLength="30" />
-          <Property Name="Name.Last" Type="nvarchar" MaxLength="30" />
-          <Property Name="Name.Suffix" Type="nvarchar" MaxLength="30" />
-          <Property Name="Skills" Type="nvarchar(max)" />
-          <Property Name="Addr.Type" Type="nvarchar" MaxLength="30" />
-          <Property Name="Addr.Loc.CountryRegion" Type="nvarchar" MaxLength="100" />
-          <Property Name="Addr.Loc.State" Type="nvarchar" MaxLength="100" />
-          <Property Name="Addr.Loc.City" Type="nvarchar" MaxLength="100" />
-          <Property Name="Addr.PostalCode" Type="nvarchar" MaxLength="20" />
-          <Property Name="EMail" Type="nvarchar(max)" />
-          <Property Name="WebSite" Type="nvarchar(max)" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'AdventureWorks.HumanResources.vJobCandidateEducation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="vJobCandidateEducation">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Edu.Level" Type="nvarchar(max)" />
-          <Property Name="Edu.StartDate" Type="datetime" />
-          <Property Name="Edu.EndDate" Type="datetime" />
-          <Property Name="Edu.Degree" Type="nvarchar" MaxLength="50" />
-          <Property Name="Edu.Major" Type="nvarchar" MaxLength="50" />
-          <Property Name="Edu.Minor" Type="nvarchar" MaxLength="50" />
-          <Property Name="Edu.GPA" Type="nvarchar" MaxLength="5" />
-          <Property Name="Edu.GPAScale" Type="nvarchar" MaxLength="5" />
-          <Property Name="Edu.School" Type="nvarchar" MaxLength="100" />
-          <Property Name="Edu.Loc.CountryRegion" Type="nvarchar" MaxLength="100" />
-          <Property Name="Edu.Loc.State" Type="nvarchar" MaxLength="100" />
-          <Property Name="Edu.Loc.City" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'AdventureWorks.HumanResources.vJobCandidateEmployment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="vJobCandidateEmployment">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Emp.StartDate" Type="datetime" />
-          <Property Name="Emp.EndDate" Type="datetime" />
-          <Property Name="Emp.OrgName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Emp.JobTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="Emp.Responsibility" Type="nvarchar(max)" />
-          <Property Name="Emp.FunctionCategory" Type="nvarchar(max)" />
-          <Property Name="Emp.IndustryCategory" Type="nvarchar(max)" />
-          <Property Name="Emp.Loc.CountryRegion" Type="nvarchar(max)" />
-          <Property Name="Emp.Loc.State" Type="nvarchar(max)" />
-          <Property Name="Emp.Loc.City" Type="nvarchar(max)" />
-        </EntityType>
-        <Association Name="FK_Employee_Employee_ManagerID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="0..1" />
-          <End Role="Employee1" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="Employee1">
-              <PropertyRef Name="ManagerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeAddress_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="1" />
-          <End Role="EmployeeAddress" Type="AdventureWorksHRModel.Store.EmployeeAddress" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeeAddress">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeDepartmentHistory_Department_DepartmentID">
-          <End Role="Department" Type="AdventureWorksHRModel.Store.Department" Multiplicity="1" />
-          <End Role="EmployeeDepartmentHistory" Type="AdventureWorksHRModel.Store.EmployeeDepartmentHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="EmployeeDepartmentHistory">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeDepartmentHistory_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="1" />
-          <End Role="EmployeeDepartmentHistory" Type="AdventureWorksHRModel.Store.EmployeeDepartmentHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeeDepartmentHistory">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeePayHistory_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="1" />
-          <End Role="EmployeePayHistory" Type="AdventureWorksHRModel.Store.EmployeePayHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeePayHistory">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_JobCandidate_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="0..1" />
-          <End Role="JobCandidate" Type="AdventureWorksHRModel.Store.JobCandidate" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="JobCandidate">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AdventureWorksHRModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="adventureworksEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Departments" EntityType="AdventureWorksHRModel.Department" />
           <EntitySet Name="Employees" EntityType="AdventureWorksHRModel.Employee" />
-          <EntitySet Name="EmployeeAddresses" EntityType="AdventureWorksHRModel.EmployeeAddress" />
-          <EntitySet Name="EmployeeDepartmentHistories" EntityType="AdventureWorksHRModel.EmployeeDepartmentHistory" />
-          <EntitySet Name="EmployeePayHistories" EntityType="AdventureWorksHRModel.EmployeePayHistory" />
-          <EntitySet Name="JobCandidates" EntityType="AdventureWorksHRModel.JobCandidate" />
           <EntitySet Name="vEmployees" EntityType="AdventureWorksHRModel.vEmployee" />
-          <EntitySet Name="vEmployeeDepartments" EntityType="AdventureWorksHRModel.vEmployeeDepartment" />
-          <EntitySet Name="vEmployeeDepartmentHistories" EntityType="AdventureWorksHRModel.vEmployeeDepartmentHistory" />
-          <EntitySet Name="vJobCandidates" EntityType="AdventureWorksHRModel.vJobCandidate" />
-          <EntitySet Name="vJobCandidateEducations" EntityType="AdventureWorksHRModel.vJobCandidateEducation" />
-          <EntitySet Name="vJobCandidateEmployments" EntityType="AdventureWorksHRModel.vJobCandidateEmployment" />
-          <AssociationSet Name="FK_EmployeeDepartmentHistory_Department_DepartmentID" Association="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Department_DepartmentID">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employee_Employee_ManagerID" Association="AdventureWorksHRModel.FK_Employee_Employee_ManagerID">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Employee1" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeAddress_Employee_EmployeeID" Association="AdventureWorksHRModel.FK_EmployeeAddress_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="EmployeeAddress" EntitySet="EmployeeAddresses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeDepartmentHistory_Employee_EmployeeID" Association="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeePayHistory_Employee_EmployeeID" Association="AdventureWorksHRModel.FK_EmployeePayHistory_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="EmployeePayHistory" EntitySet="EmployeePayHistories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_JobCandidate_Employee_EmployeeID" Association="AdventureWorksHRModel.FK_JobCandidate_Employee_EmployeeID">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="JobCandidate" EntitySet="JobCandidates" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Department">
-          <Key>
-            <PropertyRef Name="DepartmentID" />
-          </Key>
-          <Property Name="DepartmentID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="EmployeeDepartmentHistories" Relationship="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Department_DepartmentID" FromRole="Department" ToRole="EmployeeDepartmentHistory" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="BusinessEntityID" />
           </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NationalIDNumber" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
-          <Property Name="ContactID" Type="Int32" Nullable="false" />
-          <Property Name="LoginID" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="ManagerID" Type="Int32" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="BirthDate" Type="DateTime" Nullable="false" />
-          <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
-          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
-          <Property Name="HireDate" Type="DateTime" Nullable="false" />
-          <Property Name="SalariedFlag" Type="Boolean" Nullable="false" />
-          <Property Name="VacationHours" Type="Int16" Nullable="false" />
-          <Property Name="SickLeaveHours" Type="Int16" Nullable="false" />
-          <Property Name="CurrentFlag" Type="Boolean" Nullable="false" />
-          <Property Name="rowguid" Type="Guid" Nullable="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Employee1" Relationship="AdventureWorksHRModel.FK_Employee_Employee_ManagerID" FromRole="Employee" ToRole="Employee1" />
-          <NavigationProperty Name="Employee2" Relationship="AdventureWorksHRModel.FK_Employee_Employee_ManagerID" FromRole="Employee1" ToRole="Employee" />
-          <NavigationProperty Name="EmployeeAddresses" Relationship="AdventureWorksHRModel.FK_EmployeeAddress_Employee_EmployeeID" FromRole="Employee" ToRole="EmployeeAddress" />
-          <NavigationProperty Name="EmployeeDepartmentHistories" Relationship="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Employee_EmployeeID" FromRole="Employee" ToRole="EmployeeDepartmentHistory" />
-          <NavigationProperty Name="EmployeePayHistories" Relationship="AdventureWorksHRModel.FK_EmployeePayHistory_Employee_EmployeeID" FromRole="Employee" ToRole="EmployeePayHistory" />
-          <NavigationProperty Name="JobCandidates" Relationship="AdventureWorksHRModel.FK_JobCandidate_Employee_EmployeeID" FromRole="Employee" ToRole="JobCandidate" />
-        </EntityType>
-        <EntityType Name="EmployeeAddress">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="AddressID" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="AddressID" Type="Int32" Nullable="false" />
-          <Property Name="rowguid" Type="Guid" Nullable="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="AdventureWorksHRModel.FK_EmployeeAddress_Employee_EmployeeID" FromRole="EmployeeAddress" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="EmployeeDepartmentHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="DepartmentID" />
-            <PropertyRef Name="ShiftID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="DepartmentID" Type="Int16" Nullable="false" />
-          <Property Name="ShiftID" Type="Byte" Nullable="false" />
-          <Property Name="StartDate" Type="DateTime" Nullable="false" />
-          <Property Name="EndDate" Type="DateTime" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Department_DepartmentID" FromRole="EmployeeDepartmentHistory" ToRole="Department" />
-          <NavigationProperty Name="Employee" Relationship="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Employee_EmployeeID" FromRole="EmployeeDepartmentHistory" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="EmployeePayHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="RateChangeDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="RateChangeDate" Type="DateTime" Nullable="false" />
-          <Property Name="Rate" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="PayFrequency" Type="Byte" Nullable="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="AdventureWorksHRModel.FK_EmployeePayHistory_Employee_EmployeeID" FromRole="EmployeePayHistory" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="JobCandidate">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="Int32" />
-          <Property Name="Resume" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="AdventureWorksHRModel.FK_JobCandidate_Employee_EmployeeID" FromRole="JobCandidate" ToRole="Employee" />
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" />
+          <Property Type="String" Name="NationalIDNumber" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoginID" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="OrganizationLevel" annotation:StoreGeneratedPattern="Computed" />
+          <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="false" />
+          <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="HireDate" Nullable="false" />
+          <Property Type="Boolean" Name="SalariedFlag" Nullable="false" />
+          <Property Type="Int16" Name="VacationHours" Nullable="false" />
+          <Property Type="Int16" Name="SickLeaveHours" Nullable="false" />
+          <Property Type="Boolean" Name="CurrentFlag" Nullable="false" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
         </EntityType>
         <EntityType Name="vEmployee">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="BusinessEntityID" />
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="JobTitle" />
@@ -574,342 +129,76 @@
             <PropertyRef Name="PostalCode" />
             <PropertyRef Name="CountryRegionName" />
           </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Suffix" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
-          <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="EmailPromotion" Type="Int32" Nullable="false" />
-          <Property Name="AddressLine1" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
-          <Property Name="AddressLine2" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="StateProvinceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
-          <Property Name="CountryRegionName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="AdditionalContactInfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" />
+          <Property Type="String" Name="Title" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Suffix" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNumberType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EmailPromotion" Nullable="false" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateProvinceName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CountryRegionName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdditionalContactInfo" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vEmployeeDepartment">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="JobTitle" />
-            <PropertyRef Name="Department" />
-            <PropertyRef Name="GroupName" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Suffix" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Department" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="StartDate" Type="DateTime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vEmployeeDepartmentHistory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="Shift" />
-            <PropertyRef Name="Department" />
-            <PropertyRef Name="GroupName" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Suffix" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Shift" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Department" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="StartDate" Type="DateTime" Nullable="false" />
-          <Property Name="EndDate" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="vJobCandidate">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-            <PropertyRef Name="ModifiedDate" />
-          </Key>
-          <Property Name="JobCandidateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="Int32" />
-          <Property Name="Name_Prefix" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Name_First" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Name_Middle" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Name_Last" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Name_Suffix" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Skills" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Addr_Type" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="Addr_Loc_CountryRegion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Addr_Loc_State" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Addr_Loc_City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Addr_PostalCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-          <Property Name="EMail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="WebSite" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vJobCandidateEducation">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Edu_Level" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_StartDate" Type="DateTime" />
-          <Property Name="Edu_EndDate" Type="DateTime" />
-          <Property Name="Edu_Degree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_Major" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_Minor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_GPA" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_GPAScale" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_School" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_Loc_CountryRegion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_Loc_State" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Edu_Loc_City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="vJobCandidateEmployment">
-          <Key>
-            <PropertyRef Name="JobCandidateID" />
-          </Key>
-          <Property Name="JobCandidateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Emp_StartDate" Type="DateTime" />
-          <Property Name="Emp_EndDate" Type="DateTime" />
-          <Property Name="Emp_OrgName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_JobTitle" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_Responsibility" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_FunctionCategory" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_IndustryCategory" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_Loc_CountryRegion" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_Loc_State" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Emp_Loc_City" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_EmployeeDepartmentHistory_Department_DepartmentID">
-          <End Role="Department" Type="AdventureWorksHRModel.Department" Multiplicity="1" />
-          <End Role="EmployeeDepartmentHistory" Type="AdventureWorksHRModel.EmployeeDepartmentHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="EmployeeDepartmentHistory">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Employee_Employee_ManagerID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Employee" Multiplicity="0..1" />
-          <End Role="Employee1" Type="AdventureWorksHRModel.Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="Employee1">
-              <PropertyRef Name="ManagerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeAddress_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Employee" Multiplicity="1" />
-          <End Role="EmployeeAddress" Type="AdventureWorksHRModel.EmployeeAddress" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeeAddress">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeDepartmentHistory_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Employee" Multiplicity="1" />
-          <End Role="EmployeeDepartmentHistory" Type="AdventureWorksHRModel.EmployeeDepartmentHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeeDepartmentHistory">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeePayHistory_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Employee" Multiplicity="1" />
-          <End Role="EmployeePayHistory" Type="AdventureWorksHRModel.EmployeePayHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="EmployeePayHistory">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_JobCandidate_Employee_EmployeeID">
-          <End Role="Employee" Type="AdventureWorksHRModel.Employee" Multiplicity="0..1" />
-          <End Role="JobCandidate" Type="AdventureWorksHRModel.JobCandidate" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="JobCandidate">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AdventureWorksHRModelStoreContainer" CdmEntityContainer="adventureworksEntities">
-          <EntitySetMapping Name="Departments"><EntityTypeMapping TypeName="AdventureWorksHRModel.Department"><MappingFragment StoreEntitySet="Department">
-            <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Employees"><EntityTypeMapping TypeName="AdventureWorksHRModel.Employee"><MappingFragment StoreEntitySet="Employee">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="NationalIDNumber" ColumnName="NationalIDNumber" />
-            <ScalarProperty Name="ContactID" ColumnName="ContactID" />
-            <ScalarProperty Name="LoginID" ColumnName="LoginID" />
-            <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-            <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-            <ScalarProperty Name="Gender" ColumnName="Gender" />
-            <ScalarProperty Name="HireDate" ColumnName="HireDate" />
-            <ScalarProperty Name="SalariedFlag" ColumnName="SalariedFlag" />
-            <ScalarProperty Name="VacationHours" ColumnName="VacationHours" />
-            <ScalarProperty Name="SickLeaveHours" ColumnName="SickLeaveHours" />
-            <ScalarProperty Name="CurrentFlag" ColumnName="CurrentFlag" />
-            <ScalarProperty Name="rowguid" ColumnName="rowguid" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="EmployeeAddresses"><EntityTypeMapping TypeName="AdventureWorksHRModel.EmployeeAddress"><MappingFragment StoreEntitySet="EmployeeAddress">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-            <ScalarProperty Name="rowguid" ColumnName="rowguid" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="EmployeeDepartmentHistories"><EntityTypeMapping TypeName="AdventureWorksHRModel.EmployeeDepartmentHistory"><MappingFragment StoreEntitySet="EmployeeDepartmentHistory">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-            <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
-            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="EmployeePayHistories"><EntityTypeMapping TypeName="AdventureWorksHRModel.EmployeePayHistory"><MappingFragment StoreEntitySet="EmployeePayHistory">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="RateChangeDate" ColumnName="RateChangeDate" />
-            <ScalarProperty Name="Rate" ColumnName="Rate" />
-            <ScalarProperty Name="PayFrequency" ColumnName="PayFrequency" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="JobCandidates"><EntityTypeMapping TypeName="AdventureWorksHRModel.JobCandidate"><MappingFragment StoreEntitySet="JobCandidate">
-            <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="Resume" ColumnName="Resume" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vEmployees"><EntityTypeMapping TypeName="AdventureWorksHRModel.vEmployee"><MappingFragment StoreEntitySet="vEmployee">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-            <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-            <ScalarProperty Name="LastName" ColumnName="LastName" />
-            <ScalarProperty Name="Suffix" ColumnName="Suffix" />
-            <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-            <ScalarProperty Name="EmailPromotion" ColumnName="EmailPromotion" />
-            <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
-            <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="StateProvinceName" ColumnName="StateProvinceName" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="CountryRegionName" ColumnName="CountryRegionName" />
-            <ScalarProperty Name="AdditionalContactInfo" ColumnName="AdditionalContactInfo" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vEmployeeDepartments"><EntityTypeMapping TypeName="AdventureWorksHRModel.vEmployeeDepartment"><MappingFragment StoreEntitySet="vEmployeeDepartment">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-            <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-            <ScalarProperty Name="LastName" ColumnName="LastName" />
-            <ScalarProperty Name="Suffix" ColumnName="Suffix" />
-            <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
-            <ScalarProperty Name="Department" ColumnName="Department" />
-            <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vEmployeeDepartmentHistories"><EntityTypeMapping TypeName="AdventureWorksHRModel.vEmployeeDepartmentHistory"><MappingFragment StoreEntitySet="vEmployeeDepartmentHistory">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-            <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-            <ScalarProperty Name="LastName" ColumnName="LastName" />
-            <ScalarProperty Name="Suffix" ColumnName="Suffix" />
-            <ScalarProperty Name="Shift" ColumnName="Shift" />
-            <ScalarProperty Name="Department" ColumnName="Department" />
-            <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vJobCandidates"><EntityTypeMapping TypeName="AdventureWorksHRModel.vJobCandidate"><MappingFragment StoreEntitySet="vJobCandidate">
-            <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="Name_Prefix" ColumnName="Name.Prefix" />
-            <ScalarProperty Name="Name_First" ColumnName="Name.First" />
-            <ScalarProperty Name="Name_Middle" ColumnName="Name.Middle" />
-            <ScalarProperty Name="Name_Last" ColumnName="Name.Last" />
-            <ScalarProperty Name="Name_Suffix" ColumnName="Name.Suffix" />
-            <ScalarProperty Name="Skills" ColumnName="Skills" />
-            <ScalarProperty Name="Addr_Type" ColumnName="Addr.Type" />
-            <ScalarProperty Name="Addr_Loc_CountryRegion" ColumnName="Addr.Loc.CountryRegion" />
-            <ScalarProperty Name="Addr_Loc_State" ColumnName="Addr.Loc.State" />
-            <ScalarProperty Name="Addr_Loc_City" ColumnName="Addr.Loc.City" />
-            <ScalarProperty Name="Addr_PostalCode" ColumnName="Addr.PostalCode" />
-            <ScalarProperty Name="EMail" ColumnName="EMail" />
-            <ScalarProperty Name="WebSite" ColumnName="WebSite" />
-            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vJobCandidateEducations"><EntityTypeMapping TypeName="AdventureWorksHRModel.vJobCandidateEducation"><MappingFragment StoreEntitySet="vJobCandidateEducation">
-            <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
-            <ScalarProperty Name="Edu_Level" ColumnName="Edu.Level" />
-            <ScalarProperty Name="Edu_StartDate" ColumnName="Edu.StartDate" />
-            <ScalarProperty Name="Edu_EndDate" ColumnName="Edu.EndDate" />
-            <ScalarProperty Name="Edu_Degree" ColumnName="Edu.Degree" />
-            <ScalarProperty Name="Edu_Major" ColumnName="Edu.Major" />
-            <ScalarProperty Name="Edu_Minor" ColumnName="Edu.Minor" />
-            <ScalarProperty Name="Edu_GPA" ColumnName="Edu.GPA" />
-            <ScalarProperty Name="Edu_GPAScale" ColumnName="Edu.GPAScale" />
-            <ScalarProperty Name="Edu_School" ColumnName="Edu.School" />
-            <ScalarProperty Name="Edu_Loc_CountryRegion" ColumnName="Edu.Loc.CountryRegion" />
-            <ScalarProperty Name="Edu_Loc_State" ColumnName="Edu.Loc.State" />
-            <ScalarProperty Name="Edu_Loc_City" ColumnName="Edu.Loc.City" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vJobCandidateEmployments"><EntityTypeMapping TypeName="AdventureWorksHRModel.vJobCandidateEmployment"><MappingFragment StoreEntitySet="vJobCandidateEmployment">
-            <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
-            <ScalarProperty Name="Emp_StartDate" ColumnName="Emp.StartDate" />
-            <ScalarProperty Name="Emp_EndDate" ColumnName="Emp.EndDate" />
-            <ScalarProperty Name="Emp_OrgName" ColumnName="Emp.OrgName" />
-            <ScalarProperty Name="Emp_JobTitle" ColumnName="Emp.JobTitle" />
-            <ScalarProperty Name="Emp_Responsibility" ColumnName="Emp.Responsibility" />
-            <ScalarProperty Name="Emp_FunctionCategory" ColumnName="Emp.FunctionCategory" />
-            <ScalarProperty Name="Emp_IndustryCategory" ColumnName="Emp.IndustryCategory" />
-            <ScalarProperty Name="Emp_Loc_CountryRegion" ColumnName="Emp.Loc.CountryRegion" />
-            <ScalarProperty Name="Emp_Loc_State" ColumnName="Emp.Loc.State" />
-            <ScalarProperty Name="Emp_Loc_City" ColumnName="Emp.Loc.City" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="CurrentFlag" ColumnName="CurrentFlag" />
+                <ScalarProperty Name="SickLeaveHours" ColumnName="SickLeaveHours" />
+                <ScalarProperty Name="VacationHours" ColumnName="VacationHours" />
+                <ScalarProperty Name="SalariedFlag" ColumnName="SalariedFlag" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="OrganizationLevel" ColumnName="OrganizationLevel" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="NationalIDNumber" ColumnName="NationalIDNumber" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployees">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.vEmployee">
+              <MappingFragment StoreEntitySet="vEmployee">
+                <ScalarProperty Name="AdditionalContactInfo" ColumnName="AdditionalContactInfo" />
+                <ScalarProperty Name="CountryRegionName" ColumnName="CountryRegionName" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StateProvinceName" ColumnName="StateProvinceName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="EmailPromotion" ColumnName="EmailPromotion" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumberType" ColumnName="PhoneNumberType" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -930,49 +219,9 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="AdventureWorks" ZoomLevel="94">
-        <EntityTypeShape EntityType="AdventureWorksHRModel.Department" Width="1.5" PointX="3.75" PointY="5.375" Height="1.7566536458333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.Employee" Width="1.5" PointX="0.75" PointY="4" Height="4.5505582682291648" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.EmployeeAddress" Width="1.5" PointX="3" PointY="2.875" Height="1.7566536458333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.EmployeeDepartmentHistory" Width="1.5" PointX="6" PointY="5.125" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.EmployeePayHistory" Width="1.5" PointX="3" PointY="8.375" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.JobCandidate" Width="1.5" PointX="3" PointY="11" Height="1.7566536458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployee" Width="1.5" PointX="8.75" PointY="0.75" Height="3.7288216145833326" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployeeDepartment" Width="1.5" PointX="5.75" PointY="0.75" Height="2.5783902994791674" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployeeDepartmentHistory" Width="1.5" PointX="8.75" PointY="5.75" Height="2.7427376302083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vJobCandidate" Width="1.5" PointX="5.75" PointY="8.75" Height="3.5644742838541674" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vJobCandidateEducation" Width="1.5" PointX="7.75" PointY="9.75" Height="3.0714322916666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksHRModel.vJobCandidateEmployment" Width="1.5" PointX="9.75" PointY="9.75" Height="2.7427376302083317" IsExpanded="true" />
-        <AssociationConnector Association="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Department_DepartmentID" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="6.2533268229166667" />
-          <ConnectorPoint PointX="6" PointY="6.2533268229166667" />
-        </AssociationConnector>
-        <AssociationConnector Association="AdventureWorksHRModel.FK_Employee_Employee_ManagerID" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.2819230769230767" PointY="8.5505582682291639" />
-          <ConnectorPoint PointX="1.2819230769230767" PointY="8.8005582682291639" />
-          <ConnectorPoint PointX="1.7284615384615383" PointY="8.8005582682291639" />
-          <ConnectorPoint PointX="1.7284615384615383" PointY="8.5505582682291639" />
-        </AssociationConnector>
-        <AssociationConnector Association="AdventureWorksHRModel.FK_EmployeeAddress_Employee_EmployeeID" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="4.3158268229166667" />
-          <ConnectorPoint PointX="3" PointY="4.3158268229166667" />
-        </AssociationConnector>
-        <AssociationConnector Association="AdventureWorksHRModel.FK_EmployeeDepartmentHistory_Employee_EmployeeID" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="5.21875" />
-          <ConnectorPoint PointX="6" PointY="5.21875" />
-        </AssociationConnector>
-        <AssociationConnector Association="AdventureWorksHRModel.FK_EmployeePayHistory_Employee_EmployeeID" ManuallyRouted="false">
-          <ConnectorPoint PointX="0.98470903846153834" PointY="8.5505582682291639" />
-          <ConnectorPoint PointX="0.98470903846153834" PointY="9.5482796223958317" />
-          <ConnectorPoint PointX="1.937149935897436" PointY="9.5482796223958317" />
-          <ConnectorPoint PointX="2.1038166025641027" PointY="9.5482796223958317" />
-          <ConnectorPoint PointX="3" PointY="9.5482796223958317" />
-        </AssociationConnector>
-        <AssociationConnector Association="AdventureWorksHRModel.FK_JobCandidate_Employee_EmployeeID" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.0204832692307693" PointY="8.5505582682291639" />
-          <ConnectorPoint PointX="2.0204832692307693" PointY="11.878326822916666" />
-          <ConnectorPoint PointX="3" PointY="11.878326822916666" />
-        </AssociationConnector>
+      <Diagram Name="AdventureWorks" ZoomLevel="75">
+        <EntityTypeShape EntityType="AdventureWorksHRModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" Height="3.9033007812500031" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployee" Width="1.5" PointX="3.375" PointY="0.75" Height="4.4802050781250031" />
       </Diagram>
     </Diagrams>
   </Designer>

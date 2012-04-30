@@ -45,8 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dvrs\EmployeeDvr.cs" />
+    <Compile Include="Enums\BuildingTypes.cs" />
+    <Compile Include="Enums\ZoneTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\IEmployeeRepository.cs" />
+    <Compile Include="Tools\EnumExtentions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

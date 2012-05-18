@@ -1,0 +1,4 @@
+﻿.ui-igvalidator,.ui-widget .ui-igvalidator{font-size:.8em;padding:3px;white-space:nowrap}
+.ui-igvalidator-icon,.ui-widget-content .ui-igvalidator-icon,.ui-widget .ui-igvalidator-icon{display:inline-block;border:0;position:absolute}
+.ui-igvalidator-target{border-color:#d05050}
+.ui-igtrialwatermark{background-image:url(../images/trial.gif);background-repeat:repeat;opacity:.05;filter:alpha(opacity=5);-ms-filter:"alpha(opacity=5)";-khtml-opacity:.05;-moz-opacity:.05}

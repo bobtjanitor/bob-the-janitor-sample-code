@@ -1,19 +1,23 @@
 ﻿using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
+using SampleApplication.Domain;
 using SampleApplication.Objects.Dvrs;
 using SampleApplication.Repository;
 
 namespace SampleApplication.Domain_Tests.Behavioral
 {
     [TestFixture]
-    public class When_Requesting_Employees_From_Seattle_Washington_Tests : EmployeeRequests_Context
+    public class When_Requesting_Employees_From_Seattle_Washington_Tests : Test_Context<EmployeeRequests>
     {
+        public Mock<IEmployeeRepository> MockEmployeeRepository;
+
         public override void Context()
         {
             base.Context();
             MockEmployeeRepository = new Mock<IEmployeeRepository>();
-            MockEmployeeRepository.Setup(x => x.GetEmployeeByCityState("Seattle", "Washington")).Returns(new List<EmployeeDvr>() { new EmployeeDvr() { City = "Seattle", State = "Washington" } });
+            MockEmployeeRepository.Setup(x => x.GetEmployeeByCityState("Seattle", "Washington"))
+                .Returns(new List<EmployeeDvr> { new EmployeeDvr { City = "Seattle", State = "Washington" } });
             Target.EmployeeRepository = MockEmployeeRepository.Object;
         }
 
@@ -36,8 +40,10 @@ namespace SampleApplication.Domain_Tests.Behavioral
     }
 
     [TestFixture]
-    public class When_Requesting_Employees_From_Washington_With_Out_A_City_Tests : EmployeeRequests_Context
+    public class When_Requesting_Employees_From_Washington_With_Out_A_City_Tests : Test_Context<EmployeeRequests>
     {
+        public Mock<IEmployeeRepository> MockEmployeeRepository;
+
         public override void Context()
         {
             base.Context();

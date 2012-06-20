@@ -6,7 +6,7 @@ using SampleApplication.Domain;
 using SampleApplication.Objects.Dvrs;
 using SampleApplication.Repository;
 
-namespace SampleApplication.Domain_Tests
+namespace SampleApplication.Domain_Tests.UnitTest
 {
     [TestFixture]
     public class EmployeeRequests_Tests
@@ -18,7 +18,12 @@ namespace SampleApplication.Domain_Tests
         {
             target = new EmployeeRequests();
             MockEmployeeRepository = new Mock<IEmployeeRepository>();
-            MockEmployeeRepository.Setup(x => x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>())).Returns(new List<EmployeeDvr>() {new EmployeeDvr() {City = "Seattle", State = "Washington", EmployeeName = "bob"}});
+            MockEmployeeRepository.Setup(x => 
+                x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(new List<EmployeeDvr>
+                             {
+                                 new EmployeeDvr {City = "Seattle", State = "Washington", EmployeeName = "bob"}
+                             });
             target.EmployeeRepository = MockEmployeeRepository.Object;
         }
 

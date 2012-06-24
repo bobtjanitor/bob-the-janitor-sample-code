@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dvrs\EmployeeDvr.cs" />
+    <Compile Include="DomainInterfaces\IAuthRequests.cs" />
+    <Compile Include="Dtos\EmployeeDto.cs" />
+    <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Enums\BuildingTypes.cs" />
     <Compile Include="Enums\ZoneTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

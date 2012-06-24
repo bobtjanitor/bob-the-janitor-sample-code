@@ -3,8 +3,8 @@ using System.Linq;
 using Moq;
 using NUnit.Framework;
 using SampleApplication.Domain;
-using SampleApplication.Objects.Dvrs;
-using SampleApplication.Repository;
+using SampleApplication.Objects.Dtos;
+using SampleApplication.Objects.RepositoryInterfaces;
 
 namespace SampleApplication.Domain_Tests.UnitTest
 {
@@ -20,9 +20,9 @@ namespace SampleApplication.Domain_Tests.UnitTest
             MockEmployeeRepository = new Mock<IEmployeeRepository>();
             MockEmployeeRepository.Setup(x => 
                 x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(new List<EmployeeDvr>
+                .Returns(new List<EmployeeDto>
                              {
-                                 new EmployeeDvr {City = "Seattle", State = "Washington", EmployeeName = "bob"}
+                                 new EmployeeDto {City = "Seattle", State = "Washington", EmployeeName = "bob"}
                              });
             target.EmployeeRepository = MockEmployeeRepository.Object;
         }

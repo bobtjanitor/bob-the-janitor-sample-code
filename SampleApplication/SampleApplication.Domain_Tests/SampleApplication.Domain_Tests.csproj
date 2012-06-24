@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Behavioral\When_Requesting_Employees_From_Seattle_Washington_Tests.cs" />
     <Compile Include="Behavioral\Test_Context.cs" />
+    <Compile Include="Behavioral\When_Requesting_Employees_From_Washington_With_Out_A_City_Tests.cs" />
+    <Compile Include="Behavioral\When_Updating_Employee_Information_Test.cs" />
     <Compile Include="UnitTest\EmployeeRequests_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

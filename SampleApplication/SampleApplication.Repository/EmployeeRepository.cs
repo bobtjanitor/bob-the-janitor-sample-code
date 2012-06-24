@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using SampleApplication.Objects.Dvrs;
+using SampleApplication.Objects.Dtos;
+using SampleApplication.Objects.RepositoryInterfaces;
 
 namespace SampleApplication.Repository
 {
@@ -10,23 +10,21 @@ namespace SampleApplication.Repository
         private adventureworksEntities  _entities;
         public adventureworksEntities Entities
         {
-            get
-            {
-                if (_entities==null)
-                {
-                    _entities = new adventureworksEntities();
-                }
-                return _entities;
-            }
+            get { return _entities ?? (_entities = new adventureworksEntities()); }
             set { _entities = value; }
         }
 
-        public IList<EmployeeDvr> GetEmployeeByCityState(string city, string state)
+        public IList<EmployeeDto> GetEmployeeByCityState(string city, string state)
         {
             var result = Entities.vEmployees
                 .Where(x => x.City == city && x.StateProvinceName == state)
-                .Select(x => new EmployeeDvr() {City = x.City, State = x.StateProvinceName, EmployeeName = x.FirstName});
+                .Select(x => new EmployeeDto {City = x.City, State = x.StateProvinceName, EmployeeName = x.FirstName});
             return result.ToList();
+        }
+
+        public bool UpdateEmployee(EmployeeDto updateEmployee)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

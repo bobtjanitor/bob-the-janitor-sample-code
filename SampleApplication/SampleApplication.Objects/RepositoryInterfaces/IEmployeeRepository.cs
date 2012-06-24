@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SampleApplication.Objects.Dvrs;
+﻿using System.Collections.Generic;
+using SampleApplication.Objects.Dtos;
 
-namespace SampleApplication.Repository
+namespace SampleApplication.Objects.RepositoryInterfaces
 {
     public interface IEmployeeRepository
     {
-        IList<EmployeeDvr> GetEmployeeByCityState(string city, string state);
+        IList<EmployeeDto> GetEmployeeByCityState(string city, string state);
+        bool UpdateEmployee(EmployeeDto updateEmployee);
     }
 }

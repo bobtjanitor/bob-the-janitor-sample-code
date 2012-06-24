@@ -1,37 +1,43 @@
 ﻿using System.Collections.Generic;
-using SampleApplication.Objects.Dvrs;
-using SampleApplication.Repository;
+using SampleApplication.Objects.DomainInterfaces;
+using SampleApplication.Objects.Dtos;
+using SampleApplication.Objects.RepositoryInterfaces;
 
 namespace SampleApplication.Domain
 {
     public class EmployeeRequests
     {
-        private IList<string> _errors = new List<string>();
-        private IEmployeeRepository _employeeRepository;
+        public EmployeeRequests() : this(new UserDto())
+        {
+            
+        }
 
+        public EmployeeRequests(UserDto user)
+        {
+            User = user;
+        }
+
+        private IList<string> _errors = new List<string>();
         public IList<string> Errors
         {
             get { return _errors; }
             protected set { _errors = value; }
         }
 
+        private IEmployeeRepository _employeeRepository;
         public IEmployeeRepository EmployeeRepository
         {
-            get {
-                if (_employeeRepository==null)
-                {
-                    _employeeRepository = Factory.GetEmployeeRepository();
-                }
-                return _employeeRepository;
-            }
-            set {
-                _employeeRepository = value;
-            }
+            get { return _employeeRepository ?? (_employeeRepository = Factory.GetEmployeeRepository()); }
+            set { _employeeRepository = value; }
         }
 
-        public IList<EmployeeDvr> GetEmployeeByLocation(string city, string state)
+        public UserDto User { get; set; }
+
+        public IAuthRequests AuthRequests { get; set; }
+
+        public IList<EmployeeDto> GetEmployeeByLocation(string city, string state)
         {
-            List<EmployeeDvr> employees = new List<EmployeeDvr>();
+            var employees = new List<EmployeeDto>();
 
             if (string.IsNullOrWhiteSpace(city))
             {
@@ -49,6 +55,16 @@ namespace SampleApplication.Domain
             }
 
             return employees;
+        }
+
+        public bool UpdateEmployee(EmployeeDto updateEmployee)
+        {
+            var result = false;
+            if(AuthRequests.UserCanUpdateEmployee(User.Id,updateEmployee.Id))
+            {
+                result = EmployeeRepository.UpdateEmployee(updateEmployee);
+            }
+            return result;
         }
     }
 }

@@ -16,6 +16,15 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("AdventureWorksHRModel", "FK_Employee_Person_BusinessEntityID", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SampleApplication.Repository.Person), "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SampleApplication.Repository.Employee), true)]
+[assembly: EdmRelationshipAttribute("AdventureWorksHRModel", "FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SampleApplication.Repository.BusinessEntity), "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SampleApplication.Repository.Person), true)]
+[assembly: EdmRelationshipAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_Address_AddressID", "Address", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SampleApplication.Repository.Address), "BusinessEntityAddress", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SampleApplication.Repository.BusinessEntityAddress), true)]
+[assembly: EdmRelationshipAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SampleApplication.Repository.AddressType), "BusinessEntityAddress", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SampleApplication.Repository.BusinessEntityAddress), true)]
+[assembly: EdmRelationshipAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SampleApplication.Repository.BusinessEntity), "BusinessEntityAddress", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SampleApplication.Repository.BusinessEntityAddress), true)]
+
+#endregion
 
 namespace SampleApplication.Repository
 {
@@ -96,6 +105,86 @@ namespace SampleApplication.Repository
             }
         }
         private ObjectSet<vEmployee> _vEmployees;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Address> Addresses
+        {
+            get
+            {
+                if ((_Addresses == null))
+                {
+                    _Addresses = base.CreateObjectSet<Address>("Addresses");
+                }
+                return _Addresses;
+            }
+        }
+        private ObjectSet<Address> _Addresses;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<AddressType> AddressTypes
+        {
+            get
+            {
+                if ((_AddressTypes == null))
+                {
+                    _AddressTypes = base.CreateObjectSet<AddressType>("AddressTypes");
+                }
+                return _AddressTypes;
+            }
+        }
+        private ObjectSet<AddressType> _AddressTypes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<BusinessEntity> BusinessEntities
+        {
+            get
+            {
+                if ((_BusinessEntities == null))
+                {
+                    _BusinessEntities = base.CreateObjectSet<BusinessEntity>("BusinessEntities");
+                }
+                return _BusinessEntities;
+            }
+        }
+        private ObjectSet<BusinessEntity> _BusinessEntities;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Person> People
+        {
+            get
+            {
+                if ((_People == null))
+                {
+                    _People = base.CreateObjectSet<Person>("People");
+                }
+                return _People;
+            }
+        }
+        private ObjectSet<Person> _People;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<BusinessEntityAddress> BusinessEntityAddresses
+        {
+            get
+            {
+                if ((_BusinessEntityAddresses == null))
+                {
+                    _BusinessEntityAddresses = base.CreateObjectSet<BusinessEntityAddress>("BusinessEntityAddresses");
+                }
+                return _BusinessEntityAddresses;
+            }
+        }
+        private ObjectSet<BusinessEntityAddress> _BusinessEntityAddresses;
 
         #endregion
         #region AddTo Methods
@@ -115,6 +204,46 @@ namespace SampleApplication.Repository
         {
             base.AddObject("vEmployees", vEmployee);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Addresses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAddresses(Address address)
+        {
+            base.AddObject("Addresses", address);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the AddressTypes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAddressTypes(AddressType addressType)
+        {
+            base.AddObject("AddressTypes", addressType);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the BusinessEntities EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToBusinessEntities(BusinessEntity businessEntity)
+        {
+            base.AddObject("BusinessEntities", businessEntity);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the People EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPeople(Person person)
+        {
+            base.AddObject("People", person);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the BusinessEntityAddresses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToBusinessEntityAddresses(BusinessEntityAddress businessEntityAddress)
+        {
+            base.AddObject("BusinessEntityAddresses", businessEntityAddress);
+        }
 
         #endregion
     }
@@ -123,6 +252,876 @@ namespace SampleApplication.Repository
     #endregion
     
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AdventureWorksHRModel", Name="Address")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Address : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Address object.
+        /// </summary>
+        /// <param name="addressID">Initial value of the AddressID property.</param>
+        /// <param name="addressLine1">Initial value of the AddressLine1 property.</param>
+        /// <param name="city">Initial value of the City property.</param>
+        /// <param name="stateProvinceID">Initial value of the StateProvinceID property.</param>
+        /// <param name="postalCode">Initial value of the PostalCode property.</param>
+        /// <param name="rowguid">Initial value of the rowguid property.</param>
+        /// <param name="modifiedDate">Initial value of the ModifiedDate property.</param>
+        public static Address CreateAddress(global::System.Int32 addressID, global::System.String addressLine1, global::System.String city, global::System.Int32 stateProvinceID, global::System.String postalCode, global::System.Guid rowguid, global::System.DateTime modifiedDate)
+        {
+            Address address = new Address();
+            address.AddressID = addressID;
+            address.AddressLine1 = addressLine1;
+            address.City = city;
+            address.StateProvinceID = stateProvinceID;
+            address.PostalCode = postalCode;
+            address.rowguid = rowguid;
+            address.ModifiedDate = modifiedDate;
+            return address;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressID
+        {
+            get
+            {
+                return _AddressID;
+            }
+            set
+            {
+                if (_AddressID != value)
+                {
+                    OnAddressIDChanging(value);
+                    ReportPropertyChanging("AddressID");
+                    _AddressID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressID");
+                    OnAddressIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AddressID;
+        partial void OnAddressIDChanging(global::System.Int32 value);
+        partial void OnAddressIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String AddressLine1
+        {
+            get
+            {
+                return _AddressLine1;
+            }
+            set
+            {
+                OnAddressLine1Changing(value);
+                ReportPropertyChanging("AddressLine1");
+                _AddressLine1 = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("AddressLine1");
+                OnAddressLine1Changed();
+            }
+        }
+        private global::System.String _AddressLine1;
+        partial void OnAddressLine1Changing(global::System.String value);
+        partial void OnAddressLine1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AddressLine2
+        {
+            get
+            {
+                return _AddressLine2;
+            }
+            set
+            {
+                OnAddressLine2Changing(value);
+                ReportPropertyChanging("AddressLine2");
+                _AddressLine2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AddressLine2");
+                OnAddressLine2Changed();
+            }
+        }
+        private global::System.String _AddressLine2;
+        partial void OnAddressLine2Changing(global::System.String value);
+        partial void OnAddressLine2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String City
+        {
+            get
+            {
+                return _City;
+            }
+            set
+            {
+                OnCityChanging(value);
+                ReportPropertyChanging("City");
+                _City = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("City");
+                OnCityChanged();
+            }
+        }
+        private global::System.String _City;
+        partial void OnCityChanging(global::System.String value);
+        partial void OnCityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 StateProvinceID
+        {
+            get
+            {
+                return _StateProvinceID;
+            }
+            set
+            {
+                OnStateProvinceIDChanging(value);
+                ReportPropertyChanging("StateProvinceID");
+                _StateProvinceID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StateProvinceID");
+                OnStateProvinceIDChanged();
+            }
+        }
+        private global::System.Int32 _StateProvinceID;
+        partial void OnStateProvinceIDChanging(global::System.Int32 value);
+        partial void OnStateProvinceIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PostalCode
+        {
+            get
+            {
+                return _PostalCode;
+            }
+            set
+            {
+                OnPostalCodeChanging(value);
+                ReportPropertyChanging("PostalCode");
+                _PostalCode = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PostalCode");
+                OnPostalCodeChanged();
+            }
+        }
+        private global::System.String _PostalCode;
+        partial void OnPostalCodeChanging(global::System.String value);
+        partial void OnPostalCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid rowguid
+        {
+            get
+            {
+                return _rowguid;
+            }
+            set
+            {
+                OnrowguidChanging(value);
+                ReportPropertyChanging("rowguid");
+                _rowguid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("rowguid");
+                OnrowguidChanged();
+            }
+        }
+        private global::System.Guid _rowguid;
+        partial void OnrowguidChanging(global::System.Guid value);
+        partial void OnrowguidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.DateTime value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_Address_AddressID", "BusinessEntityAddress")]
+        public EntityCollection<BusinessEntityAddress> BusinessEntityAddresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "BusinessEntityAddress");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "BusinessEntityAddress", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AdventureWorksHRModel", Name="AddressType")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class AddressType : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new AddressType object.
+        /// </summary>
+        /// <param name="addressTypeID">Initial value of the AddressTypeID property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="rowguid">Initial value of the rowguid property.</param>
+        /// <param name="modifiedDate">Initial value of the ModifiedDate property.</param>
+        public static AddressType CreateAddressType(global::System.Int32 addressTypeID, global::System.String name, global::System.Guid rowguid, global::System.DateTime modifiedDate)
+        {
+            AddressType addressType = new AddressType();
+            addressType.AddressTypeID = addressTypeID;
+            addressType.Name = name;
+            addressType.rowguid = rowguid;
+            addressType.ModifiedDate = modifiedDate;
+            return addressType;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressTypeID
+        {
+            get
+            {
+                return _AddressTypeID;
+            }
+            set
+            {
+                if (_AddressTypeID != value)
+                {
+                    OnAddressTypeIDChanging(value);
+                    ReportPropertyChanging("AddressTypeID");
+                    _AddressTypeID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressTypeID");
+                    OnAddressTypeIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AddressTypeID;
+        partial void OnAddressTypeIDChanging(global::System.Int32 value);
+        partial void OnAddressTypeIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid rowguid
+        {
+            get
+            {
+                return _rowguid;
+            }
+            set
+            {
+                OnrowguidChanging(value);
+                ReportPropertyChanging("rowguid");
+                _rowguid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("rowguid");
+                OnrowguidChanged();
+            }
+        }
+        private global::System.Guid _rowguid;
+        partial void OnrowguidChanging(global::System.Guid value);
+        partial void OnrowguidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.DateTime value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_AddressType_AddressTypeID", "BusinessEntityAddress")]
+        public EntityCollection<BusinessEntityAddress> BusinessEntityAddresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "BusinessEntityAddress");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "BusinessEntityAddress", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AdventureWorksHRModel", Name="BusinessEntity")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class BusinessEntity : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BusinessEntity object.
+        /// </summary>
+        /// <param name="businessEntityID">Initial value of the BusinessEntityID property.</param>
+        /// <param name="rowguid">Initial value of the rowguid property.</param>
+        /// <param name="modifiedDate">Initial value of the ModifiedDate property.</param>
+        public static BusinessEntity CreateBusinessEntity(global::System.Int32 businessEntityID, global::System.Guid rowguid, global::System.DateTime modifiedDate)
+        {
+            BusinessEntity businessEntity = new BusinessEntity();
+            businessEntity.BusinessEntityID = businessEntityID;
+            businessEntity.rowguid = rowguid;
+            businessEntity.ModifiedDate = modifiedDate;
+            return businessEntity;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BusinessEntityID
+        {
+            get
+            {
+                return _BusinessEntityID;
+            }
+            set
+            {
+                if (_BusinessEntityID != value)
+                {
+                    OnBusinessEntityIDChanging(value);
+                    ReportPropertyChanging("BusinessEntityID");
+                    _BusinessEntityID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("BusinessEntityID");
+                    OnBusinessEntityIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _BusinessEntityID;
+        partial void OnBusinessEntityIDChanging(global::System.Int32 value);
+        partial void OnBusinessEntityIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid rowguid
+        {
+            get
+            {
+                return _rowguid;
+            }
+            set
+            {
+                OnrowguidChanging(value);
+                ReportPropertyChanging("rowguid");
+                _rowguid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("rowguid");
+                OnrowguidChanged();
+            }
+        }
+        private global::System.Guid _rowguid;
+        partial void OnrowguidChanging(global::System.Guid value);
+        partial void OnrowguidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.DateTime value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_Person_BusinessEntity_BusinessEntityID", "Person")]
+        public Person Person
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "Person").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "Person").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Person> PersonReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "Person");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "Person", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntityAddress")]
+        public EntityCollection<BusinessEntityAddress> BusinessEntityAddresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntityAddress");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BusinessEntityAddress>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntityAddress", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AdventureWorksHRModel", Name="BusinessEntityAddress")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class BusinessEntityAddress : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BusinessEntityAddress object.
+        /// </summary>
+        /// <param name="businessEntityID">Initial value of the BusinessEntityID property.</param>
+        /// <param name="addressID">Initial value of the AddressID property.</param>
+        /// <param name="addressTypeID">Initial value of the AddressTypeID property.</param>
+        /// <param name="rowguid">Initial value of the rowguid property.</param>
+        /// <param name="modifiedDate">Initial value of the ModifiedDate property.</param>
+        public static BusinessEntityAddress CreateBusinessEntityAddress(global::System.Int32 businessEntityID, global::System.Int32 addressID, global::System.Int32 addressTypeID, global::System.Guid rowguid, global::System.DateTime modifiedDate)
+        {
+            BusinessEntityAddress businessEntityAddress = new BusinessEntityAddress();
+            businessEntityAddress.BusinessEntityID = businessEntityID;
+            businessEntityAddress.AddressID = addressID;
+            businessEntityAddress.AddressTypeID = addressTypeID;
+            businessEntityAddress.rowguid = rowguid;
+            businessEntityAddress.ModifiedDate = modifiedDate;
+            return businessEntityAddress;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BusinessEntityID
+        {
+            get
+            {
+                return _BusinessEntityID;
+            }
+            set
+            {
+                if (_BusinessEntityID != value)
+                {
+                    OnBusinessEntityIDChanging(value);
+                    ReportPropertyChanging("BusinessEntityID");
+                    _BusinessEntityID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("BusinessEntityID");
+                    OnBusinessEntityIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _BusinessEntityID;
+        partial void OnBusinessEntityIDChanging(global::System.Int32 value);
+        partial void OnBusinessEntityIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressID
+        {
+            get
+            {
+                return _AddressID;
+            }
+            set
+            {
+                if (_AddressID != value)
+                {
+                    OnAddressIDChanging(value);
+                    ReportPropertyChanging("AddressID");
+                    _AddressID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressID");
+                    OnAddressIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AddressID;
+        partial void OnAddressIDChanging(global::System.Int32 value);
+        partial void OnAddressIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressTypeID
+        {
+            get
+            {
+                return _AddressTypeID;
+            }
+            set
+            {
+                if (_AddressTypeID != value)
+                {
+                    OnAddressTypeIDChanging(value);
+                    ReportPropertyChanging("AddressTypeID");
+                    _AddressTypeID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressTypeID");
+                    OnAddressTypeIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AddressTypeID;
+        partial void OnAddressTypeIDChanging(global::System.Int32 value);
+        partial void OnAddressTypeIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid rowguid
+        {
+            get
+            {
+                return _rowguid;
+            }
+            set
+            {
+                OnrowguidChanging(value);
+                ReportPropertyChanging("rowguid");
+                _rowguid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("rowguid");
+                OnrowguidChanged();
+            }
+        }
+        private global::System.Guid _rowguid;
+        partial void OnrowguidChanging(global::System.Guid value);
+        partial void OnrowguidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.DateTime value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_Address_AddressID", "Address")]
+        public Address Address
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "Address").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "Address").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Address> AddressReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "Address");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Address>("AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID", "Address", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType")]
+        public AddressType AddressType
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AddressType>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AddressType>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AddressType> AddressTypeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AddressType>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AddressType>("AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID", "AddressType", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity")]
+        public BusinessEntity BusinessEntity
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<BusinessEntity> BusinessEntityReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID", "BusinessEntity", value);
+                }
+            }
+        }
+
+        #endregion
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
@@ -539,6 +1538,483 @@ namespace SampleApplication.Repository
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_Employee_Person_BusinessEntityID", "Person")]
+        public Person Person
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Person").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Person").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Person> PersonReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Person");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Person", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AdventureWorksHRModel", Name="Person")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Person : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Person object.
+        /// </summary>
+        /// <param name="businessEntityID">Initial value of the BusinessEntityID property.</param>
+        /// <param name="personType">Initial value of the PersonType property.</param>
+        /// <param name="nameStyle">Initial value of the NameStyle property.</param>
+        /// <param name="firstName">Initial value of the FirstName property.</param>
+        /// <param name="lastName">Initial value of the LastName property.</param>
+        /// <param name="emailPromotion">Initial value of the EmailPromotion property.</param>
+        /// <param name="rowguid">Initial value of the rowguid property.</param>
+        /// <param name="modifiedDate">Initial value of the ModifiedDate property.</param>
+        public static Person CreatePerson(global::System.Int32 businessEntityID, global::System.String personType, global::System.Boolean nameStyle, global::System.String firstName, global::System.String lastName, global::System.Int32 emailPromotion, global::System.Guid rowguid, global::System.DateTime modifiedDate)
+        {
+            Person person = new Person();
+            person.BusinessEntityID = businessEntityID;
+            person.PersonType = personType;
+            person.NameStyle = nameStyle;
+            person.FirstName = firstName;
+            person.LastName = lastName;
+            person.EmailPromotion = emailPromotion;
+            person.rowguid = rowguid;
+            person.ModifiedDate = modifiedDate;
+            return person;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BusinessEntityID
+        {
+            get
+            {
+                return _BusinessEntityID;
+            }
+            set
+            {
+                if (_BusinessEntityID != value)
+                {
+                    OnBusinessEntityIDChanging(value);
+                    ReportPropertyChanging("BusinessEntityID");
+                    _BusinessEntityID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("BusinessEntityID");
+                    OnBusinessEntityIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _BusinessEntityID;
+        partial void OnBusinessEntityIDChanging(global::System.Int32 value);
+        partial void OnBusinessEntityIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PersonType
+        {
+            get
+            {
+                return _PersonType;
+            }
+            set
+            {
+                OnPersonTypeChanging(value);
+                ReportPropertyChanging("PersonType");
+                _PersonType = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PersonType");
+                OnPersonTypeChanged();
+            }
+        }
+        private global::System.String _PersonType;
+        partial void OnPersonTypeChanging(global::System.String value);
+        partial void OnPersonTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean NameStyle
+        {
+            get
+            {
+                return _NameStyle;
+            }
+            set
+            {
+                OnNameStyleChanging(value);
+                ReportPropertyChanging("NameStyle");
+                _NameStyle = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NameStyle");
+                OnNameStyleChanged();
+            }
+        }
+        private global::System.Boolean _NameStyle;
+        partial void OnNameStyleChanging(global::System.Boolean value);
+        partial void OnNameStyleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FirstName
+        {
+            get
+            {
+                return _FirstName;
+            }
+            set
+            {
+                OnFirstNameChanging(value);
+                ReportPropertyChanging("FirstName");
+                _FirstName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FirstName");
+                OnFirstNameChanged();
+            }
+        }
+        private global::System.String _FirstName;
+        partial void OnFirstNameChanging(global::System.String value);
+        partial void OnFirstNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MiddleName
+        {
+            get
+            {
+                return _MiddleName;
+            }
+            set
+            {
+                OnMiddleNameChanging(value);
+                ReportPropertyChanging("MiddleName");
+                _MiddleName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MiddleName");
+                OnMiddleNameChanged();
+            }
+        }
+        private global::System.String _MiddleName;
+        partial void OnMiddleNameChanging(global::System.String value);
+        partial void OnMiddleNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LastName
+        {
+            get
+            {
+                return _LastName;
+            }
+            set
+            {
+                OnLastNameChanging(value);
+                ReportPropertyChanging("LastName");
+                _LastName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("LastName");
+                OnLastNameChanged();
+            }
+        }
+        private global::System.String _LastName;
+        partial void OnLastNameChanging(global::System.String value);
+        partial void OnLastNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Suffix
+        {
+            get
+            {
+                return _Suffix;
+            }
+            set
+            {
+                OnSuffixChanging(value);
+                ReportPropertyChanging("Suffix");
+                _Suffix = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Suffix");
+                OnSuffixChanged();
+            }
+        }
+        private global::System.String _Suffix;
+        partial void OnSuffixChanging(global::System.String value);
+        partial void OnSuffixChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EmailPromotion
+        {
+            get
+            {
+                return _EmailPromotion;
+            }
+            set
+            {
+                OnEmailPromotionChanging(value);
+                ReportPropertyChanging("EmailPromotion");
+                _EmailPromotion = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EmailPromotion");
+                OnEmailPromotionChanged();
+            }
+        }
+        private global::System.Int32 _EmailPromotion;
+        partial void OnEmailPromotionChanging(global::System.Int32 value);
+        partial void OnEmailPromotionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AdditionalContactInfo
+        {
+            get
+            {
+                return _AdditionalContactInfo;
+            }
+            set
+            {
+                OnAdditionalContactInfoChanging(value);
+                ReportPropertyChanging("AdditionalContactInfo");
+                _AdditionalContactInfo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AdditionalContactInfo");
+                OnAdditionalContactInfoChanged();
+            }
+        }
+        private global::System.String _AdditionalContactInfo;
+        partial void OnAdditionalContactInfoChanging(global::System.String value);
+        partial void OnAdditionalContactInfoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Demographics
+        {
+            get
+            {
+                return _Demographics;
+            }
+            set
+            {
+                OnDemographicsChanging(value);
+                ReportPropertyChanging("Demographics");
+                _Demographics = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Demographics");
+                OnDemographicsChanged();
+            }
+        }
+        private global::System.String _Demographics;
+        partial void OnDemographicsChanging(global::System.String value);
+        partial void OnDemographicsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid rowguid
+        {
+            get
+            {
+                return _rowguid;
+            }
+            set
+            {
+                OnrowguidChanging(value);
+                ReportPropertyChanging("rowguid");
+                _rowguid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("rowguid");
+                OnrowguidChanged();
+            }
+        }
+        private global::System.Guid _rowguid;
+        partial void OnrowguidChanging(global::System.Guid value);
+        partial void OnrowguidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.DateTime value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_Employee_Person_BusinessEntityID", "Employee")]
+        public Employee Employee
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Employee>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Employee").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Employee>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Employee").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Employee> EmployeeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Employee>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Employee");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Employee>("AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID", "Employee", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AdventureWorksHRModel", "FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity")]
+        public BusinessEntity BusinessEntity
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<BusinessEntity> BusinessEntityReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<BusinessEntity>("AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID", "BusinessEntity", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>

@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
   <ItemGroup>
     <Compile Include="EmployeeRepository_Intergration_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_Updating_Employee_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApplication.Objects\SampleApplication.Objects.csproj">

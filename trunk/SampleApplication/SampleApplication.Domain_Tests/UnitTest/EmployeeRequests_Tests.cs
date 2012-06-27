@@ -22,7 +22,7 @@ namespace SampleApplication.Domain_Tests.UnitTest
                 x.GetEmployeeByCityState(It.IsAny<string>(), It.IsAny<string>()))
                 .Returns(new List<EmployeeDto>
                              {
-                                 new EmployeeDto {City = "Seattle", State = "Washington", EmployeeName = "bob"}
+                                 new EmployeeDto {City = "Seattle", State = "Washington", FirstName = "bob"}
                              });
             target.EmployeeRepository = MockEmployeeRepository.Object;
         }

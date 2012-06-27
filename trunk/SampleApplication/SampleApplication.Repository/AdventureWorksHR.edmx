@@ -7,6 +7,11 @@
     <Schema Namespace="AdventureWorksHRModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="AdventureWorksHRModelStoreContainer">
           <EntitySet Name="Employee" EntityType="AdventureWorksHRModel.Store.Employee" store:Type="Tables" Schema="HumanResources" />
+          <EntitySet Name="Address" EntityType="AdventureWorksHRModel.Store.Address" store:Type="Tables" Schema="Person" />
+          <EntitySet Name="AddressType" EntityType="AdventureWorksHRModel.Store.AddressType" store:Type="Tables" Schema="Person" />
+          <EntitySet Name="BusinessEntity" EntityType="AdventureWorksHRModel.Store.BusinessEntity" store:Type="Tables" Schema="Person" />
+          <EntitySet Name="BusinessEntityAddress" EntityType="AdventureWorksHRModel.Store.BusinessEntityAddress" store:Type="Tables" Schema="Person" />
+          <EntitySet Name="Person" EntityType="AdventureWorksHRModel.Store.Person" store:Type="Tables" Schema="Person" />
           <EntitySet Name="vEmployee" EntityType="AdventureWorksHRModel.Store.vEmployee" store:Type="Views" store:Schema="HumanResources" store:Name="vEmployee">
             <DefiningQuery>SELECT 
       [vEmployee].[BusinessEntityID] AS [BusinessEntityID], 
@@ -29,6 +34,26 @@
       [vEmployee].[AdditionalContactInfo] AS [AdditionalContactInfo]
       FROM [HumanResources].[vEmployee] AS [vEmployee]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_BusinessEntityAddress_Address_AddressID" Association="AdventureWorksHRModel.Store.FK_BusinessEntityAddress_Address_AddressID">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessEntityAddress_AddressType_AddressTypeID" Association="AdventureWorksHRModel.Store.FK_BusinessEntityAddress_AddressType_AddressTypeID">
+            <End Role="AddressType" EntitySet="AddressType" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" Association="AdventureWorksHRModel.Store.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID">
+            <End Role="BusinessEntity" EntitySet="BusinessEntity" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Person_BusinessEntityID" Association="AdventureWorksHRModel.Store.FK_Employee_Person_BusinessEntityID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_BusinessEntity_BusinessEntityID" Association="AdventureWorksHRModel.Store.FK_Person_BusinessEntity_BusinessEntityID">
+            <End Role="BusinessEntity" EntitySet="BusinessEntity" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
       warning 6005: The data type 'hierarchyid' is not supported; the column 'OrganizationNode' in table 'AdventureWorks.HumanResources.Employee' was excluded.
@@ -50,6 +75,69 @@
           <Property Name="VacationHours" Type="smallint" Nullable="false" />
           <Property Name="SickLeaveHours" Type="smallint" Nullable="false" />
           <Property Name="CurrentFlag" Type="bit" Nullable="false" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6005: The data type 'geography' is not supported; the column 'SpatialLocation' in table 'AdventureWorks.Person.Address' was excluded.
+      -->
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="StateProvinceID" Type="int" Nullable="false" />
+          <Property Name="PostalCode" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessEntity">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessEntityAddress">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="AddressID" />
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="AddressTypeID" Type="int" Nullable="false" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+          <Property Name="PersonType" Type="nchar" Nullable="false" MaxLength="2" />
+          <Property Name="NameStyle" Type="bit" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="8" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmailPromotion" Type="int" Nullable="false" />
+          <Property Name="AdditionalContactInfo" Type="xml" />
+          <Property Name="Demographics" Type="xml" />
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -88,6 +176,66 @@
           <Property Name="CountryRegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="AdditionalContactInfo" Type="xml" />
         </EntityType>
+        <Association Name="FK_BusinessEntityAddress_Address_AddressID">
+          <End Role="Address" Type="AdventureWorksHRModel.Store.Address" Multiplicity="1" />
+          <End Role="BusinessEntityAddress" Type="AdventureWorksHRModel.Store.BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessEntityAddress_AddressType_AddressTypeID">
+          <End Role="AddressType" Type="AdventureWorksHRModel.Store.AddressType" Multiplicity="1" />
+          <End Role="BusinessEntityAddress" Type="AdventureWorksHRModel.Store.BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID">
+          <End Role="BusinessEntity" Type="AdventureWorksHRModel.Store.BusinessEntity" Multiplicity="1" />
+          <End Role="BusinessEntityAddress" Type="AdventureWorksHRModel.Store.BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessEntity">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Person_BusinessEntityID">
+          <End Role="Person" Type="AdventureWorksHRModel.Store.Person" Multiplicity="1" />
+          <End Role="Employee" Type="AdventureWorksHRModel.Store.Employee" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_BusinessEntity_BusinessEntityID">
+          <End Role="BusinessEntity" Type="AdventureWorksHRModel.Store.BusinessEntity" Multiplicity="1" />
+          <End Role="Person" Type="AdventureWorksHRModel.Store.Person" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessEntity">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -95,6 +243,31 @@
         <EntityContainer Name="adventureworksEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="AdventureWorksHRModel.Employee" />
           <EntitySet Name="vEmployees" EntityType="AdventureWorksHRModel.vEmployee" />
+          <EntitySet Name="Addresses" EntityType="AdventureWorksHRModel.Address" />
+          <EntitySet Name="AddressTypes" EntityType="AdventureWorksHRModel.AddressType" />
+          <EntitySet Name="BusinessEntities" EntityType="AdventureWorksHRModel.BusinessEntity" />
+          <EntitySet Name="People" EntityType="AdventureWorksHRModel.Person" />
+          <AssociationSet Name="FK_Employee_Person_BusinessEntityID" Association="AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_BusinessEntity_BusinessEntityID" Association="AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID">
+            <End Role="BusinessEntity" EntitySet="BusinessEntities" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <EntitySet Name="BusinessEntityAddresses" EntityType="AdventureWorksHRModel.BusinessEntityAddress" />
+          <AssociationSet Name="FK_BusinessEntityAddress_Address_AddressID" Association="AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessEntityAddress_AddressType_AddressTypeID" Association="AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" Association="AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID">
+            <End Role="BusinessEntity" EntitySet="BusinessEntities" />
+            <End Role="BusinessEntityAddress" EntitySet="BusinessEntityAddresses" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Employee">
           <Key>
@@ -115,6 +288,7 @@
           <Property Type="Boolean" Name="CurrentFlag" Nullable="false" />
           <Property Type="Guid" Name="rowguid" Nullable="false" />
           <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID" FromRole="Employee" ToRole="Person" />
         </EntityType>
         <EntityType Name="vEmployee">
           <Key>
@@ -148,6 +322,135 @@
           <Property Type="String" Name="CountryRegionName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="AdditionalContactInfo" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Type="Int32" Name="AddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StateProvinceID" Nullable="false" />
+          <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="BusinessEntityAddresses" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID" FromRole="Address" ToRole="BusinessEntityAddress" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Type="Int32" Name="AddressTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="BusinessEntityAddresses" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID" FromRole="AddressType" ToRole="BusinessEntityAddress" />
+        </EntityType>
+        <EntityType Name="BusinessEntity">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+          </Key>
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID" FromRole="BusinessEntity" ToRole="Person" />
+          <NavigationProperty Name="BusinessEntityAddresses" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" FromRole="BusinessEntity" ToRole="BusinessEntityAddress" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+          </Key>
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" />
+          <Property Type="String" Name="PersonType" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="NameStyle" Nullable="false" />
+          <Property Type="String" Name="Title" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Suffix" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EmailPromotion" Nullable="false" />
+          <Property Type="String" Name="AdditionalContactInfo" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Demographics" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID" FromRole="Person" ToRole="Employee" />
+          <NavigationProperty Name="BusinessEntity" Relationship="AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID" FromRole="Person" ToRole="BusinessEntity" />
+        </EntityType>
+        <Association Name="FK_Employee_Person_BusinessEntityID">
+          <End Type="AdventureWorksHRModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="AdventureWorksHRModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_BusinessEntity_BusinessEntityID">
+          <End Type="AdventureWorksHRModel.BusinessEntity" Role="BusinessEntity" Multiplicity="1" />
+          <End Type="AdventureWorksHRModel.Person" Role="Person" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessEntity">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BusinessEntityAddress">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="AddressID" />
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" />
+          <Property Type="Int32" Name="AddressID" Nullable="false" />
+          <Property Type="Int32" Name="AddressTypeID" Nullable="false" />
+          <Property Type="Guid" Name="rowguid" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID" FromRole="BusinessEntityAddress" ToRole="Address" />
+          <NavigationProperty Name="AddressType" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID" FromRole="BusinessEntityAddress" ToRole="AddressType" />
+          <NavigationProperty Name="BusinessEntity" Relationship="AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" FromRole="BusinessEntityAddress" ToRole="BusinessEntity" />
+        </EntityType>
+        <Association Name="FK_BusinessEntityAddress_Address_AddressID">
+          <End Type="AdventureWorksHRModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="AdventureWorksHRModel.BusinessEntityAddress" Role="BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessEntityAddress_AddressType_AddressTypeID">
+          <End Type="AdventureWorksHRModel.AddressType" Role="AddressType" Multiplicity="1" />
+          <End Type="AdventureWorksHRModel.BusinessEntityAddress" Role="BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID">
+          <End Type="AdventureWorksHRModel.BusinessEntity" Role="BusinessEntity" Multiplicity="1" />
+          <End Type="AdventureWorksHRModel.BusinessEntityAddress" Role="BusinessEntityAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessEntity">
+              <PropertyRef Name="BusinessEntityID" />
+            </Principal>
+            <Dependent Role="BusinessEntityAddress">
+              <PropertyRef Name="BusinessEntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -199,6 +502,69 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StateProvinceID" ColumnName="StateProvinceID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressTypes">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.AddressType">
+              <MappingFragment StoreEntitySet="AddressType">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessEntities">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.BusinessEntity">
+              <MappingFragment StoreEntitySet="BusinessEntity">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="Demographics" ColumnName="Demographics" />
+                <ScalarProperty Name="AdditionalContactInfo" ColumnName="AdditionalContactInfo" />
+                <ScalarProperty Name="EmailPromotion" ColumnName="EmailPromotion" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="NameStyle" ColumnName="NameStyle" />
+                <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessEntityAddresses">
+            <EntityTypeMapping TypeName="AdventureWorksHRModel.BusinessEntityAddress">
+              <MappingFragment StoreEntitySet="BusinessEntityAddress">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -222,6 +588,45 @@
       <Diagram Name="AdventureWorks" ZoomLevel="75">
         <EntityTypeShape EntityType="AdventureWorksHRModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" Height="3.9033007812500031" />
         <EntityTypeShape EntityType="AdventureWorksHRModel.vEmployee" Width="1.5" PointX="3.375" PointY="0.75" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.Address" Width="1.5" PointX="5.75" PointY="0.75" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.AddressType" Width="1.5" PointX="0.75" PointY="5.75" Height="1.7879850260416657" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.BusinessEntity" Width="1.5" PointX="5.75" PointY="4.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="AdventureWorksHRModel.Person" Width="1.5" PointX="8" PointY="3.75" Height="3.9033007812499996" />
+        <AssociationConnector Association="AdventureWorksHRModel.FK_Employee_Person_BusinessEntityID" >
+          <ConnectorPoint PointX="8" PointY="7.65330078125" />
+          <ConnectorPoint PointX="7.625" PointY="8.02830078125" />
+          <ConnectorPoint PointX="2.625" PointY="8.02830078125" />
+          <ConnectorPoint PointX="2.625" PointY="5.2206022135416656" />
+          <ConnectorPoint PointX="2.25" PointY="4.8456022135416656" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdventureWorksHRModel.FK_Person_BusinessEntity_BusinessEntityID" >
+          <ConnectorPoint PointX="7.25" PointY="5.7401432291666659" />
+          <ConnectorPoint PointX="8" PointY="5.7401432291666659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AdventureWorksHRModel.BusinessEntityAddress" Width="1.5" PointX="8" PointY="0.75" Height="2.5571907552083317" />
+        <AssociationConnector Association="AdventureWorksHRModel.FK_BusinessEntityAddress_Address_AddressID" >
+          <ConnectorPoint PointX="7.25" PointY="2.0285953776041659" />
+          <ConnectorPoint PointX="8" PointY="2.0285953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdventureWorksHRModel.FK_BusinessEntityAddress_AddressType_AddressTypeID" >
+          <ConnectorPoint PointX="2.25" PointY="6.7401432291666667" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.7401432291666659" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.7401432291666667" />
+          <ConnectorPoint PointX="5.5" PointY="6.7401432291666667" />
+          <ConnectorPoint PointX="5.5" PointY="4.5" />
+          <ConnectorPoint PointX="7.416666666666667" PointY="4.4999999999999991" />
+          <ConnectorPoint PointX="7.583333333333333" PointY="4.5" />
+          <ConnectorPoint PointX="7.75" PointY="4.5" />
+          <ConnectorPoint PointX="7.75" PointY="3.5" />
+          <ConnectorPoint PointX="8.75" PointY="3.5" />
+          <ConnectorPoint PointX="8.75" PointY="3.3071907552083317" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdventureWorksHRModel.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" >
+          <ConnectorPoint PointX="7.25" PointY="4.75" />
+          <ConnectorPoint PointX="7.625" PointY="4.375" />
+          <ConnectorPoint PointX="7.625" PointY="2.6991450664062495" />
+          <ConnectorPoint PointX="8" PointY="2.6991450664062495" />
+        </AssociationConnector>
       </Diagram>
     </Diagrams>
   </Designer>

@@ -52,7 +52,7 @@ namespace SampleApplication.Repository_Tests
         public void ReturnsEmployeesName_Test()
         {
             var actual = target.GetEmployeeByCityState(City, State);
-            Assert.AreNotEqual(null, actual[0].EmployeeName);
+            Assert.AreNotEqual(null, actual[0].FirstName);
         }
     }
 }

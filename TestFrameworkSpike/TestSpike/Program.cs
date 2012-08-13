@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using MonoAndroidUnit.Framework;
 
 namespace TestRunner
 {
@@ -8,12 +10,12 @@ namespace TestRunner
         {
             if (args.Length==0)
             {
-                args = new []{"Sample_Tests.dll"};
+                args = new[] { "MonoAndroidUnit.Sample_Tests.dll" };
             }
             
             foreach (var s in args)
             {
-                var builder = new TestBuilder(s);
+                var builder = new TestEngine(s);
                 foreach (var result in builder.TestResultses)
                 {
                     Console.WriteLine(result.Description);
@@ -34,7 +36,14 @@ namespace TestRunner
                         }
                     }
                 }
+                var totalTests = builder.TestResultses.SelectMany(x => x.TestResultMesssage).ToList();
+                var totalTestCount = totalTests.Count;
+                var totalPassingTestsCount = totalTests.Count(x => x.Success);
+                var totalFailingTestCount = totalTests.Count(x => !x.Success);
+
+                Console.WriteLine(string.Format("Total Test Count: {0}\t Total Passing: {1}\t Total Failing: {2}", totalTestCount, totalPassingTestsCount, totalFailingTestCount));
             }
+            
             Console.WriteLine("press any key");
             Console.ReadKey();
         }

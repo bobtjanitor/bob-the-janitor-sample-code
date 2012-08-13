@@ -1,6 +1,6 @@
 using System;
 
-namespace Framework.Attributes
+namespace MonoAndroidUnit.Framework.Attributes
 {
     public class TestAttribute : Attribute
     {

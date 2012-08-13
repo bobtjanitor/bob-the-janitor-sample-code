@@ -10,7 +10,7 @@ namespace MonoAndroidUnit.Framework
 {
     public class TestEngine
     {
-        public string AssembyName { get; set; }
+        public string AssemblyName { get; set; }
         private List<TestResults> _testResultses = new List<TestResults>();
         public List<TestResults> TestResultses
         {
@@ -24,13 +24,13 @@ namespace MonoAndroidUnit.Framework
        
         public TestEngine(string name)
         {
-            AssembyName = name;
-            SetTestFixture();
+            AssemblyName = name;
+            RunAssemblyFixture();
         }
 
-        public void SetTestFixture()
+        public void RunAssemblyFixture()
         {
-            var theList = Assembly.LoadFrom(AssembyName).GetTypes().ToArray();
+            var theList = Assembly.LoadFrom(AssemblyName).GetTypes().ToArray();
             foreach (Type type in theList)
             {
                 if (type.GetCustomAttributes(typeof(TestFixtureAttribute), false).Any())

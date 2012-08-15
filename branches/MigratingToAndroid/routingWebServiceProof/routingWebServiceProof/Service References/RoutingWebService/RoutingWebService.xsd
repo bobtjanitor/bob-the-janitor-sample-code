@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RoutingWebService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RoutingWebService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects.GeoObjects" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" />
+  <xs:complexType name="RouteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfRouteLocation" />
+          <xs:element minOccurs="0" name="MilesPerGallon" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RouteRequest" nillable="true" type="tns:RouteRequest" />
+  <xs:complexType name="RequestBase">
+    <xs:sequence>
+      <xs:element name="IntegrationId" type="xs:int" />
+      <xs:element name="Password" nillable="true" type="xs:string" />
+      <xs:element name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+  <xs:complexType name="ArrayOfRouteLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RouteLocation" nillable="true" type="tns:RouteLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRouteLocation" nillable="true" type="tns:ArrayOfRouteLocation" />
+  <xs:complexType name="RouteLocation">
+    <xs:sequence>
+      <xs:element name="City" nillable="true" type="xs:string" />
+      <xs:element name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RouteLocation" nillable="true" type="tns:RouteLocation" />
+  <xs:complexType name="RouteReturn">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReturnBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AverageFuelPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="CostPerMile" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedFuelCost" type="xs:double" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Truckstop2.Objects.GeoObjects" minOccurs="0" name="FuelStopsOnRoute" nillable="true" type="q1:ArrayOfFuelstop" />
+          <xs:element minOccurs="0" name="MilesOnRoute" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RouteReturn" nillable="true" type="tns:RouteReturn" />
+  <xs:complexType name="ReturnBase">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Truckstop2.Objects" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnBase" nillable="true" type="tns:ReturnBase" />
+</xs:schema>

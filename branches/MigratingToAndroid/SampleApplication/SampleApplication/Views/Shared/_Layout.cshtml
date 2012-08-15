@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+
+    <body>
+        <ul class="menu">
+            <li>@Html.ActionLink("Basic Form Demo","index","BasicDemo" )</li>
+            <li>@Html.ActionLink("Simple Ajax Demo", "Simple", "AjaxDemo")</li>
+            <li>@Html.ActionLink("Form Ajax Demo", "Form", "AjaxDemo")</li>
+            <li>@Html.ActionLink("Custom ActionResult Demo", "index", "CustomActionDemo")</li>
+            <li>@Html.ActionLink("Custom View Enmgine Demo", "TransformedView", "CustomViewEngine")</li>
+        </ul>
+        @RenderBody()
+    </body>
+</html>

@@ -1,0 +1,4 @@
+C:\Development\jsUnitSample\jsUnitSample\bin\jsUnitSample.dll
+C:\Development\jsUnitSample\jsUnitSample\bin\jsUnitSample.pdb
+C:\Development\jsUnitSample\jsUnitSample\obj\Debug\jsUnitSample.dll
+C:\Development\jsUnitSample\jsUnitSample\obj\Debug\jsUnitSample.pdb

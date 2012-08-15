@@ -1,0 +1,5 @@
+C:\Development\DriverLogger\DriverLogger.Biz\bin\Debug\DriverLogger.Biz.dll
+C:\Development\DriverLogger\DriverLogger.Biz\bin\Debug\DriverLogger.Biz.pdb
+C:\Development\DriverLogger\DriverLogger.Biz\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\DriverLogger\DriverLogger.Biz\obj\Debug\DriverLogger.Biz.dll
+C:\Development\DriverLogger\DriverLogger.Biz\obj\Debug\DriverLogger.Biz.pdb

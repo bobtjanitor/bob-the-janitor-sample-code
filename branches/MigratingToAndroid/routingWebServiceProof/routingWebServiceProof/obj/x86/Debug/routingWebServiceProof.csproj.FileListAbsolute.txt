@@ -1,0 +1,6 @@
+C:\Development\routingWebServiceProof\routingWebServiceProof\bin\Debug\routingWebServiceProof.exe.config
+C:\Development\routingWebServiceProof\routingWebServiceProof\bin\Debug\routingWebServiceProof.exe
+C:\Development\routingWebServiceProof\routingWebServiceProof\bin\Debug\routingWebServiceProof.pdb
+C:\Development\routingWebServiceProof\routingWebServiceProof\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Development\routingWebServiceProof\routingWebServiceProof\obj\x86\Debug\routingWebServiceProof.exe
+C:\Development\routingWebServiceProof\routingWebServiceProof\obj\x86\Debug\routingWebServiceProof.pdb

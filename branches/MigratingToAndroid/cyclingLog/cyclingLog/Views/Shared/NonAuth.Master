@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="cyclingLog.Controllers" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="page">
+         <div id="header">
+            <%
+                Html.RenderPartial("MasterHeader");%>
+              
+            <div id="logindisplay">
+                &nbsp;
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">
+                  <li><%=Html.ActionLink("Routes", "RouteList", "Route")%></li> 
+                  <li>
+                    <%
+                        if (ViewData["AuthUserGuid"] != null)
+                        {
+                    %><%=Html.ActionLink("Profile", "Detail", new { controller = "Profiles", id = Guid.Parse(ViewData["AuthUserGuid"].ToString()) })%><%
+                    }
+                    else
+                    {
+                    %><%=Html.ActionLink("Login", "Index", "Login")%><%
+                    }   
+                    %>
+                 </li>   
+                </ul>
+            
+            </div>
+        </div>
+        <br style="clear:both;" />
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

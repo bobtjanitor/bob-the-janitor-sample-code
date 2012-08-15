@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="560e1344-b4ab-40c7-8ea3-68b063ffd486" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://routingwebservice.truckstop.com/v2/routing.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a04b0b3d-cb30-4f0c-8301-f8497d7f8165" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="3e31bde7-a8a9-4bd7-a67e-5ec1d6e9896b" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5293b22c-23ab-4937-8c6c-8c0863207be2" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="447b5184-1dc9-4f0f-a875-cd5eb5cea8d7" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="RoutingWebService.xsd" MetadataType="Schema" ID="00ba1bbf-fc43-48fb-b79d-dd1c48691d01" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="Truckstop2.Objects.xsd" MetadataType="Schema" ID="986357ee-e8d1-4bdf-aedd-a5b8ea14410d" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="7a18f254-3532-4e9e-8244-7ee3ae920166" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+    <MetadataFile FileName="Truckstop2.Objects.GeoObjects.xsd" MetadataType="Schema" ID="e0c5bf91-813d-47fb-9315-174abfd5a694" SourceId="1" SourceUrl="http://routingwebservice.truckstop.com/v2/routing.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

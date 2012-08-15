@@ -1,7 +1,8 @@
 using MonoAndroidUnit.Framework.Asserts;
 using MonoAndroidUnit.Framework.Attributes;
+using Sample_Tests;
 
-namespace Sample_Tests
+namespace MonoAndroidUnit.Sample_Tests
 {
     [TestFixture]
     public class SimpleClass_Add_Test

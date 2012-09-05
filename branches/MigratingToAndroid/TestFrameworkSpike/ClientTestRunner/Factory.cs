@@ -6,7 +6,7 @@ namespace ClientTestRunner
     {
         public static TestEngine  GetTestEngine()
         {
-            return new TestEngine("MonoAndroidUnit.Sample_Tests.dll");
+            return new TestEngine("AndroidUnit.Sample_Tests.dll");
         }
     }
 }

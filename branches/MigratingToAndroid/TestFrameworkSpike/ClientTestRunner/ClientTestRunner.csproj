@@ -56,7 +56,9 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Layout\Main.axml" />
+    <AndroidResource Include="Resources\Layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -68,6 +70,10 @@
     <ProjectReference Include="..\AndroidUnit.Framework\AndroidUnit.Framework.csproj">
       <Project>{50F6EBA2-E4A5-453B-B390-DD61D6B8E15D}</Project>
       <Name>AndroidUnit.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AndroidUnit.Sample_Tests\AndroidUnit.Sample_Tests.csproj">
+      <Project>{e81e0e6b-d99c-45dd-9397-aed8614b040a}</Project>
+      <Name>AndroidUnit.Sample_Tests</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

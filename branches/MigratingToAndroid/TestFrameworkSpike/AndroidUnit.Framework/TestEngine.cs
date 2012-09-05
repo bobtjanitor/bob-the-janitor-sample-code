@@ -29,7 +29,7 @@ namespace AndroidUnit.Framework
 
         public void RunAssemblyFixture()
         {
-            var theList = Assembly.LoadFrom(AssemblyName).GetTypes().ToArray();
+            var theList = Assembly.Load(AssemblyName).GetTypes().ToArray();
             foreach (Type type in theList)
             {
                 if (type.GetCustomAttributes(typeof(TestFixtureAttribute), false).Any())

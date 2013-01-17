@@ -21,7 +21,7 @@ namespace SampleApplication.CustomValidators
         {
             yield return new ModelClientValidationRule
                              {
-                                 ErrorMessage = this.ErrorMessage,
+                                 ErrorMessage = ErrorMessage,
                                  ValidationType = "Greater Then " + BaseNumber
                              };
         }

@@ -10,7 +10,7 @@ namespace SampleApplication.Controllers
 
         public ActionResult Index()
         {
-            ValidationDemoModel model = new ValidationDemoModel();
+            var model = new ValidationDemoModel();
             return View(model);
         }
 

@@ -49,6 +49,18 @@ namespace SampleApplication.Domain_Tests.UnitTest
         {
             target.GetEmployeeByLocation("Seattle", "Washington");
             MockEmployeeRepository.Verify(x => x.GetEmployeeByCityState("Seattle", "Washington"));
-        }     
+        } 
+    
+        
+        [Test]
+        [TestCase("Boise", "Id")]
+        [TestCase("Nampa", "Id")]
+        [TestCase("Rexburg", "Id")]
+        [TestCase("Eagle", "Id")]
+        public void Testing_With_TestCase_Test(string city, string state)
+        {
+            target.GetEmployeeByLocation(city, state);
+            MockEmployeeRepository.Verify(x => x.GetEmployeeByCityState(city, state));
+        }
     }
 }

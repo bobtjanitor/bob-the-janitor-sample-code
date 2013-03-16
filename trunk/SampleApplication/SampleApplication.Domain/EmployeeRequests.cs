@@ -5,7 +5,7 @@ using SampleApplication.Objects.RepositoryInterfaces;
 
 namespace SampleApplication.Domain
 {
-    public class EmployeeRequests
+    public class EmployeeRequests : IEmployeeRequests
     {
         public EmployeeRequests() : this(new UserDto())
         {

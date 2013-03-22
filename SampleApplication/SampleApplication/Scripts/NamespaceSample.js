@@ -42,8 +42,8 @@ describe("sampleNamespace_Tests", function () {
         expect(value).toBe(newTestValue);
     });
 
-   // it("test", function () {
-   //     expect(true).toBe(true);
-  //  });
+    it("test", function () {
+        expect(true).toBe(true);
+    });
     
 });

@@ -48,9 +48,8 @@ namespace SampleApplication.Domain_Tests.UnitTest
         public void VailidCityStateCallRepository_Test()
         {
             target.GetEmployeeByLocation("Seattle", "Washington");
-            MockEmployeeRepository.Verify(x => x.GetEmployeeByCityState("Seattle", "Washington"));
-        } 
-    
+            MockEmployeeRepository.Verify(x => x.GetEmployeeByCityState("Seattle", "Washington"), Times.Once());
+        }     
         
         [Test]
         [TestCase("Boise", "Id")]

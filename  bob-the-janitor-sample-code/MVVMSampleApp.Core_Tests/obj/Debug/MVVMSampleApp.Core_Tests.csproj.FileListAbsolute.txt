@@ -1,0 +1,13 @@
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\MVVMSampleApp.Core_Tests.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\MVVMSampleApp.Core_Tests.pdb
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Cirrious.CrossCore.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Cirrious.CrossCore.Wpf.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Cirrious.MvvmCross.Localization.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Cirrious.MvvmCross.Test.Core.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Moq.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\nunit.framework.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\Moq.xml
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\bin\Debug\nunit.framework.xml
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\obj\Debug\MVVMSampleApp.Core_Tests.csprojResolveAssemblyReference.cache
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\obj\Debug\MVVMSampleApp.Core_Tests.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core_Tests\obj\Debug\MVVMSampleApp.Core_Tests.pdb

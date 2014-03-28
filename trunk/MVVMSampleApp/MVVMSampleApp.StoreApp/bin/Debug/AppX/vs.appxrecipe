@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SYN-RCLEMENTS</Machine>
+    <WindowsUser>Richard</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>09ad540d-826f-4fa3-a6c1-37d5dc5cfe7c</PackageIdentityName>
+    <RegisteredManifestChecksum>C6FE1CBDFE308562600469A1FFF3D290D1591004343E86B80E4EC6B11329A2F8</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>09ad540d-826f-4fa3-a6c1-37d5dc5cfe7c_1.0.0.0_neutral__bqbb28m2ksa1g</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>09ad540d-826f-4fa3-a6c1-37d5dc5cfe7c_bqbb28m2ksa1g!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>09ad540d-826f-4fa3-a6c1-37d5dc5cfe7c</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Richard</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-25T15:47:44.965</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\bin\Debug\MVVMSampleApp.StoreApp.exe">
+      <PackagePath>MVVMSampleApp.StoreApp.exe</PackagePath>
+      <Modified>2014-03-25T15:52:16.358</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.CrossCore.dll">
+      <PackagePath>Cirrious.CrossCore.dll</PackagePath>
+      <Modified>2014-03-21T23:26:09.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.CrossCore.WindowsStore.dll">
+      <PackagePath>Cirrious.CrossCore.WindowsStore.dll</PackagePath>
+      <Modified>2014-03-21T23:26:09.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\netcore45\Cirrious.MvvmCross.dll">
+      <PackagePath>Cirrious.MvvmCross.dll</PackagePath>
+      <Modified>2014-03-21T23:26:10.020</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.MvvmCross.Localization.dll">
+      <PackagePath>Cirrious.MvvmCross.Localization.dll</PackagePath>
+      <Modified>2014-03-21T23:26:09.391</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\netcore45\Cirrious.MvvmCross.WindowsStore.dll">
+      <PackagePath>Cirrious.MvvmCross.WindowsStore.dll</PackagePath>
+      <Modified>2014-03-21T23:26:10.056</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\MVVMSampleApp.Core.dll">
+      <PackagePath>MVVMSampleApp.Core.dll</PackagePath>
+      <Modified>2014-03-25T04:58:14.310</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+      <Modified>2014-03-25T15:37:01.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\ToDo-MvvmCross\_ Windows Store UI.txt">
+      <PackagePath>ToDo-MvvmCross\_ Windows Store UI.txt</PackagePath>
+      <Modified>2014-03-25T14:58:20.987</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-03-25T14:56:09.755</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\bin\Debug\Views\FirstView.xbf">
+      <PackagePath>Views\FirstView.xbf</PackagePath>
+      <Modified>2014-03-25T15:52:16.084</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-03-25T15:47:44.833</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+﻿<xapCache source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Bin\Debug\MVVMSampleApp.WindowsPhone_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="3/27/2014 3:03:08 PM">
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\obj\Debug\MVVMSampleApp.WindowsPhone.dll" archivePath="MVVMSampleApp.WindowsPhone.dll" lastWriteTime="3/27/2014 3:03:06 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\ToDo-MvvmCross\_ Windows Phone UI.txt" archivePath="ToDo-MvvmCross\_ Windows Phone UI.txt" lastWriteTime="3/24/2014 10:18:53 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="3/24/2014 10:58:26 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="3/24/2014 10:17:17 PM" />
+  <file source="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.dll" archivePath="Cirrious.CrossCore.dll" lastWriteTime="3/21/2014 5:26:09 PM" />
+  <file source="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.WindowsPhone.dll" archivePath="Cirrious.CrossCore.WindowsPhone.dll" lastWriteTime="3/21/2014 5:26:09 PM" />
+  <file source="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.dll" archivePath="Cirrious.MvvmCross.dll" lastWriteTime="3/21/2014 5:26:10 PM" />
+  <file source="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.MvvmCross.Localization.dll" archivePath="Cirrious.MvvmCross.Localization.dll" lastWriteTime="3/21/2014 5:26:09 PM" />
+  <file source="C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll" archivePath="Cirrious.MvvmCross.WindowsPhone.dll" lastWriteTime="3/21/2014 5:26:10 PM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\MVVMSampleApp.Core.dll" archivePath="MVVMSampleApp.Core.dll" lastWriteTime="3/24/2014 10:58:14 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="9/25/2012 2:41:02 AM" />
+  <file source="C:\Development\MVVMSampleApp\MVVMSampleApp.WindowsPhone\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="3/24/2014 10:58:26 PM" />
+</xapCache>

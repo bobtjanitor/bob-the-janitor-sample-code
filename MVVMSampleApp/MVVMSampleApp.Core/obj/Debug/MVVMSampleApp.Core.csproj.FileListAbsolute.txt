@@ -1,0 +1,8 @@
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\MVVMSampleApp.Core.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\MVVMSampleApp.Core.pdb
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\Cirrious.CrossCore.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\Cirrious.MvvmCross.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\Cirrious.MvvmCross.Localization.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\obj\Debug\MVVMSampleApp.Core.csprojResolveAssemblyReference.cache
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\obj\Debug\MVVMSampleApp.Core.dll
+C:\Development\MVVMSampleApp\MVVMSampleApp.Core\obj\Debug\MVVMSampleApp.Core.pdb

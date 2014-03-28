@@ -3,11 +3,11 @@ using MVVMSampleApp.Core.ServiceInterfaces;
 
 namespace MVVMSampleApp.Droid.ClientServices
 {
-    public class ClientDataService : IDataService
+    public class DroidClientDataService : IDataService
     {
         public List<string> GetDataItems()
         {
-            return new List<string> { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            return new List<string> { "Droid Item 1", "Droid Item 2", "Droid Item 3", "Droid Item 4", "Droid Item 5" };
         }
     }
 }

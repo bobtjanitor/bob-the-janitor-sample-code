@@ -1,21 +1,19 @@
 using System.Collections.Generic;
-using MVVMSampleApp.Droid.ClientServices;
+using MVVMSampleApp.iOS.ClientServices;
 using NUnit.Framework;
 
-namespace MVVMSampleApp.Droid_Tests.DataService_Tests
+namespace MVVMSampleApp.iOS_Tests.ClientDataService_Tests
 {
     [TestFixture]
-    public class When_Calling_Get_Data_Items_Tests
+    public class ClientDataService_Tests
     {
-
-        public DroidClientDataService Target;
+        public TouchClientDataService Target;
         public List<string> Actual;
-        
+
         [SetUp]
         public void SetUp()
         {
-            Target = new DroidClientDataService();  
-
+            Target = new TouchClientDataService();
             Actual = Target.GetDataItems();
         }
 
@@ -24,5 +22,6 @@ namespace MVVMSampleApp.Droid_Tests.DataService_Tests
         {
             Assert.AreEqual(5,Actual.Count);
         }
+
     }
 }

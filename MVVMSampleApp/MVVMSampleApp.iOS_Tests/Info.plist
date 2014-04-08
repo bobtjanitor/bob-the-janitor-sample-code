@@ -16,7 +16,7 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array/>
 	<key>MinimumOSVersion</key>
-	<string>5.0</string>
+	<string>7.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>MVVM Sample App Tests</string>
 	<key>CFBundleIdentifier</key>

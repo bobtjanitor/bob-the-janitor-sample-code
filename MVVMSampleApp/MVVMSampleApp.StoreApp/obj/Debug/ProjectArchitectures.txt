@@ -1,1 +1,0 @@
-C:\Development\MVVMSampleApp\MVVMSampleApp.StoreApp\MVVMSampleApp.StoreApp.csproj;neutral

@@ -1,9 +1,0 @@
-C:\Development\MVVMSampleApp\MVVMSampleApp.Droid\bin\Debug\MVVMSampleApp.Droid.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.CrossCore.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Droid.dll
-C:\Development\MVVMSampleApp\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll
-C:\Development\MVVMSampleApp\MVVMSampleApp.Core\bin\Debug\MVVMSampleApp.Core.dll

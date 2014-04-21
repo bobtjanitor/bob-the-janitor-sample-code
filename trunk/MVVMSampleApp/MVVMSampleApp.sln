@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSampleApp.Droid", "MVVMSampleApp.Droid\MVVMSampleApp.Droid.csproj", "{0230F5FD-678E-4D81-9F2B-44DD83EC0B62}"
 EndProject
@@ -325,9 +325,9 @@ Global
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|ARM.Deploy.0 = Debug|ARM
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.ActiveCfg = Debug|ARM
+		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.Build.0 = Debug|ARM
+		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|Mixed Platforms.Deploy.0 = Debug|ARM
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|x86.ActiveCfg = Debug|x86
 		{90D8D838-32DA-477E-A3E1-5884D9BF507D}.Debug|x86.Build.0 = Debug|x86

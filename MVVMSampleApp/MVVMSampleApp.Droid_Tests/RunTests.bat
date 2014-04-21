@@ -1,0 +1,1 @@
+calabash-android run ..\MVVMSampleApp.Droid\bin\Release\MVVMSampleApp.Droid-Signed.apk

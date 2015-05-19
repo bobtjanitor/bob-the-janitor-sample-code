@@ -35,7 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -47,13 +51,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksHR.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksHR.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksHR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
     <Compile Include="AdventureWorksHR.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorksHR.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessEntity.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntityAddress.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vEmployee.cs">
+      <DependentUpon>AdventureWorksHR.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="AdventureWorksHR.edmx">
@@ -63,12 +98,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApplication.Objects\SampleApplication.Objects.csproj">
       <Project>{C3A8EF48-9116-4316-9929-C4E3776B00F3}</Project>
       <Name>SampleApplication.Objects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksHR.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksHR.Context.cs</LastGenOutput>
+      <DependentUpon>AdventureWorksHR.edmx</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorksHR.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksHR.cs</LastGenOutput>
+      <DependentUpon>AdventureWorksHR.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

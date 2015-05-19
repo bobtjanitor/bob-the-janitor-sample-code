@@ -1,0 +1,45 @@
+﻿@model SampleApplication.Web.Models.ValidationDemoModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_ModelValidationDemo.cshtml";
+}
+
+<h2>Model Validation Page</h2>
+
+@using (Html.BeginForm("Submit","ModelValidationDemo"))
+{
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name, "*")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Job Title
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.JobTitle)
+                @Html.ValidationMessageFor(x => x.JobTitle, "*")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Job Title
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.Age)
+                @Html.ValidationMessageFor(x => x.Age, "*")
+            </td>
+        </tr>
+    </table>
+    <input type="submit" />
+}
+
+
+

@@ -1,0 +1,26 @@
+﻿@model SampleApplication.Models.BasicDemoModel
+
+<tr>
+    <td>@Html.LabelFor(x=>x.Address)</td>
+    <td>
+        @Html.TextBoxFor(x => x.Address)
+        @Html.ValidationMessageFor(x => x.Address, "*")
+    </td>
+</tr>
+<tr>
+    <td>@Html.LabelFor(x=>x.City)</td>
+    <td>
+        @Html.TextBoxFor(x => x.City)
+        @Html.ValidationMessageFor(x => x.City, "*")
+    </td>
+</tr>
+<tr>
+    <td>@Html.LabelFor(x=>x.State)</td>
+    <td>
+        @Html.TextBoxFor(x => x.State, new Dictionary<string, string> { { "size", "2" }, { "max-length", "2" }, {"style","width:20px;"} })
+        @Html.ValidationMessageFor(x => x.State, "*")
+        @Html.LabelFor(x=>x.ZipCode)
+        <input type="text" size="7" maxlength="7"/>        
+        @Html.ValidationMessageFor(x => x.ZipCode, "*")
+    </td>
+</tr>

@@ -1,0 +1,46 @@
+﻿@model SampleApplication.Models.IndexModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Simple json request</h2>
+<div id="simpleResult">Not Clicked</div>
+<input id="clickCount" type="hidden" value="0"/>
+<input type="button" value="Make Json Request" onclick="MakeJsonRequest();"/>
+
+<h2>View Request</h2>
+<div id="ViewResult">Not Clicked</div>
+
+<input type="button" value="Make View Request" onclick="MakeViewRequest();"/>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function MakeJsonRequest() {
+        var clickCount = $("#clickCount").val();
+        var model = { clickCount: clickCount };
+        $.post("/AjaxDemo/JsonRequest",
+               model,
+               function (data) {
+                   $("#simpleResult").html(data.Message);
+                   $("#clickCount").val(data.Count);
+               });
+
+           }
+
+    function MakeViewRequest() {
+        
+    $.post("/AjaxDemo/ViewRequest",
+               {},
+               function (data) {
+                   $("#ViewResult").html(data);
+               });
+    }
+</script>
